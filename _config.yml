@@ -1,8 +1,35 @@
-collections:
-  authors:
+title: Jonathan Strong
+description: "A blog about infosec"
+author:
+  name: "Jonathan Strong"
+  email: "someone@somewebsite.somedomain"
+  url: "https://mrjonstrong.github.io"
+
+baseurl: /
+
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 3
+paginate_path: /page/:num/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+future: true
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Custom variables
+owner : "Jonathan Strong"
+year : "2020"
 timezone: Europe/London
-theme: jekyll-theme-hacker
+

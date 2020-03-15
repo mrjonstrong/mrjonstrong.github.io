@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-15T19:21:12+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Strong</title><subtitle>A blog about infosec</subtitle><author><name>Jonathan Strong</name><email>someone@somewebsite.somedomain</email></author><entry><title type="html">First Post</title><link href="http://localhost:4000/first-post" rel="alternate" type="text/html" title="First Post" /><published>2020-03-14T00:00:00+00:00</published><updated>2020-03-14T00:00:00+00:00</updated><id>http://localhost:4000/first-post</id><content type="html" xml:base="http://localhost:4000/first-post">&lt;p&gt;Some test posting content&lt;/p&gt;</content><author><name>Jon</name></author><summary type="html">Some test posting content</summary></entry><entry><title type="html">Yet Another Sample Page</title><link href="http://localhost:4000/Yet-Another-Sample-Page" rel="alternate" type="text/html" title="Yet Another Sample Page" /><published>2018-01-06T00:00:00+00:00</published><updated>2018-01-06T00:00:00+00:00</updated><id>http://localhost:4000/Yet-Another-Sample-Page</id><content type="html" xml:base="http://localhost:4000/Yet-Another-Sample-Page">&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jonathan Strong</title>
+    <description>A blog about infosec</description>
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <author>
+      <name>Jonathan Strong</name>
+      <email>someone@somewebsite.somedomain</email>
+      <uri>https://mrjonstrong.github.io</uri>
+    </author>
+    
+      <item>
+        <title>First Post</title>
+        <description>&lt;p&gt;Some test posting content&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000//first-post</link>
+        <link href="http://localhost:4000/first-post"/>
+        <guid isPermaLink="true">http://localhost:4000/first-post</guid>
+      </item>
+    
+      <item>
+        <title>Yet Another Sample Page</title>
+        <description>&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;another-page&quot;&gt;Link to another page&lt;/a&gt;.&lt;/p&gt;
 
@@ -160,7 +186,17 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The final element.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Jonathan Strong</name><email>someone@somewebsite.somedomain</email></author><summary type="html">Text can be bold, italic, strikethrough or keyword.</summary></entry><entry><title type="html">Sample Page</title><link href="http://localhost:4000/Sample-Page" rel="alternate" type="text/html" title="Sample Page" /><published>2017-12-12T00:00:00+00:00</published><updated>2017-12-12T00:00:00+00:00</updated><id>http://localhost:4000/Sample-Page</id><content type="html" xml:base="http://localhost:4000/Sample-Page">&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000//Yet-Another-Sample-Page</link>
+        <link href="http://localhost:4000/Yet-Another-Sample-Page"/>
+        <guid isPermaLink="true">http://localhost:4000/Yet-Another-Sample-Page</guid>
+      </item>
+    
+      <item>
+        <title>Sample Page</title>
+        <description>&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;another-page&quot;&gt;Link to another page&lt;/a&gt;.&lt;/p&gt;
 
@@ -322,7 +358,17 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The final element.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Jonathan Strong</name><email>someone@somewebsite.somedomain</email></author><summary type="html">Text can be bold, italic, strikethrough or keyword.</summary></entry><entry><title type="html">One More Sample Page</title><link href="http://localhost:4000/One-More-Sample-Page" rel="alternate" type="text/html" title="One More Sample Page" /><published>2017-12-11T00:00:00+00:00</published><updated>2017-12-11T00:00:00+00:00</updated><id>http://localhost:4000/One-More-Sample-Page</id><content type="html" xml:base="http://localhost:4000/One-More-Sample-Page">&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000//Sample-Page</link>
+        <link href="http://localhost:4000/Sample-Page"/>
+        <guid isPermaLink="true">http://localhost:4000/Sample-Page</guid>
+      </item>
+    
+      <item>
+        <title>One More Sample Page</title>
+        <description>&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;another-page&quot;&gt;Link to another page&lt;/a&gt;.&lt;/p&gt;
 
@@ -484,7 +530,17 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The final element.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Jonathan Strong</name><email>someone@somewebsite.somedomain</email></author><summary type="html">Text can be bold, italic, strikethrough or keyword.</summary></entry><entry><title type="html">Another Sample Page</title><link href="http://localhost:4000/Another-Sample-Page" rel="alternate" type="text/html" title="Another Sample Page" /><published>2017-12-10T00:00:00+00:00</published><updated>2017-12-10T00:00:00+00:00</updated><id>http://localhost:4000/Another-Sample-Page</id><content type="html" xml:base="http://localhost:4000/Another-Sample-Page">&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000//One-More-Sample-Page</link>
+        <link href="http://localhost:4000/One-More-Sample-Page"/>
+        <guid isPermaLink="true">http://localhost:4000/One-More-Sample-Page</guid>
+      </item>
+    
+      <item>
+        <title>Another Sample Page</title>
+        <description>&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;another-page&quot;&gt;Link to another page&lt;/a&gt;.&lt;/p&gt;
 
@@ -646,4 +702,13 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The final element.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Jonathan Strong</name><email>someone@somewebsite.somedomain</email></author><summary type="html">Text can be bold, italic, strikethrough or keyword.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sun, 10 Dec 2017 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000//Another-Sample-Page</link>
+        <link href="http://localhost:4000/Another-Sample-Page"/>
+        <guid isPermaLink="true">http://localhost:4000/Another-Sample-Page</guid>
+      </item>
+    
+  </channel>
+</rss>
