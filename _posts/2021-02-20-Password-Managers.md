@@ -34,7 +34,7 @@ Write it down on a piece of paper and put it in your purse/wallet to start with.
 For some ideas this website helps: <https://www.useapassphrase.com/> as does the 1Password generator <https://1password.com/password-generator/>.
 Rather than pick one generated for you I would come up with one yourself.
 
-Check out pricing at <https://1password.com/teams/pricing/>.
+Check out the pricing for your region by selecting it here <https://support.1password.com/regions/#choose-your-region>.
 There is an option for just you. But the families option works well (up to 5 people). A few advantages, better value, sharing between individuals is easy and you can set it up so that you can recover another account if they forget their master password.
 
 There is a 14 day free trial and you can move from an individual account to family account.
