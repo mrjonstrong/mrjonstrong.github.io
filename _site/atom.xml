@@ -3,12 +3,12 @@
   <channel>
     <title>Jonathan Strong</title>
     <description>A blog about infosec</description>
-    <link></link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     <author>
       <name>Jonathan Strong</name>
       <email>someone@somewebsite.somedomain</email>
-      <uri>https://mrjonstrong.github.io</uri>
+      <uri>https://jonathanstrong.org</uri>
     </author>
     
       <item>
@@ -116,9 +116,9 @@ This will help to pick the sites that need the passwords changed the most.
 &lt;p&gt;There are some short videos to help show you how to sign up and get started: &lt;a href=&quot;https://www.youtube.com/playlist?liAuthyeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM&quot;&gt;https://www.youtube.com/playlist?liAuthyeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-        <link>//Password-Managers</link>
-        <link href="/Password-Managers"/>
-        <guid isPermaLink="true">/Password-Managers</guid>
+        <link>http://localhost:4000//Password-Managers</link>
+        <link href="http://localhost:4000/Password-Managers"/>
+        <guid isPermaLink="true">http://localhost:4000/Password-Managers</guid>
       </item>
     
       <item>
@@ -288,9 +288,9 @@ This will help to pick the sites that need the passwords changed the most.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
-        <link>//Yet-Another-Sample-Page</link>
-        <link href="/Yet-Another-Sample-Page"/>
-        <guid isPermaLink="true">/Yet-Another-Sample-Page</guid>
+        <link>http://localhost:4000//Yet-Another-Sample-Page</link>
+        <link href="http://localhost:4000/Yet-Another-Sample-Page"/>
+        <guid isPermaLink="true">http://localhost:4000/Yet-Another-Sample-Page</guid>
       </item>
     
       <item>
@@ -460,9 +460,9 @@ This will help to pick the sites that need the passwords changed the most.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
-        <link>//Sample-Page</link>
-        <link href="/Sample-Page"/>
-        <guid isPermaLink="true">/Sample-Page</guid>
+        <link>http://localhost:4000//Sample-Page</link>
+        <link href="http://localhost:4000/Sample-Page"/>
+        <guid isPermaLink="true">http://localhost:4000/Sample-Page</guid>
       </item>
     
       <item>
@@ -632,9 +632,9 @@ This will help to pick the sites that need the passwords changed the most.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
-        <link>//One-More-Sample-Page</link>
-        <link href="/One-More-Sample-Page"/>
-        <guid isPermaLink="true">/One-More-Sample-Page</guid>
+        <link>http://localhost:4000//One-More-Sample-Page</link>
+        <link href="http://localhost:4000/One-More-Sample-Page"/>
+        <guid isPermaLink="true">http://localhost:4000/One-More-Sample-Page</guid>
       </item>
     
       <item>
@@ -804,9 +804,9 @@ This will help to pick the sites that need the passwords changed the most.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 10 Dec 2017 00:00:00 +0000</pubDate>
-        <link>//Another-Sample-Page</link>
-        <link href="/Another-Sample-Page"/>
-        <guid isPermaLink="true">/Another-Sample-Page</guid>
+        <link>http://localhost:4000//Another-Sample-Page</link>
+        <link href="http://localhost:4000/Another-Sample-Page"/>
+        <guid isPermaLink="true">http://localhost:4000/Another-Sample-Page</guid>
       </item>
     
   </channel>

@@ -2,6 +2,8 @@
 layout: post
 author: Jon
 title: Password Manager
+date: 2021-02-20
+tags: cyber-security password-manager
 ---
 ## What is a password manager?
 

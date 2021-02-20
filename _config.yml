@@ -3,7 +3,7 @@ description: "A blog about infosec"
 author:
   name: "Jonathan Strong"
   email: "someone@somewebsite.somedomain"
-  url: "https://mrjonstrong.github.io"
+  url: "https://jonathanstrong.org"
 
 baseurl: /
 
@@ -27,6 +27,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-target-blank 
 
 # Custom variables
 owner : "Jonathan Strong"
