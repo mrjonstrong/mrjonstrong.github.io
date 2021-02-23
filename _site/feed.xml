@@ -1,14 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-20T21:30:08+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Strong</title><subtitle>A blog about infosec</subtitle><author><name>Jonathan Strong</name><email>someone@somewebsite.somedomain</email></author><entry><title type="html">Password Manager</title><link href="http://localhost:4000/Password-Managers" rel="alternate" type="text/html" title="Password Manager" /><published>2021-02-20T00:00:00+00:00</published><updated>2021-02-20T00:00:00+00:00</updated><id>http://localhost:4000/Password-Managers</id><content type="html" xml:base="http://localhost:4000/Password-Managers">&lt;h2 id=&quot;what-is-a-password-manager&quot;&gt;What is a password manager?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-23T21:46:31+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Strong</title><subtitle>A blog about infosec</subtitle><author><name>Jonathan Strong</name><email>someone@somewebsite.somedomain</email></author><entry><title type="html">Why do I need a password manager</title><link href="http://localhost:4000/Why-do-I-need-a-password-manager" rel="alternate" type="text/html" title="Why do I need a password manager" /><published>2021-02-23T00:00:00+00:00</published><updated>2021-02-23T00:00:00+00:00</updated><id>http://localhost:4000/Why-do-I-need-a-password-manager</id><content type="html" xml:base="http://localhost:4000/Why-do-I-need-a-password-manager">&lt;p&gt;Because it actually makes your life easier. It is quicker to log into a website or app using a password manager autofill than typing your password, or more likely hitting the password reset link.&lt;/p&gt;
+
+&lt;p&gt;Easy to share wifi passwords with friends.&lt;/p&gt;
+
+&lt;p&gt;Reduces the risk of you entering the password into a fake site. For instance if you get an email about a tax refund and click the link to the tax website, your password manger will not autofill the password if it is not the right address.&lt;/p&gt;
+
+&lt;p&gt;Have you seen a friend post about a Raybands sale on Facebook? Followed by another saying they were ‘hacked’? Or had an email from a friend asking for money out of the blue, followed by another saying they were ‘hacked’? These hacks are likely because your friend used the same or similar passwords on multiple sites. When one site has a breach, your email address and password is shared with the world. Someone will take your email address and password and try it on every site on the internet.&lt;/p&gt;
+
+&lt;p&gt;There is no way to remember all your passwords yourself. I have around 300 items stored in my password manager. Most people I have spoken to have at least 50 or more. Although the only stat I could find was from &lt;a href=&quot;https://www.mcafee.com/blogs/consumer/consumer-threat-notices/security-world-password-day/&quot;&gt;McAfee in 2018&lt;/a&gt; saying the average was 23. That is still more than I could remember.&lt;/p&gt;
+
+&lt;p&gt;But what if I use a different password for each site now? The chances are it is similar and easy to guess the variations.&lt;/p&gt;
+
+&lt;p&gt;Are your passwords strong? If you can remember multiple ones the chances are they are not. Remeber the hackers know most people substitute an ‘a’ for @ or a ‘o’ for a 0 etc.&lt;/p&gt;
+
+&lt;p&gt;Most people use date of births or other significant dates. Names of children, partners, pets etc.&lt;/p&gt;
+
+&lt;p&gt;To test if your password has been in a data breach take a look here &lt;a href=&quot;https://haveibeenpwned.com/Passwords&quot;&gt;https://haveibeenpwned.com/Passwords&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To see if your email address has appeared in a known databreach take a look here &lt;a href=&quot;https://haveibeenpwned.com/&quot;&gt;https://haveibeenpwned.com/&lt;/a&gt;&lt;/p&gt;</content><author><name>jon</name></author><category term="cyber-security" /><category term="password-manager" /><summary type="html">Because it actually makes your life easier. It is quicker to log into a website or app using a password manager autofill than typing your password, or more likely hitting the password reset link.</summary></entry><entry><title type="html">Password Manager</title><link href="http://localhost:4000/Password-Managers" rel="alternate" type="text/html" title="Password Manager" /><published>2021-02-20T00:00:00+00:00</published><updated>2021-02-20T00:00:00+00:00</updated><id>http://localhost:4000/Password-Managers</id><content type="html" xml:base="http://localhost:4000/Password-Managers">&lt;h2 id=&quot;what-is-a-password-manager&quot;&gt;What is a password manager?&lt;/h2&gt;
 
 &lt;p&gt;A place to manage all your passwords.&lt;/p&gt;
 
 &lt;h2 id=&quot;why-use-a-password-manager&quot;&gt;Why use a password manager?&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://blog.1password.com/how-to-protect-yourself-from-password-reuse-attacks/&quot;&gt;https://blog.1password.com/how-to-protect-yourself-from-password-reuse-attacks/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM&quot;&gt;https://www.youtube.com/playlist?list=PLeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.1password.com/toward-better-master-passwords/&quot;&gt;https://blog.1password.com/toward-better-master-passwords/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;Why-do-I-need-a-password-manager&quot;&gt;See this post&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;how-to-use-a-password-manager&quot;&gt;How to use a password manager&lt;/h2&gt;
 
@@ -98,169 +112,7 @@ This will help to pick the sites that need the passwords changed the most.
 
 &lt;p&gt;After updating all of them you should by now be very comfortable with 1Password and remember your master password. Now is the time to update the remaining sites like your email.&lt;/p&gt;
 
-&lt;p&gt;There are some short videos to help show you how to sign up and get started: &lt;a href=&quot;https://www.youtube.com/playlist?liAuthyeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM&quot;&gt;https://www.youtube.com/playlist?liAuthyeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM&lt;/a&gt;&lt;/p&gt;</content><author><name>Jon</name></author><category term="cyber-security" /><category term="password-manager" /><summary type="html">What is a password manager?</summary></entry><entry><title type="html">Yet Another Sample Page</title><link href="http://localhost:4000/Yet-Another-Sample-Page" rel="alternate" type="text/html" title="Yet Another Sample Page" /><published>2018-01-06T00:00:00+00:00</published><updated>2018-01-06T00:00:00+00:00</updated><id>http://localhost:4000/Yet-Another-Sample-Page</id><content type="html" xml:base="http://localhost:4000/Yet-Another-Sample-Page">&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;another-page&quot;&gt;Link to another page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;There should be whitespace between paragraphs.&lt;/p&gt;
-
-&lt;p&gt;There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.&lt;/p&gt;
-
-&lt;h1 id=&quot;header-1&quot;&gt;&lt;a href=&quot;#header-1&quot;&gt;&lt;/a&gt;Header 1&lt;/h1&gt;
-
-&lt;p&gt;This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.&lt;/p&gt;
-
-&lt;h2 id=&quot;header-2&quot;&gt;&lt;a href=&quot;#header-2&quot;&gt;&lt;/a&gt;Header 2&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This is a blockquote following a header.&lt;/p&gt;
-
-  &lt;p&gt;When something is important enough, you do it even if the odds are not in your favor.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;header-3&quot;&gt;&lt;a href=&quot;#header-3&quot;&gt;&lt;/a&gt;Header 3&lt;/h3&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Javascript code with syntax highlighting.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;dateformat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./lang/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Ruby code with syntax highlighting&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;GitHubPages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dependencies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_dependency&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;= &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;header-4&quot;&gt;&lt;a href=&quot;#header-4&quot;&gt;&lt;/a&gt;Header 4&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;This is an unordered list following a header.&lt;/li&gt;
-  &lt;li&gt;This is an unordered list following a header.&lt;/li&gt;
-  &lt;li&gt;This is an unordered list following a header.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;header-5&quot;&gt;&lt;a href=&quot;#header-5&quot;&gt;&lt;/a&gt;Header 5&lt;/h5&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;This is an ordered list following a header.&lt;/li&gt;
-  &lt;li&gt;This is an ordered list following a header.&lt;/li&gt;
-  &lt;li&gt;This is an ordered list following a header.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h6 id=&quot;header-6&quot;&gt;&lt;a href=&quot;#header-6&quot;&gt;&lt;/a&gt;Header 6&lt;/h6&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;head1&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;head two&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;three&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;ok&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;good swedish fish&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nice&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;out of stock&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;good and plenty&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nice&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;ok&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;good &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oreos&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;hmm&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;ok&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;good &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zoute&lt;/code&gt; drop&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;yumm&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;theres-a-horizontal-rule-below-this&quot;&gt;There’s a horizontal rule below this.&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;here-is-an-unordered-list&quot;&gt;Here is an unordered list:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Item foo&lt;/li&gt;
-  &lt;li&gt;Item bar&lt;/li&gt;
-  &lt;li&gt;Item baz&lt;/li&gt;
-  &lt;li&gt;Item zip&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;and-an-ordered-list&quot;&gt;And an ordered list:&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Item one&lt;/li&gt;
-  &lt;li&gt;Item two&lt;/li&gt;
-  &lt;li&gt;Item three&lt;/li&gt;
-  &lt;li&gt;Item four&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;and-a-nested-list&quot;&gt;And a nested list:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;level 1 item
-    &lt;ul&gt;
-      &lt;li&gt;level 2 item&lt;/li&gt;
-      &lt;li&gt;level 2 item
-        &lt;ul&gt;
-          &lt;li&gt;level 3 item&lt;/li&gt;
-          &lt;li&gt;level 3 item&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;level 1 item
-    &lt;ul&gt;
-      &lt;li&gt;level 2 item&lt;/li&gt;
-      &lt;li&gt;level 2 item&lt;/li&gt;
-      &lt;li&gt;level 2 item&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;level 1 item
-    &lt;ul&gt;
-      &lt;li&gt;level 2 item&lt;/li&gt;
-      &lt;li&gt;level 2 item&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;level 1 item&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;small-image&quot;&gt;Small image&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://assets-cdn.github.com/images/icons/emoji/octocat.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;large-image&quot;&gt;Large image&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/branching.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;definition-lists-can-be-used-with-html-syntax&quot;&gt;Definition lists can be used with HTML syntax.&lt;/h3&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;Name&lt;/dt&gt;
-&lt;dd&gt;Godzilla&lt;/dd&gt;
-&lt;dt&gt;Born&lt;/dt&gt;
-&lt;dd&gt;1952&lt;/dd&gt;
-&lt;dt&gt;Birthplace&lt;/dt&gt;
-&lt;dd&gt;Japan&lt;/dd&gt;
-&lt;dt&gt;Color&lt;/dt&gt;
-&lt;dd&gt;Green&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The final element.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Jonathan Strong</name><email>someone@somewebsite.somedomain</email></author><summary type="html">Text can be bold, italic, strikethrough or keyword.</summary></entry><entry><title type="html">Sample Page</title><link href="http://localhost:4000/Sample-Page" rel="alternate" type="text/html" title="Sample Page" /><published>2017-12-12T00:00:00+00:00</published><updated>2017-12-12T00:00:00+00:00</updated><id>http://localhost:4000/Sample-Page</id><content type="html" xml:base="http://localhost:4000/Sample-Page">&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;There are some short videos to help show you how to sign up and get started: &lt;a href=&quot;https://www.youtube.com/playlist?liAuthyeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM&quot;&gt;https://www.youtube.com/playlist?liAuthyeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM&lt;/a&gt;&lt;/p&gt;</content><author><name>Jon</name></author><category term="cyber-security" /><category term="password-manager" /><summary type="html">What is a password manager?</summary></entry><entry><title type="html">Sample Page</title><link href="http://localhost:4000/Sample-Page" rel="alternate" type="text/html" title="Sample Page" /><published>2017-12-12T00:00:00+00:00</published><updated>2017-12-12T00:00:00+00:00</updated><id>http://localhost:4000/Sample-Page</id><content type="html" xml:base="http://localhost:4000/Sample-Page">&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;another-page&quot;&gt;Link to another page&lt;/a&gt;.&lt;/p&gt;
 

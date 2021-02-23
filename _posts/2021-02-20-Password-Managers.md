@@ -11,11 +11,7 @@ A place to manage all your passwords.
 
 ## Why use a password manager?
 
-<https://blog.1password.com/how-to-protect-yourself-from-password-reuse-attacks/>
-
-<https://www.youtube.com/playlist?list=PLeXQRfNcE6-AYi81Q60EBDZJIx1SiPKhM>
-
-<https://blog.1password.com/toward-better-master-passwords/>
+[See this post](Why-do-I-need-a-password-manager)
 
 ## How to use a password manager
 

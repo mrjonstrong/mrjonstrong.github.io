@@ -6,9 +6,6 @@ date: 2021-02-23
 tags: cyber-security password-manager
 published: true
 ---
-
-## Why do I need a password manager?
-
 Because it actually makes your life easier. It is quicker to log into a website or app using a password manager autofill than typing your password, or more likely hitting the password reset link.
 
 Easy to share wifi passwords with friends.
