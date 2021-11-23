@@ -283,7 +283,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  github-pages (>= 220)
+  github-pages (>= 222)
   jekyll (>= 3.9.0)
   jekyll-feed (>= 0.15.1)
   jekyll-paginate
