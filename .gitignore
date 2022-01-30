@@ -52,5 +52,7 @@ Temporary Items
 .ionide
 
 # Support for Project snippet scope
+.sass-cache
+.sass-cache/*
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode
