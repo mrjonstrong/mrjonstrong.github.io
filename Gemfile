@@ -14,4 +14,4 @@ end
 
 gem "webrick", "~> 1.7"
 
-gem 'github-pages', '>= 223', group: :jekyll_plugins
+gem 'github-pages', '>= 225', group: :jekyll_plugins
