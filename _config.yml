@@ -27,7 +27,8 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-target-blank 
+  - jekyll-target-blank
+  - jekyll-remote-theme 
 
 # Custom variables
 owner : "Jonathan Strong"
@@ -35,4 +36,4 @@ year : "2022"
 timezone: Europe/London
 
 
-theme: jekyll-theme-hacker
+remote_theme: pages-themes/midnight@v0.2.0
