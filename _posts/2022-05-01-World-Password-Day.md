@@ -4,7 +4,7 @@ layout: post
 author: jon
 date: 2022-05-01
 tags: cyber-security password password-manager
-published: flase
+display: none
 ---
 
 ## History of passwords
