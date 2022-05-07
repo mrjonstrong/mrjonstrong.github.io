@@ -135,7 +135,7 @@ GEM
       rouge (>= 2.0, < 4.0)
     jekyll-default-layout (0.1.4)
       jekyll (~> 3.0)
-    jekyll-feed (0.16.0)
+    jekyll-feed (0.15.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-gist (1.5.0)
       octokit (~> 4.2)
@@ -289,7 +289,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages (>= 226)
   jekyll (>= 3.9.2)
-  jekyll-feed (>= 0.16.0)
+  jekyll-feed (>= 0.15.1)
   jekyll-paginate
   jekyll-seo-tag (>= 2.8.0)
   jekyll-sitemap (>= 1.4.0)
