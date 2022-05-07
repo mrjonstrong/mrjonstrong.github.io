@@ -2,7 +2,6 @@ title: Jonathan Strong
 description: "A blog about infosec"
 author:
   name: "Jonathan Strong"
-  email: "someone@somewebsite.somedomain"
   url: "https://jonathanstrong.org"
 
 baseurl: /
@@ -21,7 +20,12 @@ defaults:
     values:
       layout: "post"
 
-future: true
+# Filtering Content
+show_drafts         : false
+limit_posts         : 0
+future              : false
+unpublished         : false
+
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate
