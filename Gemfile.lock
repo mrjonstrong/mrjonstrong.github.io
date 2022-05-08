@@ -294,6 +294,7 @@ DEPENDENCIES
   jekyll-seo-tag (>= 2.8.0)
   jekyll-sitemap (>= 1.4.0)
   jekyll-target-blank (>= 2.0.0)
+  minima
   webrick (~> 1.7)
 
 BUNDLED WITH

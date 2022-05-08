@@ -4,12 +4,16 @@ author:
   name: "Jonathan Strong"
   url: "https://jonathanstrong.org"
 
+minima:
+  date_format: "%-d %b, %Y"
+  skin: dark
+
 baseurl: /
 
 source: .
 destination: ./_site
 permalink: /:title
-paginate: 3
+paginate: 4
 paginate_path: /page/:num/
 
 defaults:
@@ -32,14 +36,36 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-target-blank
-  - jekyll-remote-theme 
 
 # Custom variables
 owner : "Jonathan Strong"
 year : "2022"
 timezone: Europe/London
 
+# generate social links in footer
+social_links:
+    twitter: mrjonstrong
+    github:  mrjonstrong
+    # devto: jekyll
+    # dribbble: jekyll
+    # facebook: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    # linkedin: jekyll
+    # pinterest: jekyll
+    # youtube: jekyll
+    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+    # youtube_channel_name: CloudCannon
+    # telegram: jekyll
+    # googleplus: +jekyll
+    # microdotblog: jekyll
+    keybase: mrjonstrong
 
-remote_theme: pages-themes/midnight@v0.2.0
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+header_pages:
+  - about.md
+  - archive.md
 
-theme: jekyll-theme-midnight
+
+theme: minima
