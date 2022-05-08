@@ -2,10 +2,10 @@
 title: World Password Day 2022
 layout: post
 author: jon
-date: 2022-05-07
+date: 2022-05-08
 tags: cyber-security password password-manager
-display: none
 ---
+As it was [World Password Day](https://nationaltoday.com/world-password-day/) on Thursday I thought I would write this post to help promote some good password hygiene.
 
 ## History of passwords
 
@@ -25,6 +25,8 @@ Many people think they have nothing to loose, and nobody would be interested in 
 
 Criminals try and compromise emails and social media accounts of anyone they can. They can then use these to compromise others or try and get money from family and friends whilst they impersonate you.
 
+![Hacker in a hoodie with an annonymous mask using a laptop](../assets/hacker.jpeg)
+
 ## How could someone break into my account?
 
 Some of the most common methods to compromise your account:
@@ -41,14 +43,15 @@ To understand the scale of breaches there is a great visulisation. [World's Bigg
 
 If you want to see how you might have been impcated then check out [have i been pwned](https://haveibeenpwned.com/).
 
-### Password managers
+## Password managers
 
-A password manager allows you to store a different password for every site, so if one is comprimised the rest aren't. As you dont need to remember the paswords they can be as long and complex as you like, making them hard to crack or guess. It is also quicker and easier to login to sites and apps with a password maanger.
+A password manager allows you to store a different password for every site, so if one is comprimised the rest aren't. As you dont need to remember the paswords they can be as long and complex as you like, making them hard to crack or guess. Another benefit of using a password manager is that if someone tricks you into visiting a fake login page, your password manager won't autofill your credentials. So in short it will defend you aginst the most common ways of having your account comprimisd.
+
+It is also quicker and easier to login to sites and apps with a password maanger.
+
 But now we are storing all our passwords in one place, what if the password manager is comprimised? Yes that would be a problem, but if we use the same password on each of the 100 sites and one site is comprimised then all of them are. And that situation is more likely. Now you only need to remember one password for your password manager, and so you can make it much harder to guess or crack, and it won't be used anywhere else. Also, unlike most of those 100 sites, the password managers allow two-factor authentication and are focused on protecting themselves.
 
-Another benefit of using a password manager is that if someone tricks you into visiting a fake login page, your password manager won't autofill your credentials.
-
-### Strong passwords
+## Strong passwords
 
 When you register on a site and set a password, generally that password is not just stored in the clear. Otherwise, anyone with access to the list could know everyone's passwords and use them. Given when you login, the site needs to compare what you entered with the password it already has on file, that would mean the site has access to the list.
 
@@ -68,6 +71,24 @@ So for passwords stored in your password manager, make them as long as the site 
 
 For passwords you need to remember, like your password manager use a passphrase. The [EFF](https://www.eff.org/dice "EFF dice") has a wordlist and walks you through how you can use it and dice to generate a passphrase. Or easier still [https://www.useapassphrase.com/](https://www.useapassphrase.com/) helps to generate a passphrase.
 
-### Two-factor Authentication
+## Two-factor Authentication
 
-Whilst your password is your first line of defence. If there is an option of using a second factor, then do so. Any second factor will severly reduce the chance of your account being comprimised. Whilst SMS is the least favourite option, it is still better than no second factor. Most comonly used is a 6 digit numeric code rotated every 30 second. Better still, use a physical security key like a [YubiKey](https://www.yubico.com/).
+Whilst your password is your first line of defence. If there is an option of using a second factor, then do so. Any second factor will severly reduce the chance of your account being comprimised. Whilst SMS is the least favourite option, it is still better than no second factor. Most comonly used is a 6 digit numeric code rotated every 30 second. For this you can use Google or Microsoft authenticator app, or better still [Authy](https://authy.com/). To be even more secure, use a physical security key like a [YubiKey](https://www.yubico.com/), they can't be phished and are easy to use. Just keep one on your key chain and a backup in a safe place.
+
+A great resource for what sites do or don't support 2FA is [2FA Directory](https://2fa.directory/gb/)
+
+## What does the future hold for passwords?
+
+[Well Microsoft, Apple, Google are trying to eliminate passwords by throwing their support behind standards developed by the FIDO Alliance and the World Wide Web Consortium (W3C).](https://www.theregister.com/2022/05/05/microsoft-apple-google-fido/)
+
+[You can already go passwordless with Microsoft](https://support.microsoft.com/en-us/account-billing/how-to-go-passwordless-with-your-microsoft-account-674ce301-3574-4387-a93d-916751764c43)
+
+## What should I do now?
+
+If you don't have a password manager yet and want to start using one, take a look at my post [Password Managers](../_posts/2021-02-20-Password-Managers.md). If you aren't convinced yet, see [Why do I need a password manager?](../_posts/2021-02-20-Why-do-I-need-a-password-manager.md).
+
+Turn on 2FA on your email and social media accounts and as many other sites as you can.
+
+Many sites like Facebook and Google have security and privacy checkups that walk you through changing your setting to make them more secure and private. Why they don't have these as the default settings I don't know.
+
+Brian Krebs pointed out maybe World Password day should be World Turn on 2FA Day. I would agree if people were using strong unique passwords already, but I know they aren't. <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">&quot;World Password Day&quot; (May 5) should be renamed &quot;World Turn on 2FA Day.&quot; That way, observance of it might actually make a dent in account takeovers. When was the last time you checked your 2FA options for the various accounts/sites you care about? <a href="https://t.co/Yk6eCBVgNA">https://t.co/Yk6eCBVgNA</a> FTW <a href="https://t.co/ZlVUYBveDQ">pic.twitter.com/ZlVUYBveDQ</a></p>&mdash; briankrebs (@briankrebs) <a href="https://twitter.com/briankrebs/status/1521971026963353613?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
