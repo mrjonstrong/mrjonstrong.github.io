@@ -1,0 +1,4 @@
+app:
+  applicationId: fe1b6912-4666-4ea7-a4f2-9a6861373396
+  host: http://jonathanstrong.org
+  env: Production
