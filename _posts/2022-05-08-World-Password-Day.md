@@ -31,9 +31,9 @@ Criminals try and compromise emails and social media accounts of anyone they can
 
 Some of the most common methods to compromise your account:
 
-1. Credential reuse - An attacker obtains a list of usernames and passwords from a website you have an account on. They take your credentials and try them on other sites. Perhaps even with some variation.
+1. Credential reuse - An attacker obtains a list of usernames and passwords from a site you have an account on. They take your credentials and try them on other sites. Perhaps even with some variation.
 2. Credential stuffing - An attacker takes a list of commonly used passwords and tries to log into your account by trying each of them. This is a type of brute force attack, an attacker could try every possible combination, but in practice using known bad passwords first is more efficent.
-3. Phishing - An attaker tricks you into clicking a link that takes you to a fake website. Often pretending to be a major social media site or email provider. It then asks you to login and captures your credentials. This can be automated to take your credentials and login using them to the real website. If that website uses 2FA (like a code sent to you via SMS), the hackers automation can even ask for the any 2FA codes.
+3. Phishing - An attaker tricks you into clicking a link that takes you to a fake site. Often pretending to be a major social media site or email provider. It then asks you to login and captures your credentials. This can be automated to take your credentials and login using them to the real site. If that site uses 2FA (like a code sent to you via SMS), the hackers automation can even ask for the any 2FA codes.
 
 ## How can I avoid getting hacked?
 
@@ -91,5 +91,5 @@ Turn on 2FA on your email and social media accounts and as many other sites as y
 
 Many sites like Facebook and Google have security and privacy checkups that walk you through changing your setting to make them more secure and private. Why they don't have these as the default settings I don't know.
 
-Brian Krebs pointed out maybe World Password day should be World Turn on 2FA Day. I would agree if people were using strong unique passwords already, but I know they aren't. 
+Brian Krebs pointed out maybe World Password day should be World Turn on 2FA Day. I would agree if people were using strong unique passwords already, but I know they aren't.
 <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">&quot;World Password Day&quot; (May 5) should be renamed &quot;World Turn on 2FA Day.&quot; That way, observance of it might actually make a dent in account takeovers. When was the last time you checked your 2FA options for the various accounts/sites you care about? <a href="https://t.co/Yk6eCBVgNA">https://t.co/Yk6eCBVgNA</a> FTW <a href="https://t.co/ZlVUYBveDQ">pic.twitter.com/ZlVUYBveDQ</a></p>&mdash; briankrebs (@briankrebs) <a href="https://twitter.com/briankrebs/status/1521971026963353613?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote>
