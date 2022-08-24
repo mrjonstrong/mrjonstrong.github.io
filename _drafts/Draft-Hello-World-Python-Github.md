@@ -1,3 +1,12 @@
+---
+title: Setting up a repo and pipeline in GitHub for a Python application
+layout: post
+author: jon
+date: 2022-08-24
+tags: cyber-security
+published: false
+---
+
 # Setting up a repo and pipeline in GitHub for a Python application
 
 ## tl;dr
