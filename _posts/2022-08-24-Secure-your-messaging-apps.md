@@ -7,8 +7,6 @@ tags: cyber-security signal
 published: true
 ---
 
-# Secure your messaging apps
-
 If you use Signal or WhatsApp then you need to check if you have added a PIN and registration lock.
 
 These aren’t just some mythical things not to worry yourself about because they are optional settings, just like locking your door isn't. Hopefully you use that feature of you door as well as the PIN and registration lock.
@@ -30,7 +28,7 @@ In this settings menu is also the toggle for Registration Lock. Make sure it is 
 
 [More info on Signal Support Centre](https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN "https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN")
 
-This was also covered in the [Signal secure hardening guide](2022-03-24-Signal.md)
+This was also covered in the [Signal secure hardening guide](https://jonathanstrong.org/Signal)
 
 ### WhatsApp
 

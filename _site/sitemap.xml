@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/Another-Sample-Page</loc>
-<lastmod>2017-12-10T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/One-More-Sample-Page</loc>
-<lastmod>2017-12-11T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/Sample-Page</loc>
-<lastmod>2017-12-12T00:00:00+00:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/Password-Managers</loc>
 <lastmod>2021-02-20T00:00:00+00:00</lastmod>
 </url>
@@ -31,6 +19,10 @@
 <url>
 <loc>http://localhost:4000/World-Password-Day</loc>
 <lastmod>2022-05-08T00:00:00+01:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/Secure-your-messaging-apps</loc>
+<lastmod>2022-08-24T00:00:00+01:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/404</loc>

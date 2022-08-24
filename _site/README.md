@@ -1,6 +1,8 @@
 # Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/mrjonstrong/mrjonstrong.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mrjonstrong_mrjonstrong.github.io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=mrjonstrong_mrjonstrong.github.io)
+
+You can use the [editor on GitHub](https://github.com/mrjonstrong/mrjonstrong.github.io/edit/main/README.md) to maintain and preview the content for your site in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
