@@ -1,3 +1,12 @@
+---
+title: Secure your messaging apps
+layout: post
+author: jon
+date: 2022-08-24
+tags: cyber-security signal
+published: true
+---
+
 # Secure your messaging apps
 
 If you use Signal or WhatsApp then you need to check if you have added a PIN and registration lock.
@@ -21,6 +30,8 @@ In this settings menu is also the toggle for Registration Lock. Make sure it is 
 
 [More info on Signal Support Centre](https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN "https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN")
 
+This was also covered in the [Signal secure hardening guide](2022-03-24-Signal.md)
+
 ### WhatsApp
 
 Called two-step verification, like Signal, you have an option to set up a PIN. WhatsApp also allows you optionally, to give a backup email address that they can email you a reset link, should you forget your PIN. WhatsAPP will ask for your PIN from time to time, unlike Signal, this isn't optional.
@@ -30,4 +41,3 @@ To turn it on go to settings:
 Account > Two-step verification > Enable
 
 [More info on WhatsApp Help Centre](https://faq.whatsapp.com/269945317385609/?helpref=hc_fnav "https://faq.whatsapp.com/269945317385609/?helpref=hc_fnav")
-
