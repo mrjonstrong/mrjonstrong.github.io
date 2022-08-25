@@ -7,8 +7,6 @@ tags: cyber-security
 published: false
 ---
 
-# Setting up a repo and pipeline in GitHub for a Python application
-
 ## tl;dr
 
 First post in a journey on creating an app around what to wear to run depepdning on the weather, type of run, the person etc
@@ -77,3 +75,5 @@ Whilst not security related, following best practices for open source projects -
 The OSS Scorecard is worth following. They have an action you can add to help highlight improvements to make [https://github.com/ossf/scorecard](https://github.com/ossf/scorecard)
 
 Use [harden runner](https://github.com/step-security/harden-runner) to secure workflows. [app.stepsecurity.io](app.stepsecurity.io)
+
+Scan against your public repos for security issues in public workflows - just a basic PAT will do [https://github.com/TinderSec/gh-workflow-auditor](https://github.com/TinderSec/gh-workflow-auditor)
