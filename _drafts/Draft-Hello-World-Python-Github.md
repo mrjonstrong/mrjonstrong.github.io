@@ -1,5 +1,5 @@
 ---
-title: Setting up a repo and pipeline in GitHub for a Python application
+title: Setting up a repository and pipeline in GitHub for a Python application
 layout: post
 author: jon
 date: 2022-08-24
@@ -34,11 +34,11 @@ This includes:
 * Adding a security.md to let users know of supported version and how to communicate security vulnerabilities - issues aren't the best place as they are too public
 * The dependency graph and dependabot alerts are already enabled. But you can enable Dependabot version updates
 * Code scanning with CodeQL
-* Secret scanning is enabled by default for public repos too
+* Secret scanning is enabled by default for public repositories too
 
-For this demo I'm using the repo [https://github.com/mrjonstrong/upgraded-disco](https://github.com/mrjonstrong/upgraded-disco) which is a hello world python app (for now).
+For this demo I'm using the repository [https://github.com/mrjonstrong/upgraded-disco](https://github.com/mrjonstrong/upgraded-disco) which is a hello world python app (for now).
 
-Some repo basics (already added a security.md as above):
+Some repository basics (already added a security.md as above):
 
 * [Readme](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 
@@ -56,7 +56,7 @@ Some repo basics (already added a security.md as above):
 
 * [Actions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository) - Here whilst the default setting is fairly good. You could change "Allowing select actions and reusable workflows to run". Allow GitHub actions and those in the Market Place from verified creators. There is also room to add specific actions you want to run to the list later on if need be.
 
-I'm going to use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), just because I like the idea of the main branch being what is released in production and having a develop branch to add features and bug fixes too. Other Git workflows are available ;)
+I'm going to use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), just because I like the idea of the main branch being what is released in production and having a develop branch to add features and bugfixes too. Other Git workflows are available ;)
 
 I mention this as it moves us on to how we can secure our branches in GitHub. With [branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches).
 
@@ -76,4 +76,4 @@ The OSS Scorecard is worth following. They have an action you can add to help hi
 
 Use [harden runner](https://github.com/step-security/harden-runner) to secure workflows. [app.stepsecurity.io](app.stepsecurity.io)
 
-Scan against your public repos for security issues in public workflows - just a basic PAT will do [https://github.com/TinderSec/gh-workflow-auditor](https://github.com/TinderSec/gh-workflow-auditor)
+Scan against your public repositories for security issues in public workflows - just a basic PAT will do [https://github.com/TinderSec/gh-workflow-auditor](https://github.com/TinderSec/gh-workflow-auditor)
