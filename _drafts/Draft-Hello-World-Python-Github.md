@@ -60,19 +60,43 @@ I'm going to use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-wor
 
 I mention this as it moves us on to how we can secure our branches in GitHub. With [branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches).
 
-* Require a pull request before merging
-  * Require approvals
-  * Dismiss stale pull request approvals when new commits are pushed
-  * Require review from Code Owners
-  * ??Require status checks?>>
-* Require signed commits
-* Include administrators
+As well as protecting the main branch, protecting the develop branch too is worth it, at least to a point.
+
+For main and develop branches
+
+* By default administrators not inlcudede in branch protection - include them. 'By default, the restrictions of a branch protection rule don't apply to people with admin permissions to the repository or custom roles with the "bypass branch protections" permission. You can optionally apply the restrictions to administrators and roles with the "bypass branch protections" permission, too.'
+* By default, you cannot [delete a protected branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#allow-deletions). Leave the default.
+* By default, [GitHub blocks force pushes on all protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#allow-force-pushes). Leave the default.
+* [Require signed commits](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)
+
+For main, optionally develop
+
+* [Require pull request reviews before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging). Select at least 1 reviewer, but 2 or more reviewers would be better.
+* Dismiss stale pull request approvals when new commits are pushed
+* [Require status checks to pass before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-status-checks-before-merging) and then select 'Require branches to be up to date before merging'
+* [Require review from Code Owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
+* [Require conversation resolution before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-conversation-resolution-before-merging)
 
 You can set up Environments and protect them - [Environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
 
 Whilst not security related, following best practices for open source projects - [recommended community standards](https://opensource.guide/).
 
 The OSS Scorecard is worth following. They have an action you can add to help highlight improvements to make [https://github.com/ossf/scorecard](https://github.com/ossf/scorecard)
+
+The OSS Scorecard helps to identify [dangerous workflows](https://github.com/ossf/scorecard/blob/main/docs/checks.md#dangerous-workflow). See [Vulnerable GitHub Actions Workflows Part 1: Privilege Escalation Inside Your CI/CD Pipeline](https://www.legitsecurity.com/blog/github-privilege-escalation-vulnerability)
+Restrict the GitHub token permissions only to the required ones; this way, even if the attackers will succeed in compromising your workflow, they won’t be able to do much.
+Use workflow input as environment variables instead of interpolation. This will prevent script injection.
+Never check out user code, code execution might happen in many ways, some of which are very hard to detect thus avoiding checkout is highly recommended.
+If possible, check that the triggering workflow doesn’t belong to a forked repository, and if it does require human approval as explained in this blog post: [Using Environment Protection Rules to Secure Secrets When Building External Forks with pull_request_target](https://dev.to/petrsvihlik/using-environment-protection-rules-to-secure-secrets-when-building-external-forks-with-pullrequesttarget-hci)
+
+If you use third-party actions it’s highly recommended you take the following actions:
+
+* Limit GitHub token to the minimum required permissions
+* Pin the action to a specific commit
+* Allow only specific actions to be used in your organization
+* Read the action source code before using it
+
+As per 
 
 Use [harden runner](https://github.com/step-security/harden-runner) to secure workflows. [app.stepsecurity.io](app.stepsecurity.io)
 
