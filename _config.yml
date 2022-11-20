@@ -44,8 +44,13 @@ timezone: Europe/London
 
 # generate social links in footer
 social_links:
-    twitter: mrjonstrong
-    github:  mrjonstrong
+    - { platform: twitter,        user_url: "https://twitter.com/mrjonstrong" }
+    - { platform: github,         user_url: "https://github.com/mrjonstrong" }
+    - { platform: keybase,        user_url: "https://keybase.io/mrjonstrong" }
+    - { platform: mastodon,       user_url: "https://infosec.exchange/@mrjonstrong" }
+
+    #twitter: mrjonstrong
+    #github:  mrjonstrong
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
@@ -59,7 +64,10 @@ social_links:
     # telegram: jekyll
     # googleplus: +jekyll
     # microdotblog: jekyll
-    keybase: mrjonstrong
+    #keybase: mrjonstrong
+#     mastodon:
+#       - username: mrjonstrong
+#         instance: infosec.exchange
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
