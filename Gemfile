@@ -11,6 +11,6 @@ group :jekyll_plugins do
   gem 'jekyll-target-blank', '>= 2.0.0'
 end
 
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.8"
 
 gem 'github-pages', '~> 227', group: :jekyll_plugins
