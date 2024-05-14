@@ -8,6 +8,7 @@ on:
     branches:
       - main
       - develop
+permissions: read-all
 jobs:
   hawkscan:
     name: HawkScan
