@@ -2,7 +2,8 @@ name: chainbench
 on:
   push:
   pull_request:
-permissions: read-all
+permissions:
+  contents: read
 jobs:
   chain_bench_scan_example:
     runs-on: ubuntu-latest
