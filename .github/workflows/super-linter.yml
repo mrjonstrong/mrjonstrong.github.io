@@ -15,7 +15,8 @@ on:
     branches:
       - main
       - develop
-permissions: read-all
+permissions:
+  contents: read
 jobs:
   run-lint:
     runs-on: ubuntu-latest
