@@ -66,7 +66,7 @@ bundle exec jekyll serve --drafts --livereload
 - `_includes/`: Reusable HTML components
 - `_layouts/`: Page layouts
 - `_sass/`: Sass stylesheets
-- `_site/`: Generated site (excluded from version control)
+- `_site/`: Generated site output (built by Jekyll)
 - `assets/`: Images, CSS, and other static files
 
 ## Workflow & Branching
@@ -92,7 +92,7 @@ bundle exec jekyll serve --drafts --livereload
 - Follow security best practices in blog posts
 - Keep dependencies up to date
 - Review Dependabot alerts promptly
-- Maintain SonarCloud quality gate standards
+- Maintain code quality and security standards enforced by CI tools (Super Linter, Trivy, StackHawk, Chainbench)
 - Ensure all external links use `target="_blank" rel="noopener noreferrer"` (handled by jekyll-target-blank plugin)
 
 ## Jekyll Plugins
@@ -151,7 +151,7 @@ date: 2026-02-14
 
 ### Markdown Formatting
 
-```markdown
+````markdown
 # Main Heading
 
 ## Subheading
@@ -163,11 +163,11 @@ date: 2026-02-14
 
 [Link text](https://example.com)
 
-\```bash
+```bash
 # Code block with syntax highlighting
 echo "Hello World"
-\```
 ```
+````
 
 ## Additional Notes
 
