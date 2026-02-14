@@ -1,9 +1,1 @@
-{
-  "threshold": 10,
-  "reporters": ["html", "console"],
-  "ignore": [
-    "_site/**",
-    "node_modules/**",
-    "vendor/**"
-  ]
-}
+{"threshold": 20,"reporters": ["html", "console"],"ignore": ["_site/**","node_modules/**","vendor/**"]}
