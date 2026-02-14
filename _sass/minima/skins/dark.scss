@@ -32,7 +32,7 @@ $table-border-color:    $border-color-01 !default;
 // https://github.com/material-theme/vsc-material-theme/blob/master/scripts/generator/color-set.ts
 // ----------------------------------------------------------------------------
 
-// Import common highlight styles shared across all skins
+// Import common highlight styles shared between classic and dark skins
 @import "highlight-common";
 
 .highlight {
