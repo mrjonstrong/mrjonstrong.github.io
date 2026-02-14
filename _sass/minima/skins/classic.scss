@@ -28,7 +28,7 @@ $table-border-color:    $border-color-01 !default;
 // Syntax highlighting styles should be adjusted appropriately for every "skin"
 // ----------------------------------------------------------------------------
 
-// Import common highlight styles shared across all skins
+// Import common highlight styles shared between classic and dark skins
 @import "highlight-common";
 
 .highlight {
