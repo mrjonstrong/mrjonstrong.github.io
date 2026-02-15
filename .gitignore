@@ -56,5 +56,6 @@ Temporary Items
 .sass-cache/*
 .jekyll-cache
 .jekyll-cache/*
+_site/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode
