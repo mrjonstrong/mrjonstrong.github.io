@@ -65,7 +65,7 @@ bundle exec jekyll serve --drafts --livereload
 - `_drafts/`: Draft posts (not published)
 - `_includes/`: Reusable HTML components
 - `_layouts/`: Page layouts
-- `_sass/`: Sass stylesheets
+- `_sass/`: Sass style sheets
 - `_site/`: Generated site output (built by Jekyll)
 - `assets/`: Images, CSS, and other static files
 
@@ -79,7 +79,7 @@ bundle exec jekyll serve --drafts --livereload
 
 ## Security & Boundaries
 
-### DO NOT
+### DO NOT:
 
 - Commit secrets, API keys, or credentials
 - Modify security scanning workflows without careful consideration
@@ -87,7 +87,7 @@ bundle exec jekyll serve --drafts --livereload
 - Change `.github/workflows/` files unless specifically requested
 - Remove or disable security scanning tools (Trivy, StackHawk, Chainbench)
 
-### DO
+### DO:
 
 - Follow security best practices in blog posts
 - Keep dependencies up to date
@@ -113,7 +113,7 @@ Before submitting a PR:
 2. Serve and review: `bundle exec jekyll serve --livereload`
 3. Check for build errors in output
 4. Verify all links work
-5. Review markdown lint compliance
+5. Review Markdown lint compliance
 6. Ensure posts display correctly with pagination
 
 ## Common Tasks
@@ -159,7 +159,7 @@ date: 2026-02-14
 - Bulleted list
 - Another item
 
-**Bold text** and _italic text_
+**Bold text** and *italic text*
 
 [Link text](https://example.com)
 

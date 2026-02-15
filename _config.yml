@@ -37,8 +37,8 @@ plugins:
   - jekyll-target-blank
 
 # Custom variables
-owner: "Jonathan Strong"
-year: "2026"
+owner : "Jonathan Strong"
+year : "2026"
 timezone: Europe/London
 
 # generate social links in footer
