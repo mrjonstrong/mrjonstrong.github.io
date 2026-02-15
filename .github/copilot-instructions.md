@@ -113,7 +113,7 @@ Before submitting a PR:
 2. Serve and review: `bundle exec jekyll serve --livereload`
 3. Check for build errors in output
 4. Verify all links work
-5. Review Markdown lint compliance
+5. Review markdown lint compliance
 6. Ensure posts display correctly with pagination
 
 ## Common Tasks
