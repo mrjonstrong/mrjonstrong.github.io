@@ -116,8 +116,6 @@
   }
 }
 
-
-
 /**
  * Site footer
  */
@@ -132,7 +130,7 @@
 }
 
 .feed-subscribe .svg-icon {
-  padding: 5px 5px 2px 0
+  padding: 5px 5px 2px 0;
 }
 
 .contact-list,
@@ -176,7 +174,7 @@
 
 @media screen and (min-width: $on-medium) {
   .footer-col-wrapper {
-    display: flex
+    display: flex;
   }
 
   .footer-col {
@@ -194,8 +192,6 @@
     }
   }
 }
-
-
 
 /**
  * Page content
@@ -232,8 +228,6 @@
   @include relative-font-size(1.5);
 }
 
-
-
 /**
  * Posts
  */
@@ -255,8 +249,16 @@
 .post-content {
   margin-bottom: $spacing-unit;
 
-  h1, h2, h3 { margin-top: $spacing-unit * 2 }
-  h4, h5, h6 { margin-top: $spacing-unit }
+  h1,
+  h2,
+  h3 {
+    margin-top: $spacing-unit * 2;
+  }
+  h4,
+  h5,
+  h6 {
+    margin-top: $spacing-unit;
+  }
 
   h2 {
     @include relative-font-size(1.75);
@@ -286,24 +288,25 @@
   }
 }
 
-
 .social-media-list {
   display: table;
   margin: 0 auto;
   li {
     float: left;
     margin: 5px 10px 5px 0;
-    &:last-of-type { margin-right: 0 }
+    &:last-of-type {
+      margin-right: 0;
+    }
     a {
       display: block;
       padding: $spacing-unit / 4;
       border: 1px solid $border-color-01;
-      &:hover { border-color: $border-color-02 }
+      &:hover {
+        border-color: $border-color-02;
+      }
     }
   }
 }
-
-
 
 /**
  * Pagination navbar
@@ -312,7 +315,8 @@
   margin-bottom: $spacing-unit;
   @extend .social-media-list;
   li {
-    a, div {
+    a,
+    div {
       min-width: 41px;
       text-align: center;
       box-sizing: border-box;
@@ -329,8 +333,6 @@
     }
   }
 }
-
-
 
 /**
  * Grid helpers
