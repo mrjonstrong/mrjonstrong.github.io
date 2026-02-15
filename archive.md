@@ -34,5 +34,6 @@ title: Archive
     {% endfor %}
     </ul>
 
-  {% endif %}
+{% endif %}
+
 </section>

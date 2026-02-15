@@ -6,6 +6,7 @@ date: 2022-05-08
 tags: cyber-security password password-manager
 published: true
 ---
+
 As it was [World Password Day](https://nationaltoday.com/world-password-day/) on Thursday I thought I would write this post to help promote some good password hygiene.
 
 ## History of passwords
@@ -64,13 +65,13 @@ Also, using a password that is easily cracked or used by others will mean it is 
 
 [Pwned Passwords](https://haveibeenpwned.com/Passwords) lets you see if your password is already known.
 
-As demonstrated well in [this cartoon](https://xkcd.com/936 "XKCD comic password strength"), the password Tr0ub4dor&3 is easier for a computer to guess, than "correct horse battery staple". Also, a passphrase is easier to remember.
+As demonstrated well in [this cartoon](https://xkcd.com/936 'XKCD comic password strength'), the password Tr0ub4dor&3 is easier for a computer to guess, than "correct horse battery staple". Also, a passphrase is easier to remember.
 
-![Password Strength cartoon](https://imgs.xkcd.com/comics/password_strength.png "Password Strength")
+![Password Strength cartoon](https://imgs.xkcd.com/comics/password_strength.png 'Password Strength')
 
 So for passwords stored in your password manager, make them as long as the site will allow and yes include as many upper and lower case letters as well as numbers and symbols.
 
-For passwords you need to remember, like your password manager use a passphrase. The [EFF](https://www.eff.org/dice "EFF dice") has a wordlist and walks you through how you can use it and dice to generate a passphrase. Or easier still [https://www.useapassphrase.com/](https://www.useapassphrase.com/) helps to generate a passphrase.
+For passwords you need to remember, like your password manager use a passphrase. The [EFF](https://www.eff.org/dice 'EFF dice') has a wordlist and walks you through how you can use it and dice to generate a passphrase. Or easier still [https://www.useapassphrase.com/](https://www.useapassphrase.com/) helps to generate a passphrase.
 
 ## Two-factor Authentication
 
@@ -93,4 +94,5 @@ Turn on 2FA on your email and social media accounts and as many other sites as y
 Many sites like Facebook and Google have security and privacy checkups that walk you through changing your setting to make them more secure and private. Why they don't have these as the default settings I don't know.
 
 Brian Krebs pointed out maybe World Password day should be World Turn on 2FA Day. I would agree if people were using strong unique passwords already, but I know they aren't.
+
 <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">&quot;World Password Day&quot; (May 5) should be renamed &quot;World Turn on 2FA Day.&quot; That way, observance of it might actually make a dent in account takeovers. When was the last time you checked your 2FA options for the various accounts/sites you care about? <a href="https://t.co/Yk6eCBVgNA">https://t.co/Yk6eCBVgNA</a> FTW <a href="https://t.co/ZlVUYBveDQ">pic.twitter.com/ZlVUYBveDQ</a></p>&mdash; briankrebs (@briankrebs) <a href="https://twitter.com/briankrebs/status/1521971026963353613?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote>
