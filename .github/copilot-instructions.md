@@ -79,7 +79,7 @@ bundle exec jekyll serve --drafts --livereload
 
 ## Security & Boundaries
 
-### DO NOT:
+### DO NOT
 
 - Commit secrets, API keys, or credentials
 - Modify security scanning workflows without careful consideration
@@ -87,7 +87,7 @@ bundle exec jekyll serve --drafts --livereload
 - Change `.github/workflows/` files unless specifically requested
 - Remove or disable security scanning tools (Trivy, StackHawk, Chainbench)
 
-### DO:
+### DO
 
 - Follow security best practices in blog posts
 - Keep dependencies up to date
@@ -159,7 +159,7 @@ date: 2026-02-14
 - Bulleted list
 - Another item
 
-**Bold text** and *italic text*
+**Bold text** and _italic text_
 
 [Link text](https://example.com)
 
