@@ -17,18 +17,17 @@ paginate: 4
 paginate_path: /page/:num/
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
 
 # Filtering Content
-show_drafts         : false
-limit_posts         : 0
-future              : false
-unpublished         : false
+show_drafts: false
+limit_posts: 0
+future: false
+unpublished: false
 
 plugins:
   - jekyll-seo-tag
@@ -44,27 +43,27 @@ timezone: Europe/London
 
 # generate social links in footer
 social_links:
-    - { platform: twitter,        user_url: "https://twitter.com/mrjonstrong" }
-    - { platform: github,         user_url: "https://github.com/mrjonstrong" }
-    - { platform: keybase,        user_url: "https://keybase.io/mrjonstrong" }
-    - { platform: mastodon,       user_url: "https://infosec.exchange/@mrjonstrong" }
+  - { platform: twitter, user_url: "https://twitter.com/mrjonstrong" }
+  - { platform: github, user_url: "https://github.com/mrjonstrong" }
+  - { platform: keybase, user_url: "https://keybase.io/mrjonstrong" }
+  - { platform: mastodon, user_url: "https://infosec.exchange/@mrjonstrong" }
 
-    #twitter: mrjonstrong
-    #github:  mrjonstrong
-    # devto: jekyll
-    # dribbble: jekyll
-    # facebook: jekyll
-    # flickr:   jekyll
-    # instagram: jekyll
-    # linkedin: jekyll
-    # pinterest: jekyll
-    # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
-    # telegram: jekyll
-    # googleplus: +jekyll
-    # microdotblog: jekyll
-    #keybase: mrjonstrong
+  #twitter: mrjonstrong
+  #github:  mrjonstrong
+  # devto: jekyll
+  # dribbble: jekyll
+  # facebook: jekyll
+  # flickr:   jekyll
+  # instagram: jekyll
+  # linkedin: jekyll
+  # pinterest: jekyll
+  # youtube: jekyll
+  # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+  # youtube_channel_name: CloudCannon
+  # telegram: jekyll
+  # googleplus: +jekyll
+  # microdotblog: jekyll
+  #keybase: mrjonstrong
 #     mastodon:
 #       - username: mrjonstrong
 #         instance: infosec.exchange
@@ -74,6 +73,5 @@ social_links:
 header_pages:
   - about.md
   - archive.md
-
 
 theme: minima
