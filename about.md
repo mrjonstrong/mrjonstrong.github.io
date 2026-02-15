@@ -10,4 +10,4 @@ Ultra runner and student of information security.
 
 - [Keybase](<https://keybase.io/mrjonstrong>)
 - [Twitter](<https://twitter.com/mrjonstrong>)
-- [Github](<https://github.com/mrjonstrong>)
+- [GitHub](<https://github.com/mrjonstrong>)
