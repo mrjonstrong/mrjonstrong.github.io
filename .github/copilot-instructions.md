@@ -48,7 +48,7 @@ bundle exec jekyll serve --drafts --livereload
   ```yaml
   ---
   layout: post
-  title: "Your Title"
+  title: 'Your Title'
   date: YYYY-MM-DD
   ---
   ```
@@ -144,7 +144,7 @@ Before submitting a PR:
 ```yaml
 ---
 layout: post
-title: "Understanding Buffer Overflows"
+title: 'Understanding Buffer Overflows'
 date: 2026-02-14
 ---
 ```
@@ -159,7 +159,7 @@ date: 2026-02-14
 - Bulleted list
 - Another item
 
-**Bold text** and *italic text*
+**Bold text** and _italic text_
 
 [Link text](https://example.com)
 

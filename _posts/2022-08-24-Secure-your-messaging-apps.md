@@ -13,7 +13,7 @@ These aren’t just some mythical things not to worry yourself about because the
 
 ## Why is it important?
 
-A well known journalist had their signal account compromised. This could have been avoided had they enabled registration lock. [How a Third-Party SMS Service Was Used to Take Over Signal Accounts](https://www.vice.com/en/article/qjkvxv/how-a-third-party-sms-service-was-used-to-take-over-signal-accounts "https://www.vice.com/en/article/qjkvxv/how-a-third-party-sms-service-was-used-to-take-over-signal-accounts")
+A well known journalist had their signal account compromised. This could have been avoided had they enabled registration lock. [How a Third-Party SMS Service Was Used to Take Over Signal Accounts](https://www.vice.com/en/article/qjkvxv/how-a-third-party-sms-service-was-used-to-take-over-signal-accounts 'https://www.vice.com/en/article/qjkvxv/how-a-third-party-sms-service-was-used-to-take-over-signal-accounts')
 
 ### Signal
 
@@ -26,7 +26,7 @@ Signal Settings > Account
 If you have a PIN there should be a change PIN option and you can enable PIN reminders. PIN reminders are useful as Signal will keep asking you for your PIN from time to time so you don’t forget it.
 In this settings menu is also the toggle for Registration Lock. Make sure it is on.
 
-[More info on Signal Support Centre](https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN "https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN")
+[More info on Signal Support Centre](https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN 'https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN')
 
 This was also covered in the [Signal secure hardening guide](https://jonathanstrong.org/Signal)
 
@@ -38,4 +38,4 @@ To turn it on go to settings:
 
 Account > Two-step verification > Enable
 
-[More info on WhatsApp Help Centre](https://faq.whatsapp.com/269945317385609/?helpref=hc_fnav "https://faq.whatsapp.com/269945317385609/?helpref=hc_fnav")
+[More info on WhatsApp Help Centre](https://faq.whatsapp.com/269945317385609/?helpref=hc_fnav 'https://faq.whatsapp.com/269945317385609/?helpref=hc_fnav')

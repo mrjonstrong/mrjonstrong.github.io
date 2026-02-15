@@ -5,6 +5,7 @@ title: Password Manager
 date: 2021-02-20
 tags: cyber-security password-manager
 ---
+
 ## What is a password manager?
 
 A place to manage all your passwords.
@@ -23,13 +24,13 @@ You might already have something you use for 2FA with other accounts. Often time
 In which case, just use that for now. Many people have Microsoft Authenticator <https://www.microsoft.com/en-gb/account/authenticator> already for use with an old hotmail or Microsoft account. Or Google authenticator <https://support.google.com/accounts/answer/1066447?hl=en&co=GENIE.Platform%3DAndroid&oco=0>.
 
 If you don’t have anything, I would recommend using Authy <https://authy.com/>.
-It works on your desktop as well as your phone, you can backup if you like, so if you switch phones you can transfer it easily. *I need to do a separate bit on 2FA and using Authy.*
+It works on your desktop as well as your phone, you can backup if you like, so if you switch phones you can transfer it easily. _I need to do a separate bit on 2FA and using Authy._
 
 Second thing you will need is a master password. This is important as it will be used to secure everything.
 It must not be something you have used before or even similar to anything you have used before. Picking a passphrase of 4 or 5 random words with spaces in-between is my suggestion. 4 long words, or 5 shorter ones seem to be the right balance between enough security without making it hard to remember or type. I would not worry about capitalising the letters or adding number or symbols.
 Write it down on a piece of paper and put it in your purse/wallet to start with. If you forget this you will be locked out. Once you are happy you have remembered it you can destroy the paper. Yes you have been told not to write it down, but forgetting it will mean you have no access. The chance of someone finding it written down will be slim and it will only be whilst you learn it.
 
-For some ideas this website helps: <https://www.useapassphrase.com/> as does the 1Password generator <https://1password.com/password-generator/>.
+For some ideas this site helps: <https://www.useapassphrase.com/> as does the 1Password generator <https://1password.com/password-generator/>.
 Rather than pick one generated for you I would come up with one yourself.
 
 Check out the pricing for your region by selecting it here <https://support.1password.com/regions/#choose-your-region>.
@@ -55,10 +56,10 @@ The benefit of a password manager comes with it integrating with your browser. I
 
 This is a good start, but keep going and set up the app on your phone, tablet and any other devices. You need your secret key for those, you can set up biometrics on your phone for instance. If your phone restarts you may have to enter your master password again. Otherwise you could go a long time without entering your master password if you only ever used your phone and then forget it.
 
-On your desktop/laptop sign into websites and as you do save them into 1Password. Once a site is saved, you can always sign back out from it and try logging in with 1Password to check it has saved correctly and works. This will get you comfortable with using 1Password as well as saving all your sites.
+On your desktop/laptop sign into sites and as you do save them into 1Password. Once a site is saved, you can always sign back out from it and try logging in with 1Password to check it has saved correctly and works. This will get you comfortable with using 1Password as well as saving all your sites.
 Don’t worry about changing any of them just yet.
 
-If you are on the family plan, you can store some of your passwords in a shared vault with one or more of your family. Passwords for streaming sites and food delivery are common ones to share, as is wifi passwords.
+If you are on the family plan, you can store some of your passwords in a shared vault with one or more of your family. Passwords for streaming sites and food delivery are common ones to share, as is Wi-Fi passwords.
 
 Try and go through and save as many sites as you can remember having a sign on for. Check your favourites, history and emails to help jog your memory. I’m sure I read somewhere the average is around 200 sites. I have around 350 which I have accumulated over many years. Although I probably only sign into 100 a year.
 
@@ -79,7 +80,7 @@ But whilst this is all good, the reason for using a password manger is so you co
 Now is the time to start to change a few more.
 I would avoid changing your email provider(s) or other accounts you could not do without for now. Your email accounts are the most important ones as usually these allow you to reset any other sites passwords. Until you are more comfortable with using 1Password and have remembered your master password at least.
 
-One way to help you pick which ones is to look at Watchtower. On your desktop/laptop log into the 1Password website. You need to pick one vault at a time and then go to watchtower on the left.
+One way to help you pick which ones is to look at Watchtower. On your desktop/laptop log into the 1Password site. You need to pick one vault at a time and then go to watchtower on the left.
 This will help to pick the sites that need the passwords changed the most.
 <https://support.1password.com/watchtower/>
 
@@ -93,7 +94,7 @@ Weak passwords - change any weak passwords to make them more secure
 
 Reused passwords - this is the main reason for starting this journey, even a strong complex password could be stored in plain text and leaked by a site, so changing these are key and making sure you do not reuse them. However, this will only spot ones that are exactly the same. So if you used password123!Facebook and password123!Twitter it won’t spot this. But a taker will.
 
-Unsecured Websites - this lists any sites saved in 1password with http instead of https. Review them and if they support https upgrade the details in 1password. If they don’t then your passwords will be sent to those sites in the clear and are not safe. Whilst you are there update the passwords for these sites if you have not already since saving in 1password. You can see created and last modified dates.
+Unsecured sites - this lists any sites saved in 1password with http instead of https. Review them and if they support https upgrade the details in 1password. If they don’t then your passwords will be sent to those sites in the clear and are not safe. Whilst you are there update the passwords for these sites if you have not already since saving in 1password. You can see created and last modified dates.
 
 Two-Factor authentication - list sites that allow two-factor authentication but do not have a one time pass code saved. As well as changing the passwords on these sites you should also add the one time passcode to 1password. Yes this is putting all your eggs in the same basket. Some would argue adding the 2fa should be to Authy or another 2fa app. However, for most people a secure 1password is enough. However, feel free to add the 2fa to Authy or other app. I would get yubikeys and use those physical keys were you can.
 

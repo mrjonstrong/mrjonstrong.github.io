@@ -2,8 +2,8 @@
    original: https://github.com/pages-themes/hacker 
 */
 
-@import "rouge-base16-dark";
-@import "default_colors";
+@import 'rouge-base16-dark';
+@import 'default_colors';
 
 $body-background: $cod-grey !default;
 $body-foreground: $gallery !default;
@@ -14,12 +14,12 @@ $blockquote-border: $dove-grey !default;
 body {
   margin: 0;
   padding: 0;
-  background: $body-background url("../assets/bkg.png") 0 0;
+  background: $body-background url('../assets/bkg.png') 0 0;
   color: $body-foreground;
   font-size: 16px;
   line-height: 1.5;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal,
-    monospace;
+  font-family:
+    Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal, monospace;
 }
 
 /* General & 'Reset' Stuff */
@@ -75,10 +75,12 @@ header h1 {
   margin: 0;
   text-align: center;
   font-weight: bold;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal,
-    monospace;
+  font-family:
+    Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal, monospace;
   color: $conifer; //$header;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1),
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(181, 232, 83, 0.1),
     0 0 10px rgba(181, 232, 83, 0.1);
   letter-spacing: -1px;
   -webkit-font-smoothing: antialiased;
@@ -108,11 +110,13 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal,
-    monospace;
+  font-family:
+    Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal, monospace;
   color: $header;
   letter-spacing: -0.03em;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1),
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(181, 232, 83, 0.1),
     0 0 10px rgba(181, 232, 83, 0.1);
 }
 
@@ -151,7 +155,7 @@ dt {
 }
 
 ul li {
-  list-style-image: url("../assets/bullet.png");
+  list-style-image: url('../assets/bullet.png');
 }
 
 blockquote {
@@ -249,7 +253,7 @@ hr {
 
 .btn-github .icon {
   opacity: 0.6;
-  background: url("../images/blacktocat.png") 0 0 no-repeat;
+  background: url('../images/blacktocat.png') 0 0 no-repeat;
 }
 
 /* Links
@@ -272,7 +276,7 @@ a:focus {
 
 .cf:before,
 .cf:after {
-  content: "";
+  content: '';
   display: table;
 }
 

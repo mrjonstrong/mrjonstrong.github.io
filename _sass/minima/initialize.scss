@@ -2,11 +2,12 @@
 
 // Define defaults for each variable.
 
-$base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-  "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica,
-  Arial, sans-serif !default;
-$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono",
-  "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$base-font-family:
+  -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI Emoji',
+  'Segoe UI Symbol', 'Apple Color Emoji', Roboto, Helvetica, Arial, sans-serif !default;
+$code-font-family:
+  'Menlo', 'Inconsolata', 'Consolas', 'Roboto Mono', 'Ubuntu Mono',
+  'Liberation Mono', 'Courier New', monospace;
 $base-font-size: 16px !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.875 !default;
@@ -45,11 +46,10 @@ $on-large: $on-laptop !default;
 }
 
 // Import pre-styling-overrides hook and style-partials.
-@import "minima/custom-variables",
+@import 'minima/custom-variables',
   // Hook to override predefined variables.
-  "minima/base",
+  'minima/base',
   // Defines element resets.
-  "minima/layout",
+  'minima/layout',
   // Defines structure and style based on CSS selectors.
-  "minima/custom-styles" // Hook to override existing styles.
-;
+  'minima/custom-styles'; // Hook to override existing styles.

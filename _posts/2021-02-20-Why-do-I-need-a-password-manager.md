@@ -6,11 +6,12 @@ date: 2021-02-23
 tags: cyber-security password-manager
 published: true
 ---
-Because it actually makes your life easier. It is quicker to log into a website or app using a password manager autofill than typing your password, or more likely hitting the password reset link.
 
-Easy to share wifi passwords with friends.
+Because it actually makes your life easier. It is quicker to log into a site or app using a password manager autofill than typing your password, or more likely hitting the password reset link.
 
-Reduces the risk of you entering the password into a fake site. For instance if you get an email about a tax refund and click the link to the tax website, your password manger will not autofill the password if it is not the right address.
+Easy to share Wi-Fi passwords with friends.
+
+Reduces the risk of you entering the password into a fake site. For instance if you get an email about a tax refund and click the link to the tax site, your password manger will not autofill the password if it is not the right address.
 
 Have you seen a friend post about a Raybands sale on Facebook? Followed by another saying they were 'hacked'? Or had an email from a friend asking for money out of the blue, followed by another saying they were 'hacked'? These hacks are likely because your friend used the same or similar passwords on multiple sites. When one site has a breach, your email address and password is shared with the world. Someone will take your email address and password and try it on every site on the internet.
 
