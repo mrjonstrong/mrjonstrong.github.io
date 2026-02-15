@@ -1,11 +1,11 @@
 title: Jonathan Strong
-description: "A blog about infosec"
+description: 'A blog about infosec'
 author:
-  name: "Jonathan Strong"
-  url: "https://jonathanstrong.org"
+  name: 'Jonathan Strong'
+  url: 'https://jonathanstrong.org'
 
 minima:
-  date_format: "%-d %b, %Y"
+  date_format: '%-d %b, %Y'
   skin: dark
 
 baseurl: /
@@ -18,10 +18,10 @@ paginate_path: /page/:num/
 
 defaults:
   - scope:
-      path: ""
-      type: "posts"
+      path: ''
+      type: 'posts'
     values:
-      layout: "post"
+      layout: 'post'
 
 # Filtering Content
 show_drafts: false
@@ -37,16 +37,16 @@ plugins:
   - jekyll-target-blank
 
 # Custom variables
-owner : "Jonathan Strong"
-year : "2026"
+owner: 'Jonathan Strong'
+year: '2026'
 timezone: Europe/London
 
 # generate social links in footer
 social_links:
-  - { platform: twitter, user_url: "https://twitter.com/mrjonstrong" }
-  - { platform: github, user_url: "https://github.com/mrjonstrong" }
-  - { platform: keybase, user_url: "https://keybase.io/mrjonstrong" }
-  - { platform: mastodon, user_url: "https://infosec.exchange/@mrjonstrong" }
+  - { platform: twitter, user_url: 'https://twitter.com/mrjonstrong' }
+  - { platform: github, user_url: 'https://github.com/mrjonstrong' }
+  - { platform: keybase, user_url: 'https://keybase.io/mrjonstrong' }
+  - { platform: mastodon, user_url: 'https://infosec.exchange/@mrjonstrong' }
 
   #twitter: mrjonstrong
   #github:  mrjonstrong

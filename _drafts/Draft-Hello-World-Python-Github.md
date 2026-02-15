@@ -31,30 +31,30 @@ Specifics for securing your respositry:
 
 This includes:
 
-* Adding a security.md to let users know of supported version and how to communicate security vulnerabilities - issues aren't the best place as they are too public
-* The dependency graph and dependabot alerts are already enabled. But you can enable Dependabot version updates
-* Code scanning with CodeQL
-* Secret scanning is enabled by default for public repositories too
+- Adding a security.md to let users know of supported version and how to communicate security vulnerabilities - issues aren't the best place as they are too public
+- The dependency graph and dependabot alerts are already enabled. But you can enable Dependabot version updates
+- Code scanning with CodeQL
+- Secret scanning is enabled by default for public repositories too
 
 For this demo I'm using the repository [https://github.com/mrjonstrong/upgraded-disco](https://github.com/mrjonstrong/upgraded-disco) which is a hello world python app (for now).
 
 Some repository basics (already added a security.md as above):
 
-* [Readme](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
+- [Readme](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 
-* [License](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+- [License](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 
-* [Sponsor button (Hey you never know!)](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository)
+- [Sponsor button (Hey you never know!)](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository)
 
-* [Image for link previews](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
+- [Image for link previews](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
 
-* [Topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
+- [Topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
 
-* [Codeowners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
+- [Codeowners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
 
-* [Citation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)
+- [Citation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)
 
-* [Actions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository) - Here whilst the default setting is fairly good. You could change "Allowing select actions and reusable workflows to run". Allow GitHub actions and those in the Market Place from verified creators. There is also room to add specific actions you want to run to the list later on if need be.
+- [Actions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository) - Here whilst the default setting is fairly good. You could change "Allowing select actions and reusable workflows to run". Allow GitHub actions and those in the Market Place from verified creators. There is also room to add specific actions you want to run to the list later on if need be.
 
 I'm going to use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), just because I like the idea of the main branch being what is released in production and having a develop branch to add features and bugfixes too. Other Git workflows are available ;)
 
@@ -64,25 +64,25 @@ As well as protecting the main branch, protecting the develop branch too is wort
 
 For main and develop branches
 
-* By default administrators not inlcudede in branch protection - include them. 'By default, the restrictions of a branch protection rule don't apply to people with admin permissions to the repository or custom roles with the "bypass branch protections" permission. You can optionally apply the restrictions to administrators and roles with the "bypass branch protections" permission, too.'
-* By default, you cannot [delete a protected branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#allow-deletions). Leave the default.
-* By default, [GitHub blocks force pushes on all protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#allow-force-pushes). Leave the default.
-* [Require signed commits](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits), for most individual users, GPG or SSH will be the best choice for signing commits. SSH signatures are the simplest to generate. You can even upload your existing authentication key to GitHub Enterprise Cloud to also use as a signing key. Generating a GPG signing key is more involved than generating an SSH key, but GPG has features that SSH does not. A GPG key can expire or be revoked when no longer used. GitHub Enterprise Cloud shows commits that were signed with such a key as "Verified" unless the key was marked as compromised. SSH keys don't have this capability.
-When using the Rebase and Merge option on a pull request, it's important to note that the commits in the head branch are added to the base branch without commit signature verification. When you use this option, GitHub creates a modified commit, using the data and content of the original commit. This means that GitHub didn't truly create this commit, and can't therefore sign it as a generic system user. GitHub doesn't have access to the committer's private signing keys, so it can't sign the commit on the user's behalf.
-A workaround for this is to rebase and merge locally, and then push the changes to the pull request's base branch.
-[About commit signature verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
+- By default administrators not inlcudede in branch protection - include them. 'By default, the restrictions of a branch protection rule don't apply to people with admin permissions to the repository or custom roles with the "bypass branch protections" permission. You can optionally apply the restrictions to administrators and roles with the "bypass branch protections" permission, too.'
+- By default, you cannot [delete a protected branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#allow-deletions). Leave the default.
+- By default, [GitHub blocks force pushes on all protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#allow-force-pushes). Leave the default.
+- [Require signed commits](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits), for most individual users, GPG or SSH will be the best choice for signing commits. SSH signatures are the simplest to generate. You can even upload your existing authentication key to GitHub Enterprise Cloud to also use as a signing key. Generating a GPG signing key is more involved than generating an SSH key, but GPG has features that SSH does not. A GPG key can expire or be revoked when no longer used. GitHub Enterprise Cloud shows commits that were signed with such a key as "Verified" unless the key was marked as compromised. SSH keys don't have this capability.
+  When using the Rebase and Merge option on a pull request, it's important to note that the commits in the head branch are added to the base branch without commit signature verification. When you use this option, GitHub creates a modified commit, using the data and content of the original commit. This means that GitHub didn't truly create this commit, and can't therefore sign it as a generic system user. GitHub doesn't have access to the committer's private signing keys, so it can't sign the commit on the user's behalf.
+  A workaround for this is to rebase and merge locally, and then push the changes to the pull request's base branch.
+  [About commit signature verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
 
 For main, optionally develop
 
-* [Require pull request reviews before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging). Select at least 1 reviewer, but 2 or more reviewers would be better.
-* Dismiss stale pull request approvals when new commits are pushed
-* [Require status checks to pass before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-status-checks-before-merging) and then select 'Require branches to be up to date before merging'
-* [Require review from Code Owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
-* [Require conversation resolution before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-conversation-resolution-before-merging)
+- [Require pull request reviews before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging). Select at least 1 reviewer, but 2 or more reviewers would be better.
+- Dismiss stale pull request approvals when new commits are pushed
+- [Require status checks to pass before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-status-checks-before-merging) and then select 'Require branches to be up to date before merging'
+- [Require review from Code Owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
+- [Require conversation resolution before merging](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-conversation-resolution-before-merging)
 
 To consider
 
-* <https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-deployments-to-succeed-before-merging>
+- <https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-deployments-to-succeed-before-merging>
 
 You can set up Environments and protect them - [Environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
 
@@ -98,10 +98,10 @@ If possible, check that the triggering workflow doesn’t belong to a forked rep
 
 If you use third-party actions it’s highly recommended you take the following actions:
 
-* Limit GitHub token to the minimum required permissions
-* Pin the action to a specific commit
-* Allow only specific actions to be used in your organization
-* Read the action source code before using it
+- Limit GitHub token to the minimum required permissions
+- Pin the action to a specific commit
+- Allow only specific actions to be used in your organization
+- Read the action source code before using it
 
 As per
 
