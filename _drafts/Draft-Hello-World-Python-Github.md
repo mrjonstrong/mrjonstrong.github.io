@@ -54,7 +54,7 @@ Some repository basics (already added a security.md as above):
 
 - [Citation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)
 
-- [Actions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository) - Here whilst the default setting is fairly good. You could change "Allowing select actions and reusable workflows to run". Allow GitHub actions and those in the Market Place from verified creators. There is also room to add specific actions you want to run to the list later on if need be.
+- [Actions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository) - Here whilst the default setting is fairly good. You could change "Allowing select actions and reusable workflows to run". Allow GitHub Actions and those in the Market Place from verified creators. There is also room to add specific actions you want to run to the list later on if need be.
 
 I'm going to use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), just because I like the idea of the main branch being what is released in production and having a develop branch to add features and bugfixes too. Other Git workflows are available ;)
 
