@@ -65,7 +65,7 @@ bundle exec jekyll serve --drafts --livereload
 - `_drafts/`: Draft posts (not published)
 - `_includes/`: Reusable HTML components
 - `_layouts/`: Page layouts
-- `_sass/`: Sass style sheets
+- `_sass/`: Sass stylesheets
 - `_site/`: Generated site output (built by Jekyll)
 - `assets/`: Images, CSS, and other static files
 
