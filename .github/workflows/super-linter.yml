@@ -34,6 +34,4 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Exclude generated site directory
-          FILTER_REGEX_EXCLUDE: .*_site/.*
-          # Use custom JSCPD configuration
-          JSCPD_CONFIG_FILE: .jscpd.json
+          FILTER_REGEX_EXCLUDE: .*dist/.*|.*\.astro/.*
