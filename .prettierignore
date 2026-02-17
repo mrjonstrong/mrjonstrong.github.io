@@ -1,5 +1,8 @@
-_site/
-node_modules/
-vendor/
-.bundle/
-Gemfile.lock
+*.min.js
+node_modules
+
+# cache-dirs
+**/.cache
+
+pnpm-lock.yaml
+dist
