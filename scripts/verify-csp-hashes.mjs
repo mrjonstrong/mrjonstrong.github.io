@@ -203,6 +203,8 @@ function extractScriptSrcHashes(cspValue) {
 
 		hasScriptDirective = true;
 
+		// Reset regex state before reusing it for this directive
+		hashRe.lastIndex = 0;
 		let match;
 		// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
 		while ((match = hashRe.exec(directive)) !== null) {
@@ -217,12 +219,13 @@ function extractScriptSrcHashes(cspValue) {
 
 			const directiveLower = directive.toLowerCase();
 			const isDefaultSrc =
-				directiveLower === "default-src" ||
-				directiveLower.startsWith("default-src ");
+				directiveLower === "default-src" || directiveLower.startsWith("default-src ");
 
 			if (!isDefaultSrc) {
 				continue;
 			}
+			// Reset regex state before reusing it for this directive
+			hashRe.lastIndex = 0;
 			let match;
 			// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
 			while ((match = hashRe.exec(directive)) !== null) {
