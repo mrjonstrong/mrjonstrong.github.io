@@ -9,6 +9,7 @@
 import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { parse } from "node-html-parser";
 
 const DIST_DIR = "dist";
 const HEADERS_FILE = "public/_headers";
@@ -39,22 +40,35 @@ function findHtmlFiles(dir) {
  */
 function extractInlineScriptHashes(html) {
 	const hashes = new Set();
-	const re = /<script([^>]*)>([\s\S]*?)<\/script>/g;
-	let m;
-	// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
-	while ((m = re.exec(html)) !== null) {
-		const attrs = m[1];
-		const body = m[2];
+	const root = parse(html);
+	const scriptTags = root.querySelectorAll("script");
+
+	for (const script of scriptTags) {
+		// Skip external scripts (those with src attribute)
+		if (script.getAttribute("src")) continue;
+
+		// Skip speculation rules scripts
+		const type = script.getAttribute("type");
+		if (type?.includes("speculationrules")) continue;
+
+		// Get the text content of the script
+		const body = script.textContent || "";
 		if (!body.trim()) continue;
-		if (/(?:^|\s)src\s*=/.test(attrs)) continue;
-		if (/speculationrules/.test(attrs)) continue;
+
 		const hash = createHash("sha256").update(body).digest("base64");
 		hashes.add(`sha256-${hash}`);
 	}
 	return hashes;
 }
 
-const htmlFiles = findHtmlFiles(DIST_DIR);
+let htmlFiles;
+try {
+	htmlFiles = findHtmlFiles(DIST_DIR);
+} catch (error) {
+	console.error(`ERROR: Cannot access ${DIST_DIR} directory: ${error.message}`);
+	process.exit(1);
+}
+
 if (htmlFiles.length === 0) {
 	console.error("ERROR: No HTML files found in dist/. Was the build successful?");
 	process.exit(1);
@@ -62,7 +76,13 @@ if (htmlFiles.length === 0) {
 
 const buildHashes = new Set();
 for (const file of htmlFiles) {
-	const html = readFileSync(file, "utf-8");
+	let html;
+	try {
+		html = readFileSync(file, "utf-8");
+	} catch (error) {
+		console.error(`ERROR: Cannot read HTML file ${file}: ${error.message}`);
+		process.exit(1);
+	}
 	for (const h of extractInlineScriptHashes(html)) {
 		buildHashes.add(h);
 	}
@@ -77,7 +97,13 @@ if (buildHashes.size === 0) {
 /*  2. Extract sha256-* hashes from the CSP in public/_headers        */
 /* ------------------------------------------------------------------ */
 
-const headersContent = readFileSync(HEADERS_FILE, "utf-8");
+let headersContent;
+try {
+	headersContent = readFileSync(HEADERS_FILE, "utf-8");
+} catch (error) {
+	console.error(`ERROR: Cannot read ${HEADERS_FILE}: ${error.message}`);
+	process.exit(1);
+}
 
 /**
  * Extract the full CSP value, handling multi-line headers.
