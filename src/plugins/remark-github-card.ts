@@ -45,7 +45,7 @@ export const remarkGithubCard: Plugin<[], Root> = () => (tree) => {
         		t.querySelector('.gh-forks').innerText = Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll("\u202f", '');
         		t.querySelector('.gh-stars').innerText = Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll("\u202f", '');
 						const avatarEl = t.querySelector('.gh-avatar');
-        		avatarEl.style.backgroundImage = 'url(' + data.owner.avatar_url + ')';
+        		avatarEl.style.backgroundImage = 'url("' + data.owner.avatar_url + '")';
 
 						if (data.license?.spdx_id) {
 							t.querySelector('.gh-license').innerText = data.license?.spdx_id
@@ -108,7 +108,7 @@ export const remarkGithubCard: Plugin<[], Root> = () => (tree) => {
 						t.classList.remove("gh-loading");
 
 						const avatarEl = t.querySelector('.gh-avatar');
-        		avatarEl.style.backgroundImage = 'url(' + data.avatar_url + ')';
+        		avatarEl.style.backgroundImage = 'url("' + data.avatar_url + '")';
 						t.querySelector('.gh-followers').innerText = Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(data.followers).replaceAll("\u202f", '');
 						t.querySelector('.gh-repositories').innerText = Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(data.public_repos).replaceAll("\u202f", '');
 						if (data.location) t.querySelector('.gh-region').innerText = data.location;
