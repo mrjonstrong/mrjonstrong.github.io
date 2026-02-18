@@ -160,13 +160,42 @@ if (!cspValue) {
 	process.exit(1);
 }
 
-const cspHashes = new Set();
-const hashRe = /["'](sha256-[A-Za-z0-9+/]+=*)["']/g;
-let hm;
-// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
-while ((hm = hashRe.exec(cspValue)) !== null) {
-	cspHashes.add(hm[1]);
+/**
+ * Extract SHA-256 hashes from script-src related directives only.
+ * CSP directives are semicolon-separated. This function parses the CSP
+ * to find script-src, script-src-elem, and script-src-attr directives
+ * and extracts only the hashes from those directives.
+ *
+ * @param {string} cspValue - The full Content-Security-Policy header value
+ * @returns {Set<string>} Set of SHA-256 hashes found in script-src directives
+ */
+function extractScriptSrcHashes(cspValue) {
+	const hashes = new Set();
+	// Split CSP into directives (semicolon-separated)
+	const directives = cspValue.split(";").map((d) => d.trim());
+
+	for (const directive of directives) {
+		// Check if this is a script-related directive
+		const directiveLower = directive.toLowerCase();
+		if (
+			directiveLower.startsWith("script-src ") ||
+			directiveLower.startsWith("script-src-elem ") ||
+			directiveLower.startsWith("script-src-attr ")
+		) {
+			// Extract SHA-256 hashes from this directive
+			const hashRe = /["'](sha256-[A-Za-z0-9+/]+=*)["']/g;
+			let match;
+			// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
+			while ((match = hashRe.exec(directive)) !== null) {
+				hashes.add(match[1]);
+			}
+		}
+	}
+
+	return hashes;
 }
+
+const cspHashes = extractScriptSrcHashes(cspValue);
 
 /* ------------------------------------------------------------------ */
 /*  3. Compare                                                        */
