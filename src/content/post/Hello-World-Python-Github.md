@@ -85,6 +85,9 @@ To consider
 
 You can set up Environments and protect them - [Environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
 
+[Keeping your GitHub Actions and workflows secure](https://securitylab.github.com/research/github-actions-preventing-pwn-requests/)
+See also [Understanding the risk of script injections](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#understanding-the-risk-of-script-injections)
+
 Whilst not security related, following best practices for open source projects - [recommended community standards](https://opensource.guide/).
 
 The OSS Scorecard is worth following. They have an action you can add to help highlight improvements to make [https://github.com/ossf/scorecard](https://github.com/ossf/scorecard)
