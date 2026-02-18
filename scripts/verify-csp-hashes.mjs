@@ -160,13 +160,84 @@ if (!cspValue) {
 	process.exit(1);
 }
 
-const cspHashes = new Set();
-const hashRe = /["'](sha256-[A-Za-z0-9+/]+=*)["']/g;
-let hm;
-// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
-while ((hm = hashRe.exec(cspValue)) !== null) {
-	cspHashes.add(hm[1]);
+/**
+ * Extract SHA-256 hashes from script-src related directives, falling back
+ * to default-src when no script-src* directives are present.
+ *
+ * CSP directives are semicolon-separated. This function parses the CSP
+ * to find script-src, script-src-elem, and script-src-attr directives and
+ * extracts only the hashes from those directives. If none of those
+ * directives are present, it falls back to extracting hashes from the
+ * default-src directive, which governs scripts in that case.
+ *
+ * @param {string} cspValue - The full Content-Security-Policy header value
+ * @returns {Set<string>} Set of SHA-256 hashes relevant for scripts
+ */
+function extractScriptSrcHashes(cspValue) {
+	const hashes = new Set();
+	// Split CSP into directives (semicolon-separated)
+	const directives = cspValue.split(";").map((d) => d.trim());
+
+	// Helper regex to extract SHA-256 hashes from a directive value
+	const hashRe = /["'](sha256-[A-Za-z0-9+/]+=*)["']/g;
+
+	let hasScriptDirective = false;
+
+	// First pass: collect hashes from script-src* directives
+	for (const directive of directives) {
+		// Skip empty directives that can appear due to trailing semicolons
+		if (!directive) continue;
+
+		const directiveLower = directive.toLowerCase();
+		const isScriptDirective =
+			directiveLower === "script-src" ||
+			directiveLower.startsWith("script-src ") ||
+			directiveLower === "script-src-elem" ||
+			directiveLower.startsWith("script-src-elem ") ||
+			directiveLower === "script-src-attr" ||
+			directiveLower.startsWith("script-src-attr ");
+
+		if (!isScriptDirective) {
+			continue;
+		}
+
+		hasScriptDirective = true;
+
+		// Reset regex state before reusing it for this directive
+		hashRe.lastIndex = 0;
+		let match;
+		// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
+		while ((match = hashRe.exec(directive)) !== null) {
+			hashes.add(match[1]);
+		}
+	}
+
+	// If no script-src* directives are present, fall back to default-src
+	if (!hasScriptDirective) {
+		for (const directive of directives) {
+			if (!directive) continue;
+
+			const directiveLower = directive.toLowerCase();
+			const isDefaultSrc =
+				directiveLower === "default-src" || directiveLower.startsWith("default-src ");
+
+			if (!isDefaultSrc) {
+				continue;
+			}
+			// Reset regex state before reusing it for this directive
+			hashRe.lastIndex = 0;
+			let match;
+			// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
+			while ((match = hashRe.exec(directive)) !== null) {
+				hashes.add(match[1]);
+			}
+		}
+	}
+
+	return hashes;
 }
+
+const cspHashes = extractScriptSrcHashes(cspValue);
 
 /* ------------------------------------------------------------------ */
 /*  3. Compare                                                        */
