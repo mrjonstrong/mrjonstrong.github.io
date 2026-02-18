@@ -7,7 +7,7 @@
  */
 
 import { createHash } from "node:crypto";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const DIST_DIR = "dist";
@@ -41,6 +41,7 @@ function extractInlineScriptHashes(html) {
 	const hashes = new Set();
 	const re = /<script([^>]*)>([\s\S]*?)<\/script>/g;
 	let m;
+	// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
 	while ((m = re.exec(html)) !== null) {
 		const attrs = m[1];
 		const body = m[2];
@@ -77,8 +78,58 @@ if (buildHashes.size === 0) {
 /* ------------------------------------------------------------------ */
 
 const headersContent = readFileSync(HEADERS_FILE, "utf-8");
-const cspMatch = headersContent.match(/Content-Security-Policy:\s*(.+)/);
-if (!cspMatch) {
+
+/**
+ * Extract the full CSP value, handling multi-line headers.
+ * HTTP headers can span multiple lines when continuation lines start with
+ * whitespace (space or tab) per RFC 7230 (obsoletes RFC 2616).
+ *
+ * A line is considered a new header if it contains a colon after non-whitespace
+ * characters, indicating a "Header-Name: value" pattern.
+ */
+function extractCspValue(content) {
+	const lines = content.split("\n");
+	let cspValue = null;
+	let inCsp = false;
+
+	for (let i = 0; i < lines.length; i++) {
+		const line = lines[i];
+
+		// Start of CSP header
+		if (/^\s*Content-Security-Policy:\s*/i.test(line)) {
+			cspValue = line.replace(/^\s*Content-Security-Policy:\s*/i, "");
+			inCsp = true;
+			continue;
+		}
+
+		// If we're processing CSP
+		if (inCsp) {
+			// Check if this line looks like a new header (has header-name: pattern)
+			// after trimming leading whitespace
+			const trimmed = line.trim();
+			if (trimmed && /^[A-Za-z0-9-]+:\s*/.test(trimmed)) {
+				// This is a new header, stop processing CSP
+				break;
+			}
+
+			// Continuation line (starts with whitespace and is not a new header)
+			if (/^[\s\t]/.test(line) && trimmed) {
+				cspValue += ` ${trimmed}`;
+				continue;
+			}
+
+			// Empty line or non-continuation line ends the CSP
+			if (trimmed === "") {
+				break;
+			}
+		}
+	}
+
+	return cspValue;
+}
+
+const cspValue = extractCspValue(headersContent);
+if (!cspValue) {
 	console.error("ERROR: No Content-Security-Policy found in", HEADERS_FILE);
 	process.exit(1);
 }
@@ -86,7 +137,8 @@ if (!cspMatch) {
 const cspHashes = new Set();
 const hashRe = /["'](sha256-[A-Za-z0-9+/]+=*)["']/g;
 let hm;
-while ((hm = hashRe.exec(cspMatch[1])) !== null) {
+// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
+while ((hm = hashRe.exec(cspValue)) !== null) {
 	cspHashes.add(hm[1]);
 }
 
