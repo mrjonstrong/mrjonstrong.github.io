@@ -88,7 +88,7 @@ const headersContent = readFileSync(HEADERS_FILE, "utf-8");
  * characters, indicating a "Header-Name: value" pattern.
  */
 function extractCspValue(content) {
-	const lines = content.split("\n");
+	const lines = content.split(/\r?\n/);
 	let cspValue = null;
 	let inCsp = false;
 
@@ -107,7 +107,7 @@ function extractCspValue(content) {
 			// Check if this line looks like a new header (has header-name: pattern)
 			// after trimming leading whitespace
 			const trimmed = line.trim();
-			if (trimmed && /^[A-Za-z0-9-]+:\s*/.test(trimmed)) {
+			if (trimmed && /^[A-Za-z0-9-]+:\s+/.test(trimmed)) {
 				// This is a new header, stop processing CSP
 				break;
 			}
