@@ -69,7 +69,13 @@ if (htmlFiles.length === 0) {
 
 const buildHashes = new Set();
 for (const file of htmlFiles) {
-	const html = readFileSync(file, "utf-8");
+	let html;
+	try {
+		html = readFileSync(file, "utf-8");
+	} catch (error) {
+		console.error(`ERROR: Cannot read HTML file ${file}: ${error.message}`);
+		process.exit(1);
+	}
 	for (const h of extractInlineScriptHashes(html)) {
 		buildHashes.add(h);
 	}
