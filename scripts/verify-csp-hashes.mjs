@@ -45,7 +45,7 @@ function extractInlineScriptHashes(html) {
 		const attrs = m[1];
 		const body = m[2];
 		if (!body.trim()) continue;
-		if (/\bsrc\s*=/.test(attrs)) continue;
+		if (/(?:^|\s)src\s*=/.test(attrs)) continue;
 		if (/speculationrules/.test(attrs)) continue;
 		const hash = createHash("sha256").update(body).digest("base64");
 		hashes.add(`sha256-${hash}`);
