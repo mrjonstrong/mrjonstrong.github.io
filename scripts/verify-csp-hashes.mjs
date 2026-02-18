@@ -9,6 +9,7 @@
 import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { parse } from "node-html-parser";
 
 const DIST_DIR = "dist";
 const HEADERS_FILE = "public/_headers";
@@ -39,15 +40,21 @@ function findHtmlFiles(dir) {
  */
 function extractInlineScriptHashes(html) {
 	const hashes = new Set();
-	const re = /<script([^>]*)>([\s\S]*?)<\/script>/g;
-	let m;
-	// biome-ignore lint/suspicious/noAssignInExpressions: Standard regex matching pattern
-	while ((m = re.exec(html)) !== null) {
-		const attrs = m[1];
-		const body = m[2];
+	const root = parse(html);
+	const scriptTags = root.querySelectorAll("script");
+
+	for (const script of scriptTags) {
+		// Skip external scripts (those with src attribute)
+		if (script.getAttribute("src")) continue;
+
+		// Skip speculation rules scripts
+		const type = script.getAttribute("type");
+		if (type?.includes("speculationrules")) continue;
+
+		// Get the text content of the script
+		const body = script.textContent || "";
 		if (!body.trim()) continue;
-		if (/(?:^|\s)src\s*=/.test(attrs)) continue;
-		if (/speculationrules/.test(attrs)) continue;
+
 		const hash = createHash("sha256").update(body).digest("base64");
 		hashes.add(`sha256-${hash}`);
 	}
