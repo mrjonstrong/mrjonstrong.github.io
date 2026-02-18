@@ -54,7 +54,14 @@ function extractInlineScriptHashes(html) {
 	return hashes;
 }
 
-const htmlFiles = findHtmlFiles(DIST_DIR);
+let htmlFiles;
+try {
+	htmlFiles = findHtmlFiles(DIST_DIR);
+} catch (error) {
+	console.error(`ERROR: Cannot access ${DIST_DIR} directory: ${error.message}`);
+	process.exit(1);
+}
+
 if (htmlFiles.length === 0) {
 	console.error("ERROR: No HTML files found in dist/. Was the build successful?");
 	process.exit(1);
@@ -77,7 +84,13 @@ if (buildHashes.size === 0) {
 /*  2. Extract sha256-* hashes from the CSP in public/_headers        */
 /* ------------------------------------------------------------------ */
 
-const headersContent = readFileSync(HEADERS_FILE, "utf-8");
+let headersContent;
+try {
+	headersContent = readFileSync(HEADERS_FILE, "utf-8");
+} catch (error) {
+	console.error(`ERROR: Cannot read ${HEADERS_FILE}: ${error.message}`);
+	process.exit(1);
+}
 
 /**
  * Extract the full CSP value, handling multi-line headers.
