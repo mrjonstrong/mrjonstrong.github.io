@@ -79,7 +79,7 @@ if (!cspMatch) {
 }
 
 const cspHashes = new Set();
-const hashRe = /'(sha256-[A-Za-z0-9+/=]+)'/g;
+const hashRe = /["'](sha256-[A-Za-z0-9+/]+=*)["']/g;
 let hm;
 while ((hm = hashRe.exec(cspMatch[1])) !== null) {
 	cspHashes.add(hm[1]);
