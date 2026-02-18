@@ -178,8 +178,11 @@ function extractScriptSrcHashes(cspValue) {
 		// Check if this is a script-related directive
 		const directiveLower = directive.toLowerCase();
 		if (
+			directiveLower === "script-src" ||
 			directiveLower.startsWith("script-src ") ||
+			directiveLower === "script-src-elem" ||
 			directiveLower.startsWith("script-src-elem ") ||
+			directiveLower === "script-src-attr" ||
 			directiveLower.startsWith("script-src-attr ")
 		) {
 			// Extract SHA-256 hashes from this directive
