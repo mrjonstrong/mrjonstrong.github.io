@@ -67,6 +67,11 @@ for (const file of htmlFiles) {
 	}
 }
 
+if (buildHashes.size === 0) {
+	console.warn(
+		"WARNING: No inline scripts found in build output. This may indicate an issue with the build or hash extraction.",
+	);
+}
 /* ------------------------------------------------------------------ */
 /*  2. Extract sha256-* hashes from the CSP in public/_headers        */
 /* ------------------------------------------------------------------ */
