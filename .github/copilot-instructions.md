@@ -120,11 +120,13 @@ The site uses the following Astro integrations and plugins:
 **Astro Integrations:**
 - `@astrojs/mdx`: MDX support
 - `@astrojs/sitemap`: Automatic sitemap generation
-- `@astrojs/rss`: RSS feed generation
 - `astro-expressive-code`: Code syntax highlighting (Dracula dark, GitHub Light themes)
 - `astro-icon`: Icon components (MDI icons)
 - `astro-robots-txt`: Robots.txt generation
 - `astro-webmanifest`: Web manifest for PWA
+
+**Libraries (not integrations):**
+- `@astrojs/rss`: RSS feed generation via endpoint files (`src/pages/rss.xml.ts`, `src/pages/notes/rss.xml.ts`)
 
 **Remark Plugins:**
 - `remark-directive`: Handle ::: directives in markdown
