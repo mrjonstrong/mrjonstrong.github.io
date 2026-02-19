@@ -63,17 +63,17 @@ Place images in `public/images/` and reference as `/images/filename.jpg`.
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `src/site.config.ts` | Site title, description, author, URL, nav menu |
-| `astro.config.ts` | Astro integrations, markdown plugins, env schema |
-| `src/content.config.ts` | Content collection schemas (post, note, tag) |
-| `src/components/SocialList.astro` | Footer social links |
-| `src/pages/about.astro` | About page |
-| `public/_redirects` | Cloudflare Pages URL redirects |
-| `public/images/` | Static images |
-| `.github/workflows/` | CI: check & build, trivy |
-| `.github/dependabot.yml` | Auto-updates: npm + github-actions daily to `develop` |
+| File                               | Purpose                                                  |
+| ---------------------------------- | -------------------------------------------------------- |
+| `src/site.config.ts`               | Site title, description, author, URL, nav menu           |
+| `astro.config.ts`                  | Astro integrations, markdown plugins, env schema         |
+| `src/content.config.ts`            | Content collection schemas (post, note, tag)             |
+| `src/components/SocialList.astro`  | Footer social links                                      |
+| `src/pages/about.astro`            | About page                                               |
+| `public/_redirects`                | Cloudflare Pages URL redirects                           |
+| `public/images/`                   | Static images                                            |
+| `.github/workflows/`               | CI: check & build, trivy                                 |
+| `.github/dependabot.yml`           | Auto-updates: npm + github-actions daily to `develop`    |
 
 ## Security
 
@@ -84,10 +84,10 @@ Place images in `public/images/` and reference as `/images/filename.jpg`.
 
 ## CI Workflows
 
-| Workflow | Trigger | Purpose |
-|----------|---------|---------|
-| `ci.yml` | push/PR to main, develop | Type check (`astro check`), lint (`biome check`), build |
-| `trivy.yml` | weekly + push/PR | Filesystem vulnerability scanning |
+| Workflow    | Trigger                  | Purpose                                                 |
+| ----------- | ------------------------ | ------------------------------------------------------- |
+| `ci.yml`    | push/PR to main, develop | Type check (`astro check`), lint (`biome check`), build |
+| `trivy.yml` | weekly + push/PR         | Filesystem vulnerability scanning                       |
 
 CI runs the same `pnpm check` and `pnpm build` commands used locally, so failures are predictable and reproducible.
 
