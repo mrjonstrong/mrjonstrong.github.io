@@ -63,34 +63,33 @@ Place images in `public/images/` and reference as `/images/filename.jpg`.
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `src/site.config.ts` | Site title, description, author, URL, nav menu |
-| `astro.config.ts` | Astro integrations, markdown plugins, env schema |
-| `src/content.config.ts` | Content collection schemas (post, note, tag) |
-| `src/components/SocialList.astro` | Footer social links |
-| `src/pages/about.astro` | About page |
-| `public/_redirects` | Cloudflare Pages URL redirects |
-| `public/images/` | Static images |
-| `.github/workflows/` | CI: super-linter, trivy, chainbench |
-| `.github/dependabot.yml` | Auto-updates: npm + github-actions daily to `develop` |
+| File                               | Purpose                                                  |
+| ---------------------------------- | -------------------------------------------------------- |
+| `src/site.config.ts`               | Site title, description, author, URL, nav menu           |
+| `astro.config.ts`                  | Astro integrations, markdown plugins, env schema         |
+| `src/content.config.ts`            | Content collection schemas (post, note, tag)             |
+| `src/components/SocialList.astro`  | Footer social links                                      |
+| `src/pages/about.astro`            | About page                                               |
+| `public/_redirects`                | Cloudflare Pages URL redirects                           |
+| `public/images/`                   | Static images                                            |
+| `.github/workflows/`               | CI: check & build, trivy                                 |
+| `.github/dependabot.yml`           | Auto-updates: npm + github-actions daily to `develop`    |
 
 ## Security
 
 - **Never** commit secrets, API keys, or `.env` files
-- **Never** disable security scanning workflows (trivy, chainbench, super-linter)
+- **Never** disable security scanning workflows (trivy)
 - Keep dependencies up to date — run `pnpm audit` and `pnpm update --latest` periodically
 - The `pnpm.overrides` section in `package.json` contains security patches for transitive dependencies — do not remove them without checking `pnpm audit` first
 
 ## CI Workflows
 
-| Workflow | Trigger | Purpose |
-|----------|---------|---------|
-| `super-linter.yml` | push/PR to main, develop | Lints Markdown, YAML, TypeScript |
-| `trivy.yml` | weekly + push/PR | Filesystem vulnerability scanning |
-| `chainbench.yml` | scheduled | Supply chain security |
+| Workflow    | Trigger                  | Purpose                                                           |
+| ----------- | ------------------------ | ----------------------------------------------------------------- |
+| `ci.yml`    | push/PR to main, develop | Type check (`astro check`), lint (`biome check`, markdown), build |
+| `trivy.yml` | weekly + push/PR         | Filesystem vulnerability scanning                                 |
 
-Super-linter excludes `dist/` and `.astro/` (build artifacts).
+CI runs the same `pnpm check` and `pnpm build` commands used locally, so failures are predictable and reproducible.
 
 ## Cloudflare Pages Setup
 
