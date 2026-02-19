@@ -8,7 +8,7 @@ This repository is a personal infosec blog built with Astro using the Cactus the
 - **Purpose**: Personal blog about information security
 - **Deployment**: Cloudflare Pages
 - **Theme**: Cactus (dark/light mode)
-- **Package Manager**: pnpm
+- **Package Manager**: pnpm 10.29.3
 
 ## Build & Test Commands
 
@@ -18,25 +18,34 @@ This repository is a personal infosec blog built with Astro using the Cactus the
 # Install dependencies
 pnpm install
 
-# Build the site
-pnpm build
-
-# Serve the site locally with hot reload
+# Start dev server (http://localhost:4321)
 pnpm dev
 
-# Preview production build
+# Production build -> dist/
+pnpm build
+
+# Preview production build locally
 pnpm preview
 
-# Type check and lint
+# Type check (astro check) + lint (biome check)
 pnpm check
+
+# Auto-fix lint issues with biome
+pnpm lint
+
+# Format with prettier
+pnpm format
 ```
 
 ### Linting
 
 ```bash
-# The repository uses GitHub Super Linter which runs automatically on PRs
-# Biome is used for code linting: pnpm check
-# Prettier is used for formatting: pnpm format
+# Type checking and linting
+pnpm check          # astro check + biome check
+pnpm lint           # biome check --write (auto-fix)
+pnpm format         # prettier -w . --cache
+
+# CI runs these checks automatically on push/PR to main and develop branches
 ```
 
 ## Code Style & Conventions
@@ -47,31 +56,43 @@ pnpm check
 - Use frontmatter for all posts:
   ```yaml
   ---
-  title: "Your Title" # max 60 characters
-  description: "A short description for SEO"
-  publishDate: "YYYY-MM-DD"
-  tags: ["tag1", "tag2"]
-  draft: false # set true for drafts
+  title: "Your Title"          # max 60 characters (enforced by schema)
+  description: "SEO summary"   # required, shown in post listings
+  publishDate: "YYYY-MM-DD"    # or ISO 8601 date
+  tags: ["tag1", "tag2"]       # array, not space-separated string
+  draft: false                 # omit or set false for published posts
+  pinned: false                # optional, pin to top of posts list
+  coverImage:                  # optional cover image
+    src: ./image.jpg
+    alt: "Image description"
+  ogImage: "/og-image.png"     # optional custom OG image
+  updatedDate: "YYYY-MM-DD"    # optional, for last update tracking
   ---
   ```
 
 ### Directory Structure
 
-- `src/content/post/`: Blog posts
+- `src/content/post/`: Blog posts (.md, .mdx)
+- `src/content/note/`: Short notes/microblog entries
+- `src/content/tag/`: Tag descriptions
 - `src/components/`: Astro components
 - `src/layouts/`: Page layouts
 - `src/pages/`: File-based routing pages
 - `src/styles/`: Global styles (Tailwind CSS v4)
+- `src/plugins/`: Custom remark/rehype plugins
 - `public/`: Static assets (images, redirects, icons)
-- `dist/`: Generated site output (built by Astro)
+- `public/_redirects`: Cloudflare Pages redirects (Jekyll to Astro URL migration)
+- `dist/`: Generated site output (built by Astro, not committed)
 
 ## Workflow & Branching
 
-- Main branch: `main` (production)
+- Main branch: `main` (production, deployed to jonathanstrong.org)
 - Development branch: `develop`
 - Feature branches should be created from `develop`
+- Copilot branches: `copilot/*` (created by GitHub Copilot)
 - All changes require PR review before merging
-- Super Linter runs on pushes to `main` and `develop` branches and on all PRs
+- CI workflow runs on pushes to `main` and `develop` branches and on all PRs
+- Trivy security scanning runs weekly and on push/PR
 
 ## Security & Boundaries
 
@@ -79,40 +100,55 @@ pnpm check
 
 - Commit secrets, API keys, or credentials
 - Modify security scanning workflows without careful consideration
-- Edit files in `dist/` directory (auto-generated)
+- Edit files in `dist/` directory (auto-generated, not committed)
 - Change `.github/workflows/` files unless specifically requested
-- Remove or disable security scanning tools (Trivy, Chainbench)
+- Remove or disable security scanning tools (Trivy)
+- Remove security overrides from `pnpm.overrides` in package.json without checking first
 
 ### DO:
 
 - Follow security best practices in blog posts
-- Keep dependencies up to date
+- Keep dependencies up to date (Dependabot auto-updates to `develop` daily)
 - Review Dependabot alerts promptly
 - Maintain code quality and security standards enforced by CI tools
+- Test builds locally before pushing (`pnpm build` includes pagefind indexing and CSP hash verification)
 
 ## Astro Features
 
-The site uses the following Astro integrations:
+The site uses the following Astro integrations and plugins:
 
+**Astro Integrations:**
 - `@astrojs/mdx`: MDX support
 - `@astrojs/sitemap`: Automatic sitemap generation
 - `@astrojs/rss`: RSS feed generation
-- `astro-expressive-code`: Code syntax highlighting
+- `astro-expressive-code`: Code syntax highlighting (Dracula dark, GitHub Light themes)
 - `astro-icon`: Icon components (MDI icons)
 - `astro-robots-txt`: Robots.txt generation
 - `astro-webmanifest`: Web manifest for PWA
+- `pagefind`: Client-side search (runs in postbuild script)
+
+**Remark Plugins:**
+- `remark-directive`: Handle ::: directives in markdown
+- `remark-reading-time`: Calculate reading time (custom plugin)
+- `remark-github-card`: GitHub card embeds (custom plugin)
+- `remark-admonitions`: Admonition blocks (custom plugin)
+
+**Rehype Plugins:**
+- `rehype-heading-ids`: Add IDs to headings
+- `rehype-autolink-headings`: Make headings clickable links
 - `rehype-external-links`: External links open in new tab with noopener/noreferrer
-- `pagefind`: Client-side search
+- `rehype-unwrap-images`: Remove paragraph wrappers from images
 
 ## Testing Changes
 
 Before submitting a PR:
 
-1. Build the site: `pnpm build`
-2. Preview and review: `pnpm preview`
-3. Check for type errors: `pnpm check`
+1. Type check and lint: `pnpm check`
+2. Build the site: `pnpm build` (includes pagefind indexing and CSP verification)
+3. Preview and review: `pnpm preview`
 4. Verify all links work
 5. Ensure posts display correctly
+6. Check markdown linting (runs automatically in CI)
 
 ## Common Tasks
 
@@ -131,6 +167,13 @@ Before submitting a PR:
 
 ## Additional Notes
 
-- Site URL: https://jonathanstrong.org
-- Old Jekyll URLs redirect to new `/posts/` paths via `public/_redirects`
-- Pagination and dark/light mode are built into the Cactus theme
+- **Site URL:** https://jonathanstrong.org
+- **Node version:** 22 (see `.nvmrc`)
+- **Framework:** Astro 5 (static output)
+- **Styling:** Tailwind CSS v4
+- **Theme:** astro-theme-cactus (customized)
+- **Old Jekyll URLs** redirect to new `/posts/` paths via `public/_redirects`
+- **URL structure:** Posts are served at `/posts/[slug]` where slug is the lowercased filename
+- **Pagination and dark/light mode** are built into the Cactus theme
+- **Build process:** `postbuild` script runs pagefind indexing and CSP hash verification
+- **CI workflows:** `ci.yml` (type check, lint, build) and `trivy.yml` (security scanning)
