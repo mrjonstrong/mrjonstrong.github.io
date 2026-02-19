@@ -125,7 +125,6 @@ The site uses the following Astro integrations and plugins:
 - `astro-icon`: Icon components (MDI icons)
 - `astro-robots-txt`: Robots.txt generation
 - `astro-webmanifest`: Web manifest for PWA
-- `pagefind`: Client-side search (runs in postbuild script)
 
 **Remark Plugins:**
 - `remark-directive`: Handle ::: directives in markdown
@@ -138,6 +137,9 @@ The site uses the following Astro integrations and plugins:
 - `rehype-autolink-headings`: Make headings clickable links
 - `rehype-external-links`: External links open in new tab with noopener/noreferrer
 - `rehype-unwrap-images`: Remove paragraph wrappers from images
+
+**Build Tools:**
+- `pagefind`: Client-side search indexing (runs via postbuild script)
 
 ## Testing Changes
 
