@@ -45,7 +45,7 @@ export const remarkGithubCard: Plugin<[], Root> = () => (tree) => {
         		t.querySelector('.gh-forks').innerText = Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll("\u202f", '');
         		t.querySelector('.gh-stars').innerText = Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll("\u202f", '');
 						const avatarEl = t.querySelector('.gh-avatar');
-        		avatarEl.style.backgroundImage = 'url("' + data.owner.avatar_url + '")';
+        		avatarEl.style.backgroundImage = 'url(' + JSON.stringify(String(data.owner?.avatar_url || '')) + ')';
 
 						if (data.license?.spdx_id) {
 							t.querySelector('.gh-license').innerText = data.license?.spdx_id
