@@ -52,3 +52,4 @@ Temporary Items
 *.pem
 .cache
 .astro
+.vscode/settings.json
