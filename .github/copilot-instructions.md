@@ -73,8 +73,8 @@ pnpm format         # prettier -w . --cache
 ### Directory Structure
 
 - `src/content/post/`: Blog posts (.md, .mdx)
-- `src/content/note/`: Short notes/microblog entries
-- `src/content/tag/`: Tag descriptions
+- `src/content/note/`: Content collection for short notes/microblog entries (defined in `src/content.config.ts`; create this directory when adding notes)
+- `src/content/tag/`: Content collection for tag descriptions (defined in `src/content.config.ts`; create this directory when adding tags)
 - `src/components/`: Astro components
 - `src/layouts/`: Page layouts
 - `src/pages/`: File-based routing pages
