@@ -84,10 +84,10 @@ Place images in `public/images/` and reference as `/images/filename.jpg`.
 
 ## CI Workflows
 
-| Workflow    | Trigger                  | Purpose                                                        |
-| ----------- | ------------------------ | -------------------------------------------------------------- |
+| Workflow    | Trigger                  | Purpose                                                           |
+| ----------- | ------------------------ | ----------------------------------------------------------------- |
 | `ci.yml`    | push/PR to main, develop | Type check (`astro check`), lint (`biome check`, markdown), build |
-| `trivy.yml` | weekly + push/PR         | Filesystem vulnerability scanning                              |
+| `trivy.yml` | weekly + push/PR         | Filesystem vulnerability scanning                                 |
 
 CI runs the same `pnpm check` and `pnpm build` commands used locally, so failures are predictable and reproducible.
 
