@@ -11,7 +11,7 @@ Personal infosec blog for **Jonathan Strong** (`jonathanstrong.org`), migrated f
 ```bash
 pnpm install        # Install dependencies
 pnpm dev            # Start dev server (http://localhost:4321)
-pnpm build          # Production build -> dist/
+pnpm build          # Production build -> dist/ (includes pagefind + CSP verification)
 pnpm preview        # Preview production build locally
 pnpm check          # Type check (astro check) + lint (biome check)
 pnpm lint           # Auto-fix lint issues with biome
@@ -23,15 +23,16 @@ pnpm audit          # Check for known vulnerabilities
 
 - `main` — production (jonathanstrong.org)
 - `develop` — integration branch
+- `copilot/*` — GitHub Copilot feature branches, always branch from `develop`
 - `claude/*` — Claude Code feature branches, always branch from `develop`
 - All PRs require review before merging to `main` or `develop`
 
 ## Architecture
 
 - **Framework:** Astro 5 (static output)
-- **Theme:** astro-theme-cactus
+- **Theme:** astro-theme-cactus (customized)
 - **Styling:** Tailwind CSS v4
-- **Package manager:** pnpm (do not use npm or yarn)
+- **Package manager:** pnpm 10.29.3 (do not use npm or yarn)
 - **Deployment:** Cloudflare Pages (build command: `pnpm build`, output: `dist/`)
 - **Node version:** 22 (see `.nvmrc`)
 
@@ -45,9 +46,15 @@ Blog posts live in `src/content/post/` as `.md` or `.mdx` files.
 ---
 title: "Post title"          # max 60 characters — enforced by schema
 description: "SEO summary"   # required, shown in post listings
-publishDate: "YYYY-MM-DD"
+publishDate: "YYYY-MM-DD"    # or ISO 8601 date
 tags: ["tag1", "tag2"]       # array, not space-separated string
 draft: true                  # omit or set false for published posts
+pinned: false                # optional, pin to top of posts list
+coverImage:                  # optional cover image
+  src: ./image.jpg
+  alt: "Image description"
+ogImage: "/og-image.png"     # optional custom OG image
+updatedDate: "YYYY-MM-DD"    # optional, for last update tracking
 ---
 ```
 
@@ -63,38 +70,40 @@ Place images in `public/images/` and reference as `/images/filename.jpg`.
 
 ## Key Files
 
-| File                               | Purpose                                                  |
-| ---------------------------------- | -------------------------------------------------------- |
-| `src/site.config.ts`               | Site title, description, author, URL, nav menu           |
-| `astro.config.ts`                  | Astro integrations, markdown plugins, env schema         |
-| `src/content.config.ts`            | Content collection schemas (post, note, tag)             |
-| `src/components/SocialList.astro`  | Footer social links                                      |
-| `src/pages/about.astro`            | About page                                               |
-| `public/_redirects`                | Cloudflare Pages URL redirects                           |
-| `public/images/`                   | Static images                                            |
-| `.github/workflows/`               | CI: check & build, trivy                                 |
-| `.github/dependabot.yml`           | Auto-updates: npm + github-actions daily to `develop`    |
+| File                              | Purpose                                               |
+| --------------------------------- | ----------------------------------------------------- |
+| `src/site.config.ts`              | Site title, description, author, URL, nav menu        |
+| `astro.config.ts`                 | Astro integrations, markdown plugins, env schema      |
+| `src/content.config.ts`           | Content collection schemas (post, note, tag)          |
+| `src/components/SocialList.astro` | Footer social links                                   |
+| `src/pages/about.astro`           | About page                                            |
+| `src/plugins/`                    | Custom remark/rehype plugins                          |
+| `public/_redirects`               | Cloudflare Pages URL redirects                        |
+| `public/images/`                  | Static images                                         |
+| `.github/workflows/`              | CI: check & build, trivy                              |
+| `.github/dependabot.yml`          | Auto-updates: npm + github-actions daily to `develop` |
+| `scripts/verify-csp-hashes.mjs`   | CSP hash verification (runs in postbuild)             |
 
 ## Security
 
 - **Never** commit secrets, API keys, or `.env` files
 - **Never** disable security scanning workflows (trivy)
 - Keep dependencies up to date — run `pnpm audit` and `pnpm update --latest` periodically
-- The `pnpm.overrides` section in `package.json` contains security patches for transitive dependencies — do not remove them without checking `pnpm audit` first
+- The `pnpm.overrides` section in `package.json` contains security patches for transitive dependencies — do not remove them without verifying security first
 
 ## CI Workflows
 
-| Workflow    | Trigger                  | Purpose                                                           |
-| ----------- | ------------------------ | ----------------------------------------------------------------- |
-| `ci.yml`    | push/PR to main, develop | Type check (`astro check`), lint (`biome check`, markdown), build |
-| `trivy.yml` | weekly + push/PR         | Filesystem vulnerability scanning                                 |
+| Workflow    | Trigger                  | Purpose                                                               |
+| ----------- | ------------------------ | --------------------------------------------------------------------- |
+| `ci.yml`    | push/PR to main, develop | Type check (`astro check`), lint (`biome check`, markdownlint), build |
+| `trivy.yml` | weekly + push/PR         | Filesystem vulnerability scanning                                     |
 
-CI runs the same `pnpm check` and `pnpm build` commands used locally, so failures are predictable and reproducible.
+CI runs the same `pnpm check` and `pnpm build` commands used locally. The `postbuild` script runs `pagefind --site dist` for search indexing and `scripts/verify-csp-hashes.mjs` for CSP hash verification.
 
 ## Cloudflare Pages Setup
 
-- **Production branch:** `main`
-- **Preview branch:** `claude/migrate-jekyll-astro-xYafH` → `preview.jonathanstrong.org`
+- **Production branch:** `main` (deployed to jonathanstrong.org)
+- **Preview branches:** Feature branches get automatic preview deployments
 - **Build command:** `pnpm build`
 - **Output directory:** `dist`
 - **Environment variable:** `NODE_VERSION=22`
