@@ -36,10 +36,8 @@ jobs:
       - name: Type check & lint (astro check + biome)
         run: pnpm check
 
-      - name: Lint blog posts (markdownlint)
+      - name: Lint Markdown
         uses: DavidAnson/markdownlint-cli2-action@07035fd053f7be764496c0f8d8f9f41f98305101 # v22
-        with:
-          globs: "src/content/post/**/*.md"
 
       - name: Build
         run: pnpm build
