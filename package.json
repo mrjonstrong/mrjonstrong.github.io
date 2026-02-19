@@ -5,7 +5,7 @@
 	"version": "6.11.0",
 	"private": false,
 	"scripts": {
-		"postinstall": "pnpm rebuild sharp",
+		"postinstall": "pnpm rebuild sharp --force",
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
