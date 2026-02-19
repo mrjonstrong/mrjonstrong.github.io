@@ -134,7 +134,7 @@ The site uses the following Astro integrations and plugins:
 - `remark-admonitions`: Admonition blocks (custom plugin)
 
 **Rehype Plugins:**
-- `rehype-heading-ids`: Add IDs to headings
+- `rehypeHeadingIds` (from `@astrojs/markdown-remark`): Add IDs to headings
 - `rehype-autolink-headings`: Make headings clickable links
 - `rehype-external-links`: External links open in new tab with noopener/noreferrer
 - `rehype-unwrap-images`: Remove paragraph wrappers from images
