@@ -120,7 +120,7 @@ The site uses the following Astro integrations and plugins:
 **Astro Integrations:**
 - `@astrojs/mdx`: MDX support
 - `@astrojs/sitemap`: Automatic sitemap generation
-- `@astrojs/rss`: RSS feed generation
+- `@astrojs/rss` (used as a library in RSS endpoint files, not as an Astro integration): RSS feed generation
 - `astro-expressive-code`: Code syntax highlighting (Dracula dark, GitHub Light themes)
 - `astro-icon`: Icon components (MDI icons)
 - `astro-robots-txt`: Robots.txt generation
