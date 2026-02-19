@@ -1,6 +1,7 @@
 {
 	"name": "astro-cactus",
 	"type": "module",
+	"packageManager": "pnpm@10.29.3",
 	"version": "6.11.0",
 	"private": false,
 	"scripts": {
