@@ -70,19 +70,19 @@ Place images in `public/images/` and reference as `/images/filename.jpg`.
 
 ## Key Files
 
-| File                            | Purpose                                               |
-| ------------------------------- | ----------------------------------------------------- |
-| `src/site.config.ts`            | Site title, description, author, URL, nav menu        |
-| `astro.config.ts`               | Astro integrations, markdown plugins, env schema      |
-| `src/content.config.ts`         | Content collection schemas (post, note, tag)          |
-| `src/components/SocialList.astro` | Footer social links                                 |
-| `src/pages/about.astro`         | About page                                            |
-| `src/plugins/`                  | Custom remark/rehype plugins                          |
-| `public/_redirects`             | Cloudflare Pages URL redirects                        |
-| `public/images/`                | Static images                                         |
-| `.github/workflows/`            | CI: check & build, trivy                              |
-| `.github/dependabot.yml`        | Auto-updates: npm + github-actions daily to `develop` |
-| `scripts/verify-csp-hashes.mjs` | CSP hash verification (runs in postbuild)            |
+| File                              | Purpose                                               |
+| --------------------------------- | ----------------------------------------------------- |
+| `src/site.config.ts`              | Site title, description, author, URL, nav menu        |
+| `astro.config.ts`                 | Astro integrations, markdown plugins, env schema      |
+| `src/content.config.ts`           | Content collection schemas (post, note, tag)          |
+| `src/components/SocialList.astro` | Footer social links                                   |
+| `src/pages/about.astro`           | About page                                            |
+| `src/plugins/`                    | Custom remark/rehype plugins                          |
+| `public/_redirects`               | Cloudflare Pages URL redirects                        |
+| `public/images/`                  | Static images                                         |
+| `.github/workflows/`              | CI: check & build, trivy                              |
+| `.github/dependabot.yml`          | Auto-updates: npm + github-actions daily to `develop` |
+| `scripts/verify-csp-hashes.mjs`   | CSP hash verification (runs in postbuild)             |
 
 ## Security
 
@@ -93,10 +93,10 @@ Place images in `public/images/` and reference as `/images/filename.jpg`.
 
 ## CI Workflows
 
-| Workflow    | Trigger                  | Purpose                                                              |
-| ----------- | ------------------------ | -------------------------------------------------------------------- |
+| Workflow    | Trigger                  | Purpose                                                               |
+| ----------- | ------------------------ | --------------------------------------------------------------------- |
 | `ci.yml`    | push/PR to main, develop | Type check (`astro check`), lint (`biome check`, markdownlint), build |
-| `trivy.yml` | weekly + push/PR         | Filesystem vulnerability scanning                                    |
+| `trivy.yml` | weekly + push/PR         | Filesystem vulnerability scanning                                     |
 
 CI runs the same `pnpm check` and `pnpm build` commands used locally. The `postbuild` script runs `pagefind --site dist` for search indexing and `scripts/verify-csp-hashes.mjs` for CSP hash verification.
 
