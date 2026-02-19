@@ -16,9 +16,8 @@ pnpm preview        # Preview production build locally
 pnpm check          # Type check (astro check) + lint (biome check)
 pnpm lint           # Auto-fix lint issues with biome
 pnpm format         # Format with prettier
+pnpm audit          # Check for known vulnerabilities
 ```
-
-**Note:** There is no `pnpm audit` command in package.json. Use `npm audit` or check Dependabot alerts for vulnerability scanning.
 
 ## Branch Strategy
 
@@ -89,7 +88,7 @@ Place images in `public/images/` and reference as `/images/filename.jpg`.
 
 - **Never** commit secrets, API keys, or `.env` files
 - **Never** disable security scanning workflows (trivy)
-- Keep dependencies up to date — Dependabot runs daily, targeting `develop` branch
+- Keep dependencies up to date — run `pnpm audit` and `pnpm update --latest` periodically
 - The `pnpm.overrides` section in `package.json` contains security patches for transitive dependencies — do not remove them without verifying security first
 
 ## CI Workflows
