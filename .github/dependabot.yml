@@ -20,7 +20,6 @@ updates:
     target-branch: 'develop'
     labels:
       - 'dependencies'
-      - 'ci'
     groups:
       actions:
         patterns:
