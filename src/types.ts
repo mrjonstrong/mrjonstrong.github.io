@@ -6,6 +6,7 @@ export interface SiteConfig {
 	};
 	description: string;
 	lang: string;
+	mastodon: string;
 	ogLocale: string;
 	title: string;
 	url: string;

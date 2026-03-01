@@ -1,5 +1,6 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
+import { siteConfig } from "@/site.config";
 
 const meta = {
 	description: "About Jonathan Strong",
@@ -31,8 +32,8 @@ const meta = {
 			<li>
 				<a
 					class="cactus-link inline-block"
-					href="https://infosec.exchange/@mrjonstrong"
-					rel="noreferrer me"
+					href={siteConfig.mastodon}
+					rel="noreferrer me authn"
 					target="_blank">Mastodon</a
 				>
 			</li>
