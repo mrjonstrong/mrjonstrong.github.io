@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/site.config";
 
 /**
 	Uses https://www.astroicon.dev/getting-started/
@@ -20,7 +21,7 @@ const socialLinks: {
 	{
 		friendlyName: "Mastodon",
 		isWebmention: true,
-		link: "https://infosec.exchange/@mrjonstrong",
+		link: siteConfig.mastodon,
 		name: "mdi:mastodon",
 	},
 	{
@@ -45,7 +46,7 @@ const socialLinks: {
 					<a
 						class="hover:text-link inline-block"
 						href={link}
-						rel={`noreferrer ${isWebmention ? "me authn" : ""}`}
+						rel={["noreferrer", ...(isWebmention ? ["me"] : [])].join(" ")}
 						target="_blank"
 					>
 						<Icon aria-hidden="true" class="h-8 w-8" focusable="false" name={name} />

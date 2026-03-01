@@ -13,6 +13,7 @@ export const siteConfig: SiteConfig = {
 	},
 	description: "A blog about infosec",
 	lang: "en-GB",
+	mastodon: "https://infosec.exchange/@mrjonstrong",
 	ogLocale: "en_GB",
 	title: "Jonathan Strong",
 	url: "https://jonathanstrong.org",
