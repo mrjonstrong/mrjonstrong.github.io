@@ -46,7 +46,7 @@ const socialLinks: {
 					<a
 						class="hover:text-link inline-block"
 						href={link}
-						rel={`noreferrer ${isWebmention ? "me" : ""}`}
+						rel={["noreferrer", ...(isWebmention ? ["me"] : [])].join(" ")}
 						target="_blank"
 					>
 						<Icon aria-hidden="true" class="h-8 w-8" focusable="false" name={name} />
