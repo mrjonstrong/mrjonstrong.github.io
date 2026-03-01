@@ -23,7 +23,7 @@ You might already have something you use for 2FA with other accounts. Often time
 In which case, just use that for now. Many people have Microsoft Authenticator <https://www.microsoft.com/en-gb/account/authenticator> already for use with an old hotmail or Microsoft account. Or Google authenticator <https://support.google.com/accounts/answer/1066447?hl=en&co=GENIE.Platform%3DAndroid&oco=0>.
 
 If you don't have anything, I would recommend using Authy <https://authy.com/>.
-It works on your desktop as well as your phone, you can backup if you like, so if you switch phones you can transfer it easily. _I need to do a separate bit on 2FA and using Authy._
+You can backup if you like, so if you switch phones you can transfer it easily. _I need to do a separate bit on 2FA and using Authy._
 
 Second thing you will need is a master password. This is important as it will be used to secure everything.
 It must not be something you have used before or even similar to anything you have used before. Picking a passphrase of 4 or 5 random words with spaces in-between is my suggestion. 4 long words, or 5 shorter ones seem to be the right balance between enough security without making it hard to remember or type. I would not worry about capitalising the letters or adding number or symbols.
