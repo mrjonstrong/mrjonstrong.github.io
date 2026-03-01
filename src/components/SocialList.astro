@@ -6,6 +6,7 @@ import { siteConfig } from "@/site.config";
 	Uses https://www.astroicon.dev/getting-started/
 	Find icons via guide: https://www.astroicon.dev/guides/customization/#open-source-icon-sets
 	Only installed pack is: @iconify-json/mdi
+	Also uses a custom SVG in src/icons/ (e.g. bluesky.svg for the Bluesky icon)
 */
 const socialLinks: {
 	friendlyName: string;
@@ -25,9 +26,9 @@ const socialLinks: {
 		name: "mdi:mastodon",
 	},
 	{
-		friendlyName: "Twitter",
-		link: "https://twitter.com/mrjonstrong",
-		name: "mdi:twitter",
+		friendlyName: "Bluesky",
+		link: "https://bsky.app/profile/jonathanstrong.org",
+		name: "bluesky",
 	},
 	{
 		friendlyName: "Keybase",
