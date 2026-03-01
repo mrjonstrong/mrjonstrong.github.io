@@ -6,6 +6,8 @@ This file provides guidance for Claude Code when working in this repository.
 
 Personal infosec blog for **Jonathan Strong** (`jonathanstrong.org`), migrated from Jekyll/GitHub Pages to **Astro** using the [astro-theme-cactus](https://github.com/chrismwilliams/astro-theme-cactus) template, deployed on **Cloudflare Pages**.
 
+**Repository:** `mrjonstrong/website` (renamed from `mrjonstrong/mrjonstrong.github.io` to prevent GitHub Pages from auto-building)
+
 ## Commands
 
 ```bash
@@ -102,6 +104,7 @@ CI runs the same `pnpm check` and `pnpm build` commands used locally. The `postb
 
 ## Cloudflare Pages Setup
 
+- **Repository:** `mrjonstrong/website`
 - **Production branch:** `main` (deployed to jonathanstrong.org)
 - **Preview branches:** Feature branches get automatic preview deployments
 - **Build command:** `pnpm build`
