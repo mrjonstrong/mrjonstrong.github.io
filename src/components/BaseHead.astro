@@ -74,7 +74,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <link href="/notes/rss.xml" title="Notes" rel="alternate" type="application/rss+xml" />
 
 {/* Mastodon verification */}
-<link rel="me" href="https://infosec.exchange/@mrjonstrong" />
+<link rel="me" href={siteConfig.mastodon} />
 
 {/* Webmentions */}
 {

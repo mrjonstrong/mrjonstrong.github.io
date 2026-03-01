@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/site.config";
 
 /**
 	Uses https://www.astroicon.dev/getting-started/
@@ -20,7 +21,7 @@ const socialLinks: {
 	{
 		friendlyName: "Mastodon",
 		isWebmention: true,
-		link: "https://infosec.exchange/@mrjonstrong",
+		link: siteConfig.mastodon,
 		name: "mdi:mastodon",
 	},
 	{
