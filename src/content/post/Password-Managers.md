@@ -61,7 +61,7 @@ Don't worry about changing any of them just yet.
 
 If you are on the family plan, you can store some of your passwords in a shared vault with one or more of your family. Passwords for streaming sites and food delivery are common ones to share, as are Wi-Fi passwords.
 
-Try to go through and save as many sites as you can remember having a sign on for. Check your favourites, history, and emails to help jog your memory. I'm sure I read somewhere the average is around 200 sites. I have around 400 which I have accumulated over many years. Although I probably only sign into 100 a year.
+Try to go through and save as many sites as you can remember having an account on. Check your favourites, history, and emails to help jog your memory. I'm sure I read somewhere the average is around 200 sites. I have around 400 which I have accumulated over many years. Although I probably only sign into 100 a year.
 
 Once you have saved as many as you can remember, try to change a few passwords. Start with ones you are less concerned about and if you get into a muddle you wouldn't worry about. Maybe that online shop you just bought that one thing from.
 
