@@ -86,7 +86,7 @@ This will help to pick the sites that need the passwords changed the most.
 
 Compromised sites — unlikely to have any yet as these will only appear where a site has had a data breach and you have not changed your password since. As you have only just created these entries there won't be any yet. If you do ever see these then change these right away.
 
-Vulnerable passwords — check now and again; any passwords need changing as they are already on a list of ones people will try to use against your accounts.
+Vulnerable passwords — check this Watchtower section now and again; any passwords listed here need changing as they are already on a list of ones people will try to use against your accounts.
 
 Weak passwords — change any weak passwords to make them more secure.
 
