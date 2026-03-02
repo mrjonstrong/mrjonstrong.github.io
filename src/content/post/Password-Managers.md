@@ -28,7 +28,7 @@ You can back up if you like, so if you switch phones you can transfer it easily.
 
 Second thing you will need is a master password. This is important as it will be used to secure everything.
 It must not be something you have used before or even similar to anything you have used before. Picking a passphrase of 4 or 5 random words with spaces in between is my suggestion. 4 long words, or 5 shorter ones seem to be the right balance between enough security without making it hard to remember or type. I would not worry about capitalising the letters or adding numbers or symbols.
-Write it down on a piece of paper and put it in your purse/wallet to start with. If you forget this you will be locked out. Once you are happy you have remembered it, you can destroy the paper. Yes you have been told not to write passwords down, but forgetting it will mean you have no access. The chance of someone finding it written down will be slim, it is only whilst you memorise it.
+Write it down on a piece of paper and put it in your purse/wallet to start with. If you forget this you will be locked out. Once you are happy you have remembered it, you can destroy the paper. Yes you have been told not to write passwords down, but forgetting it will mean you have no access. The chance of someone finding it written down will be slim — it is only whilst you memorise it.
 
 For some ideas this site helps: <https://www.useapassphrase.com/> as does the 1Password generator <https://1password.com/password-generator/>.
 Rather than pick one generated for you, I would come up with one yourself.
@@ -36,9 +36,9 @@ Rather than pick one generated for you, I would come up with one yourself.
 Check out the pricing for your region by selecting it here <https://support.1password.com/regions/#choose-your-region>.
 There is an option for just you. But the families option works well (up to 5 people). A few advantages: better value, sharing between individuals is easy, and you can set it up so that you can recover another account if they forget their master password.
 
-There is a 14 day free trial and you can move from an individual account to a family account.
+There is a 14-day free trial and you can move from an individual account to a family account.
 
-You will need to enter your card details when you sign up, as after the free trial you will be charged if you do not cancel and close your account before.
+You will need to enter your card details when you sign up, as after the free trial you will be charged if you do not cancel and close your account.
 
 Once you have registered you will download a PDF Emergency Kit. This contains your secret key. This is something 1Password generated and without it you can't login to 1Password on a new device. You can print it out and put it in a safe place (like a safe, with your passport and birth certificate etc). Keep the PDF safe as well. If you lost all your devices you were signed into 1Password on, signing in would be impossible without your secret key.
 
@@ -49,8 +49,8 @@ Head to your name on the top right again and pick get apps.
 You can check out the options here too <https://1password.com/downloads/>.
 
 I would start with your desktop client called 1Password 8. Once installed, sign into it — the easiest way is to go to your profile and get apps and click the add your account directly to fill the details in, then enter your master password.
-I would set it to lock and ask you to enter your master password quite often at first. Like 5 minutes. Once you have typed it plenty of times you can start to move this out to every hour, then every day, so it is less annoying but you still remember it.
-You will find on most modern devices it can link to biometrics to unlock, and only enter your master password once a week to help make sure you don't forget it. 
+I would set it to lock and ask you to enter your master password quite often at first — like every 5 minutes. Once you have typed it plenty of times you can start to move this out to every hour, then every day, so it is less annoying but you still remember it.
+You will find on most modern devices it can use biometrics to unlock — set it to require your master password once a week to help make sure you don't forget it.
 
 The benefit of a password manager comes with it integrating with your browser. If you are on a Mac and using Safari you can switch it on, otherwise there are extensions for Chrome, Firefox, Edge and Brave. Install the extension and sign in. <https://support.1password.com/getting-started-browser/>
 
@@ -61,9 +61,9 @@ Don't worry about changing any of them just yet.
 
 If you are on the family plan, you can store some of your passwords in a shared vault with one or more of your family. Passwords for streaming sites and food delivery are common ones to share, as are Wi-Fi passwords.
 
-Try and go through and save as many sites as you can remember having a sign on for. Check your favourites, history, and emails to help jog your memory. I'm sure I read somewhere the average is around 200 sites. I have around 400 which I have accumulated over many years. Although I probably only sign into 100 a year.
+Try to go through and save as many sites as you can remember having a sign on for. Check your favourites, history, and emails to help jog your memory. I'm sure I read somewhere the average is around 200 sites. I have around 400 which I have accumulated over many years. Although I probably only sign into 100 a year.
 
-Once you have saved as many as you can remember, try and change a few passwords. Start with ones you are less concerned about and if you get into a muddle you wouldn't worry about. Maybe that online shop you just bought that one thing from.
+Once you have saved as many as you can remember, try to change a few passwords. Start with ones you are less concerned about and if you get into a muddle you wouldn't worry about. Maybe that online shop you just bought that one thing from.
 
 After changing a few passwords on sites you are less worried about, take a break if you like, leave it a day or so. Just enjoy the ease of 1Password filling in your details (including apps and sites on your phone/tablet). And keep practising your master password.
 
@@ -86,7 +86,7 @@ This will help to pick the sites that need the passwords changed the most.
 
 Compromised sites — unlikely to have any yet as these will only appear where a site has had a data breach and you have not changed your password since. As you have only just created these entries there won't be any yet. If you do ever see these then change these right away.
 
-Vulnerable passwords — check now and again; any passwords need changing as they are already on a list of ones people will try and use against your accounts.
+Vulnerable passwords — check now and again; any passwords need changing as they are already on a list of ones people will try to use against your accounts.
 
 Weak passwords — change any weak passwords to make them more secure.
 
@@ -94,7 +94,7 @@ Reused passwords — this is the main reason for starting this journey. Even a s
 
 Unsecured sites — this lists any sites saved in 1Password with http instead of https. Review them and if they support https upgrade the details in 1Password. If they don't then your passwords will be sent to those sites in the clear and are not safe. Whilst you are there, update the passwords for these sites if you have not already since saving in 1Password. You can see created and last modified dates.
 
-Passkeys - lists sites that support passkeys but you don't have one saved. Set up passkeys whereever possible as they are the strongest way to authenticate as they can not be used by phishing sites. See the [Two-Factor Authentication](#two-factor-authentication-2fa) section below for a full breakdown of your options.
+Passkeys - lists sites that support passkeys but you don't have one saved. Set up passkeys wherever possible as they are the strongest way to authenticate, as they cannot be used by phishing sites. See the [Two-Factor Authentication](#two-factor-authentication-2fa) section below for a full breakdown of your options.
 
 Two-Factor Authentication — lists sites that support 2FA but do not have a one-time passcode saved. For each one, set up 2FA and consider storing the TOTP code in 1Password. See the [Two-Factor Authentication](#two-factor-authentication-2fa) section below for a full breakdown of your options.
 
@@ -106,7 +106,7 @@ There are some short videos to help show you how to sign up and get started: <ht
 
 ## Two-Factor Authentication (2FA)
 
-Passwords are the first factor — something you know. Two-factor authentication (2FA) adds a second factor so that even if your password is stolen or guessed, an attacker still cannot get in. Here is a breakdown of the options, from weakest to strongest. <https://2fa.directory/gb/> lists what type if any 2FA a site supports.
+Passwords are the first factor — something you know. Two-factor authentication (2FA) adds a second factor so that even if your password is stolen or guessed, an attacker still cannot get in. Here is a breakdown of the options, from weakest to strongest. <https://2fa.directory/gb/> lists what type, if any, 2FA a site supports.
 
 ### SMS / text message codes
 
@@ -116,7 +116,7 @@ Its weakness is SIM-swapping — where an attacker convinces your mobile carrier
 
 ### Time-based one-time passcodes (TOTP)
 
-These are the 6-digit codes that change every 30 seconds — the kind generated by Microsoft Authenticator, Google Authenticator, or Authy. They are significantly stronger than SMS because the code is generated locally on your device and never travels over a phone network. The downside to these is that a phishing site could convince you to enter the code in their website allowing a criminal to log into your account. A good example of this happening <https://www.troyhunt.com/a-sneaky-phish-just-grabbed-my-mailchimp-mailing-list/>. Side note: 1Password only wants to fill in a password to the website saved in the entry, so pay attention if that isn't working. Whilst often the website has a different name for their login, it could also be a phishing site.
+These are the 6-digit codes that change every 30 seconds — the kind generated by Microsoft Authenticator, Google Authenticator, or Authy. They are significantly stronger than SMS because the code is generated locally on your device and never travels over a phone network. The downside to these is that a phishing site could convince you to enter the code on their website, allowing a criminal to log into your account. Here is a good example of this happening: <https://www.troyhunt.com/a-sneaky-phish-just-grabbed-my-mailchimp-mailing-list/>. Side note: 1Password only wants to fill in your password on the website saved in the entry, so pay attention if that isn't working. Whilst often the website has a different name for their login, it could also be a phishing site.
 
 **Storing TOTP codes in 1Password**
 
@@ -133,7 +133,7 @@ If you prefer to keep TOTP codes separate for higher-risk accounts (email, banki
 
 ### Passkeys
 
-Passkeys are a newer standard that can replace both the password and the second factor in one step. However, they often are only used as a second factor of authentication. They use public-key cryptography: a private key stays on your device (or in your password manager), and a public key is registered with the website. When you sign in, your device proves it holds the private key without ever sending it anywhere.
+Passkeys are a newer standard that can replace both the password and the second factor in one step. However, they are often only used as a second factor of authentication. They use public-key cryptography: a private key stays on your device (or in your password manager), and a public key is registered with the website. When you sign in, your device proves it holds the private key without ever sending it anywhere.
 
 **Why passkeys are stronger**
 
