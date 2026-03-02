@@ -31,7 +31,7 @@ It must not be something you have used before or even similar to anything you ha
 Write it down on a piece of paper and put it in your purse/wallet to start with. If you forget this you will be locked out. Once you are happy you have remembered it, you can destroy the paper. Yes you have been told not to write passwords down, but forgetting it will mean you have no access. The chance of someone finding it written down will be slim — it is only whilst you memorise it.
 
 For some ideas this site helps: <https://www.useapassphrase.com/> as does the 1Password generator <https://1password.com/password-generator/>.
-Rather than pick one generated for you, I would come up with one yourself.
+Rather than pick one generated for you, you should come up with one yourself.
 
 Check out the pricing for your region by selecting it here <https://support.1password.com/regions/#choose-your-region>.
 There is an option for just you. But the families option works well (up to 5 people). A few advantages: better value, sharing between individuals is easy, and you can set it up so that you can recover another account if they forget their master password.
