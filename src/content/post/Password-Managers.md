@@ -40,7 +40,7 @@ There is a 14-day free trial and you can move from an individual account to a fa
 
 You will need to enter your card details when you sign up, as after the free trial you will be charged if you do not cancel and close your account.
 
-Once you have registered you will download a PDF Emergency Kit. This contains your secret key. This is something 1Password generated and without it you can't log in to 1Password on a new device. You can print it out and put it in a safe place (like a safe, with your passport and birth certificate etc). Keep the PDF safe as well. If you lost all your devices you were signed into 1Password on, signing in would be impossible without your secret key.
+Once you have registered you will download a PDF Emergency Kit. This contains your secret key. This is something 1Password generated and without it you can't log in to 1Password on a new device. You can print it out and put it in a safe place (like a safe, with your passport and birth certificate etc). Keep the PDF safe as well. If you were to lose access to all devices currently signed into 1Password, signing in would be impossible without your secret key.
 
 Go to your name on the top right, select your profile, then on the left under more actions pick Manage Two Factor Authentication. Add your 2FA.
 
