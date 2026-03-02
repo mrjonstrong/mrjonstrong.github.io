@@ -94,7 +94,7 @@ Reused passwords — this is the main reason for starting this journey. Even a s
 
 Unsecured sites — this lists any sites saved in 1Password with http instead of https. Review them and if they support https upgrade the details in 1Password. If they don't then your passwords will be sent to those sites in the clear and are not safe. Whilst you are there, update the passwords for these sites if you have not already since saving in 1Password. You can see created and last modified dates.
 
-Passkeys - lists sites that support passkeys but you don't have one saved. Set up passkeys wherever possible as they are the strongest way to authenticate, as they cannot be used by phishing sites. See the [Two-Factor Authentication](#two-factor-authentication-2fa) section below for a full breakdown of your options.
+Passkeys — lists sites that support passkeys but you don't have one saved. Set up passkeys wherever possible as they are the strongest way to authenticate, as they cannot be used by phishing sites. See the [Two-Factor Authentication](#two-factor-authentication-2fa) section below for a full breakdown of your options.
 
 Two-Factor Authentication — lists sites that support 2FA but do not have a one-time passcode saved. For each one, set up 2FA and consider storing the TOTP code in 1Password. See the [Two-Factor Authentication](#two-factor-authentication-2fa) section below for a full breakdown of your options.
 
