@@ -26,7 +26,7 @@ In which case, just use that for now. Many people have Microsoft Authenticator <
 If you don't have anything, I would recommend using Authy <https://authy.com/>.
 You can back up if you like, so if you switch phones you can transfer it easily.
 
-Second thing you will need is a master password. This is important as it will be used to secure everything.
+The second thing you will need is a master password. This is important as it will be used to secure everything.
 It must not be something you have used before or even similar to anything you have used before. Picking a passphrase of 4 or 5 random words with spaces in between is my suggestion. 4 long words, or 5 shorter ones seem to be the right balance between enough security without making it hard to remember or type. I would not worry about capitalising the letters or adding numbers or symbols.
 Write it down on a piece of paper and put it in your purse/wallet to start with. If you forget this you will be locked out. Once you are happy you have remembered it, you can destroy the paper. Yes you have been told not to write passwords down, but forgetting it will mean you have no access. The chance of someone finding it written down will be slim — it is only whilst you memorise it.
 
