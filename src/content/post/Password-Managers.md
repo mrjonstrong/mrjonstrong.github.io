@@ -63,6 +63,8 @@ If you are on the family plan, you can store some of your passwords in a shared 
 
 Try to go through and save as many sites as you can remember having an account on. Check your favourites, history, and emails to help jog your memory. I'm sure I read somewhere the average is around 200 sites. I have around 400 which I have accumulated over many years. Although I probably only sign into 100 a year.
 
+As you add each site, consider whether you actually need that account. If you don't, look to delete it — fewer accounts means a smaller surface for data breaches and spam. Most sites have a delete account option buried in the account or privacy settings. If you can't find one, check the privacy policy for a contact address and request deletion that way. Keep the entry in 1Password until you have confirmed the account has been deleted — that way you still have the credentials if you need them during the process.
+
 Once you have saved as many as you can remember, try to change a few passwords. Start with ones you are less concerned about and if you get into a muddle you wouldn't worry about. Maybe that online shop you just bought that one thing from.
 
 After changing a few passwords on sites you are less worried about, take a break if you like, leave it a day or so. Just enjoy the ease of 1Password filling in your details (including apps and sites on your phone/tablet). And keep practising your master password.
