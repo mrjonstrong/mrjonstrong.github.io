@@ -1,8 +1,8 @@
 ---
-title: "Password Manager"
+title: "Setting Up a Password Manager"
 description: "A practical guide to setting up and using 1Password as your password manager."
 publishDate: "2021-02-20"
-updatedDate: "2026-03-02"
+updatedDate: "2026-03-03"
 tags: ["cyber-security", "password-manager"]
 ---
 
