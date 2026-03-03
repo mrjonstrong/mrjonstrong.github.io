@@ -14,7 +14,7 @@ At the same time I wanted to bake security in, espically using GitHub workflows.
 
 At the end I need to add this all together into a summary/checklist etc, but for now I want to document as I go.
 
-Goes without saying basic security hygine, keep OS/apps up to date, password manager, 2FA etc. Take a look at [this previous post](/posts/setting-up-a-password-manager)
+Goes without saying basic security hygiene, keep OS/apps up to date, password manager, 2FA etc. Take a look at [this previous post](/posts/setting-up-a-password-manager)
 
 To that end check out some basics of securing your GitHub account.
 [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-strong-password](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-strong-password)
