@@ -85,7 +85,7 @@ A great resource for what sites do or don't support 2FA is [2FA Directory](https
 
 ## What should I do now?
 
-If you don't have a password manager yet and want to start using one, take a look at my post [Password Managers](/posts/password-managers). If you aren't convinced yet, see [Why do I need a password manager?](/posts/why-do-i-need-a-password-manager).
+If you don't have a password manager yet and want to start using one, take a look at my post [Password Managers](/posts/setting-up-a-password-manager). If you aren't convinced yet, see [Why do I need a password manager?](/posts/why-do-i-need-a-password-manager).
 
 Turn on 2FA on your email and social media accounts and as many other sites as you can.
 
