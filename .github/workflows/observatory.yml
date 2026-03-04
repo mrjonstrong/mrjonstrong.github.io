@@ -16,9 +16,18 @@ jobs:
       - name: Scan and check grade
         run: |
           set -euo pipefail
-          result=$(curl -sf --max-time 30 -X POST \
+          result_file=$(mktemp)
+          http_code=$(curl -s --max-time 30 \
+            -w "%{http_code}" \
+            -o "$result_file" \
+            -X POST \
             "https://observatory-api.mdn.mozilla.net/api/v2/scan?host=jonathanstrong.org") \
-            || { echo "::error::curl failed to reach Observatory API"; exit 1; }
+            || { echo "::error::curl transport error contacting Observatory API (network failure or timeout)"; exit 1; }
+          result=$(cat "$result_file")
+          if [[ "$http_code" != "200" ]]; then
+            echo "::error::Observatory API returned HTTP $http_code: $result"
+            exit 1
+          fi
           grade=$(echo "$result" | jq -r '.grade')
           score=$(echo "$result" | jq -r '.score')
           if [[ "$grade" == "null" || -z "$grade" ]]; then
