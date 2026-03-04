@@ -4,7 +4,7 @@ Personal infosec blog built with [Astro](https://astro.build), deployed on [Clou
 
 ## Status
 
-| | |
+| Item | Status |
 | --- | --- |
 | Build | [![CI](https://github.com/mrjonstrong/website/actions/workflows/ci.yml/badge.svg)](https://github.com/mrjonstrong/website/actions/workflows/ci.yml) |
 | Vulnerabilities | [![Trivy](https://github.com/mrjonstrong/website/actions/workflows/trivy.yml/badge.svg)](https://github.com/mrjonstrong/website/actions/workflows/trivy.yml) |
