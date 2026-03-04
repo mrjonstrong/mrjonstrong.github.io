@@ -64,6 +64,10 @@ jobs:
             echo "::error::Observatory API returned HTTP $http_code triggering scan: $result"
             exit 1
           fi
+          if ! echo "$result" | jq empty 2>/dev/null; then
+            echo "::error::Observatory API returned non-JSON response when triggering scan: $result"
+            exit 1
+          fi
 
           # Step 2: Poll /api/v2/analyze until the scan completes and a grade is returned
           echo "Waiting for scan to complete..."
