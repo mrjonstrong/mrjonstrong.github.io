@@ -17,7 +17,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          MAX_POLL_ATTEMPTS=18  # maximum number of polls; overall runtime is governed by POLL_SLEEP and the retry_curl backoff policy below
+          MAX_POLL_ATTEMPTS=18  # upper bound: 18 polls × (10s sleep + up to MAX_CURL_RETRIES retries each with ≤60s waits)
           POLL_SLEEP=10
           MAX_CURL_RETRIES=5
           HOST="jonathanstrong.org"
