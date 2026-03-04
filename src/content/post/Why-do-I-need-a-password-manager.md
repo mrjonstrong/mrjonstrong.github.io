@@ -2,6 +2,7 @@
 title: "Why do I need a password manager"
 description: "Why everyone needs a password manager and how it improves your security."
 publishDate: "2021-02-23"
+updatedDate: "2026-03-04"
 tags: ["cyber-security", "password-manager"]
 ---
 
@@ -12,6 +13,8 @@ Easy to share Wi-Fi passwords with friends.
 Reduces the risk of you entering the password into a fake site. For instance if you get an email about a tax refund and click the link to the tax site, your password manger will not autofill the password if it is not the right address.
 
 Have you seen a friend post about a Raybands sale on Facebook? Followed by another saying they were 'hacked'? Or had an email from a friend asking for money out of the blue, followed by another saying they were 'hacked'? These hacks are likely because your friend used the same or similar passwords on multiple sites. When one site has a breach, your email address and password is shared with the world. Someone will take your email address and password and try it on every site on the internet.
+
+To get a sense of just how many breaches have happened — and how large some of them are — take a look at this visualisation of the [world's biggest data breaches](https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/). The scale is staggering.
 
 There is no way to remember all your passwords yourself. I have around 300 items stored in my password manager. Most people I have spoken to have at least 50 or more. Although the only stat I could find was from [McAfee in 2018](https://www.mcafee.com/blogs/consumer/consumer-threat-notices/security-world-password-day/) saying the average was 23. That is still more than I could remember.
 
