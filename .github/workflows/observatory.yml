@@ -17,6 +17,7 @@ jobs:
         run: |
           set -euo pipefail
           result_file=$(mktemp)
+          trap 'rm -f "$result_file"' EXIT
           http_code=$(curl -s --max-time 30 \
             -w "%{http_code}" \
             -o "$result_file" \
