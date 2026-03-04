@@ -40,16 +40,28 @@ jobs:
                 -w "%{http_code}" -o "$result_file" \
                 -X "$method" "$url") || {
                 echo "::warning::curl transport error (attempt $attempt/$MAX_CURL_RETRIES); retrying in ${wait}s..."
-                sleep "$wait"; (( wait *= 2 )) || true; continue
+                if (( attempt < MAX_CURL_RETRIES )); then
+                  sleep "$wait"; (( wait *= 2 )) || true; continue
+                else
+                  break
+                fi
               }
               result=$(cat "$result_file")
               if [[ "$http_code" == "429" ]]; then
                 echo "::warning::Observatory API rate-limited (429, attempt $attempt/$MAX_CURL_RETRIES); waiting 60s..."
-                sleep 60; continue
+                if (( attempt < MAX_CURL_RETRIES )); then
+                  sleep 60; continue
+                else
+                  break
+                fi
               fi
               if [[ "$http_code" =~ ^5 ]]; then
                 echo "::warning::Observatory API returned HTTP $http_code (attempt $attempt/$MAX_CURL_RETRIES); retrying in ${wait}s..."
-                sleep "$wait"; (( wait *= 2 )) || true; continue
+                if (( attempt < MAX_CURL_RETRIES )); then
+                  sleep "$wait"; (( wait *= 2 )) || true; continue
+                else
+                  break
+                fi
               fi
               return 0
             done
