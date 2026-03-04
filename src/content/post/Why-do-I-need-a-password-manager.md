@@ -2,6 +2,7 @@
 title: "Why do I need a password manager"
 description: "Why everyone needs a password manager and how it improves your security."
 publishDate: "2021-02-23"
+updatedDate: "2026-03-04"
 tags: ["cyber-security", "password-manager"]
 ---
 
