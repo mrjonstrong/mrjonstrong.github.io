@@ -1,0 +1,27 @@
+name: Mozilla Observatory
+
+on:
+  schedule:
+    - cron: "0 14 * * 1" # Every Monday at 14:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  observatory:
+    name: HTTP Security Headers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scan and check grade
+        run: |
+          result=$(curl -sf --max-time 30 -X POST \
+            "https://observatory-api.mdn.mozilla.net/api/v2/scan?host=jonathanstrong.org")
+          grade=$(echo "$result" | jq -r '.grade')
+          score=$(echo "$result" | jq -r '.score')
+          echo "Grade: $grade (Score: $score)"
+          # Minimum passing grade: B. B- and below (C+, C, C-, D+, D, D-, F) fail.
+          case "$grade" in
+            A+|A|A-|B+|B) echo "Pass" ;;
+            *) echo "::error::Observatory grade $grade is below minimum (B)"; exit 1 ;;
+          esac
