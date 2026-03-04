@@ -16,29 +16,90 @@ jobs:
       - name: Scan and check grade
         run: |
           set -euo pipefail
+
+          MAX_POLL_ATTEMPTS=18  # upper bound: 18 polls × (10s sleep + up to MAX_CURL_RETRIES retries each with ≤60s waits)
+          POLL_SLEEP=10
+          MAX_CURL_RETRIES=5
+          HOST="jonathanstrong.org"
+          API_BASE="https://observatory-api.mdn.mozilla.net/api/v2"
+
           result_file=$(mktemp)
           trap 'rm -f "$result_file"' EXIT
-          http_code=$(curl -s --max-time 30 \
-            -w "%{http_code}" \
-            -o "$result_file" \
-            -X POST \
-            "https://observatory-api.mdn.mozilla.net/api/v2/scan?host=jonathanstrong.org") \
-            || { echo "::error::curl transport error contacting Observatory API (network failure or timeout)"; exit 1; }
-          result=$(cat "$result_file")
+
+          # retry_curl <method> <url>
+          # Retries curl with exponential backoff; handles 429 with a fixed 60s wait.
+          # Sets globals: http_code, result
+          retry_curl() {
+            local method="$1" url="$2"
+            local attempt=0 wait=5
+            http_code="000"
+            result=""
+            while (( attempt < MAX_CURL_RETRIES )); do
+              (( attempt++ )) || true
+              http_code=$(curl -s --max-time 30 \
+                -w "%{http_code}" -o "$result_file" \
+                -X "$method" "$url") || {
+                echo "::warning::curl transport error (attempt $attempt/$MAX_CURL_RETRIES); retrying in ${wait}s..."
+                sleep "$wait"; (( wait *= 2 )) || true; continue
+              }
+              result=$(cat "$result_file")
+              if [[ "$http_code" == "429" ]]; then
+                echo "::warning::Observatory API rate-limited (429, attempt $attempt/$MAX_CURL_RETRIES); waiting 60s..."
+                sleep 60; continue
+              fi
+              if [[ "$http_code" =~ ^5 ]]; then
+                echo "::warning::Observatory API returned HTTP $http_code (attempt $attempt/$MAX_CURL_RETRIES); retrying in ${wait}s..."
+                sleep "$wait"; (( wait *= 2 )) || true; continue
+              fi
+              return 0
+            done
+            echo "::error::Observatory API unreachable after $MAX_CURL_RETRIES attempts (last HTTP $http_code)."
+            exit 1
+          }
+
+          # Step 1: Trigger a new scan
+          echo "Triggering Observatory scan for $HOST..."
+          retry_curl POST "$API_BASE/scan?host=$HOST"
           if [[ "$http_code" != "200" ]]; then
-            echo "::error::Observatory API returned HTTP $http_code: $result"
+            echo "::error::Observatory API returned HTTP $http_code triggering scan: $result"
             exit 1
           fi
-          if ! echo "$result" | jq empty 2>/dev/null; then
-            echo "::error::Observatory API returned non-JSON response (HTTP $http_code): ${result:0:300}"
-            exit 1
-          fi
-          grade=$(echo "$result" | jq -r '.grade')
-          score=$(echo "$result" | jq -r '.score')
+
+          # Step 2: Poll /api/v2/analyze until the scan completes and a grade is returned
+          echo "Waiting for scan to complete..."
+          grade="null"
+          state="unknown"
+          poll=0
+          while (( poll < MAX_POLL_ATTEMPTS )); do
+            (( poll++ )) || true
+            retry_curl GET "$API_BASE/analyze?host=$HOST"
+
+            if [[ "$http_code" != "200" ]]; then
+              echo "::warning::Poll $poll/$MAX_POLL_ATTEMPTS: HTTP $http_code; retrying in ${POLL_SLEEP}s..."
+              sleep "$POLL_SLEEP"; continue
+            fi
+            if ! echo "$result" | jq empty 2>/dev/null; then
+              echo "::warning::Poll $poll/$MAX_POLL_ATTEMPTS: non-JSON response; retrying in ${POLL_SLEEP}s..."
+              sleep "$POLL_SLEEP"; continue
+            fi
+
+            grade=$(echo "$result" | jq -r '.grade // "null"')
+            state=$(echo "$result" | jq -r '.state // "unknown"')
+            echo "Poll $poll/$MAX_POLL_ATTEMPTS: state=$state grade=$grade"
+
+            if [[ "$grade" != "null" && -n "$grade" ]]; then
+              break
+            fi
+            sleep "$POLL_SLEEP"
+          done
+
           if [[ "$grade" == "null" || -z "$grade" ]]; then
-            echo "::error::Observatory API did not return a grade (rate-limited, scan pending, or unexpected response): $result"
+            echo "::error::Observatory scan did not complete within $(( MAX_POLL_ATTEMPTS * POLL_SLEEP ))s (last state: $state). Last response: $result"
             exit 1
           fi
+
+          # Step 3: Evaluate grade against minimum threshold (B)
+          score=$(echo "$result" | jq -r '.score // "N/A"')
           echo "Grade: $grade (Score: $score)"
           # Minimum passing grade: B. B- and below (C+, C, C-, D+, D, D-, F) fail.
           case "$grade" in
