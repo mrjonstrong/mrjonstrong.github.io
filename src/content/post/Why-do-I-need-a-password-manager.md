@@ -13,6 +13,8 @@ Reduces the risk of you entering the password into a fake site. For instance if 
 
 Have you seen a friend post about a Raybands sale on Facebook? Followed by another saying they were 'hacked'? Or had an email from a friend asking for money out of the blue, followed by another saying they were 'hacked'? These hacks are likely because your friend used the same or similar passwords on multiple sites. When one site has a breach, your email address and password is shared with the world. Someone will take your email address and password and try it on every site on the internet.
 
+To get a sense of just how many breaches have happened — and how large some of them are — take a look at this visualisation of the [world's biggest data breaches](https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/). The scale is staggering.
+
 There is no way to remember all your passwords yourself. I have around 300 items stored in my password manager. Most people I have spoken to have at least 50 or more. Although the only stat I could find was from [McAfee in 2018](https://www.mcafee.com/blogs/consumer/consumer-threat-notices/security-world-password-day/) saying the average was 23. That is still more than I could remember.
 
 But what if I use a different password for each site now? The chances are it is similar and easy to guess the variations.
