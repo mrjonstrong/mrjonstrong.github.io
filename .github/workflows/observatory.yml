@@ -17,7 +17,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          MAX_POLL_ATTEMPTS=18  # 18 × 10s = 3 minutes max wait for scan
+          MAX_POLL_ATTEMPTS=18  # upper bound: 18 polls × (10s sleep + up to MAX_CURL_RETRIES retries each with ≤60s waits)
           POLL_SLEEP=10
           MAX_CURL_RETRIES=5
           HOST="jonathanstrong.org"
@@ -32,6 +32,8 @@ jobs:
           retry_curl() {
             local method="$1" url="$2"
             local attempt=0 wait=5
+            http_code="000"
+            result=""
             while (( attempt < MAX_CURL_RETRIES )); do
               (( attempt++ )) || true
               http_code=$(curl -s --max-time 30 \
