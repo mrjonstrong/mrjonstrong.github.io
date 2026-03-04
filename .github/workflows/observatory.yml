@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Scan and check grade
         run: |
-          result=$(curl -sf -X POST \
+          result=$(curl -sf --max-time 30 -X POST \
             "https://observatory-api.mdn.mozilla.net/api/v2/scan?host=jonathanstrong.org")
           grade=$(echo "$result" | jq -r '.grade')
           score=$(echo "$result" | jq -r '.score')
