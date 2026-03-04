@@ -20,7 +20,8 @@ jobs:
           grade=$(echo "$result" | jq -r '.grade')
           score=$(echo "$result" | jq -r '.score')
           echo "Grade: $grade (Score: $score)"
+          # Minimum passing grade: B. B- and below (C+, C, C-, D+, D, D-, F) fail.
           case "$grade" in
             A+|A|A-|B+|B) echo "Pass" ;;
-            *) echo "::error::Observatory grade $grade is below threshold (B)"; exit 1 ;;
+            *) echo "::error::Observatory grade $grade is below minimum (B)"; exit 1 ;;
           esac
