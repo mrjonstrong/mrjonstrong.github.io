@@ -13,24 +13,10 @@ jobs:
     name: HTTP Security Headers
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger scan
+      - name: Scan and check grade
         run: |
-          curl -sf -X POST \
-            "https://observatory.mozilla.org/api/v1/analyze?host=jonathanstrong.org" \
-            -o /dev/null
-
-      - name: Wait for results
-        run: |
-          for i in $(seq 1 12); do
-            state=$(curl -sf "https://observatory.mozilla.org/api/v1/analyze?host=jonathanstrong.org" | jq -r '.state')
-            echo "State: $state (attempt $i/12)"
-            [ "$state" = "FINISHED" ] && break
-            sleep 5
-          done
-
-      - name: Check grade
-        run: |
-          result=$(curl -sf "https://observatory.mozilla.org/api/v1/analyze?host=jonathanstrong.org")
+          result=$(curl -sf -X POST \
+            "https://observatory-api.mdn.mozilla.net/api/v2/scan?host=jonathanstrong.org")
           grade=$(echo "$result" | jq -r '.grade')
           score=$(echo "$result" | jq -r '.score')
           echo "Grade: $grade (Score: $score)"
