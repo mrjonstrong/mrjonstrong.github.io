@@ -1,0 +1,40 @@
+name: Mozilla Observatory
+
+on:
+  schedule:
+    - cron: "0 14 * * 1" # Every Monday at 14:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  observatory:
+    name: HTTP Security Headers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger scan
+        run: |
+          curl -sf -X POST \
+            "https://observatory.mozilla.org/api/v1/analyze?host=jonathanstrong.org" \
+            -o /dev/null
+
+      - name: Wait for results
+        run: |
+          for i in $(seq 1 12); do
+            state=$(curl -sf "https://observatory.mozilla.org/api/v1/analyze?host=jonathanstrong.org" | jq -r '.state')
+            echo "State: $state (attempt $i/12)"
+            [ "$state" = "FINISHED" ] && break
+            sleep 5
+          done
+
+      - name: Check grade
+        run: |
+          result=$(curl -sf "https://observatory.mozilla.org/api/v1/analyze?host=jonathanstrong.org")
+          grade=$(echo "$result" | jq -r '.grade')
+          score=$(echo "$result" | jq -r '.score')
+          echo "Grade: $grade (Score: $score)"
+          case "$grade" in
+            A+|A|A-|B+|B) echo "Pass" ;;
+            *) echo "::error::Observatory grade $grade is below threshold (B)"; exit 1 ;;
+          esac
