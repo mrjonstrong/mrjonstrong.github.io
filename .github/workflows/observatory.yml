@@ -21,6 +21,10 @@ jobs:
             || { echo "::error::curl failed to reach Observatory API"; exit 1; }
           grade=$(echo "$result" | jq -r '.grade')
           score=$(echo "$result" | jq -r '.score')
+          if [[ "$grade" == "null" || -z "$grade" ]]; then
+            echo "::error::Observatory API did not return a grade (rate-limited, scan pending, or unexpected response): $result"
+            exit 1
+          fi
           echo "Grade: $grade (Score: $score)"
           # Minimum passing grade: B. B- and below (C+, C, C-, D+, D, D-, F) fail.
           case "$grade" in
