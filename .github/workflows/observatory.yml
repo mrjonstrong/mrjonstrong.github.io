@@ -15,8 +15,10 @@ jobs:
     steps:
       - name: Scan and check grade
         run: |
+          set -euo pipefail
           result=$(curl -sf --max-time 30 -X POST \
-            "https://observatory-api.mdn.mozilla.net/api/v2/scan?host=jonathanstrong.org")
+            "https://observatory-api.mdn.mozilla.net/api/v2/scan?host=jonathanstrong.org") \
+            || { echo "::error::curl failed to reach Observatory API"; exit 1; }
           grade=$(echo "$result" | jq -r '.grade')
           score=$(echo "$result" | jq -r '.score')
           echo "Grade: $grade (Score: $score)"
