@@ -28,6 +28,10 @@ jobs:
             echo "::error::Observatory API returned HTTP $http_code: $result"
             exit 1
           fi
+          if ! echo "$result" | jq empty 2>/dev/null; then
+            echo "::error::Observatory API returned non-JSON response (HTTP $http_code): ${result:0:300}"
+            exit 1
+          fi
           grade=$(echo "$result" | jq -r '.grade')
           score=$(echo "$result" | jq -r '.score')
           if [[ "$grade" == "null" || -z "$grade" ]]; then
