@@ -34,22 +34,44 @@ function findHtmlFiles(dir) {
 
 /**
  * Return the set of SHA-256 hashes (base64) for every inline <script>
- * in the given HTML string.  Skips:
+ * in the given HTML string that is subject to CSP script-src enforcement.
+ * This includes:
+ *   - Inline JavaScript scripts with no type attribute (defaults to JS)
+ *   - Inline scripts whose type is one of the two canonical JS MIME types
+ *     recognised here: "text/javascript" or "application/javascript"
+ *   - <script type="module"> (ES module scripts)
+ *   - <script type="speculationrules"> (subject to script-src per CSP spec)
+ * Skips:
  *   - scripts with a src= attribute (external files)
- *   - <script type="speculationrules"> (JSON data block, not JS)
+ *   - non-executable data blocks like <script type="application/ld+json">
+ *
+ * Note: browsers also accept legacy JS MIME type aliases (e.g. text/ecmascript,
+ * application/x-javascript) but Astro never emits those, so they are not
+ * listed in CSP_GOVERNED_TYPES.  If that ever changes, add them here.
  */
 function extractInlineScriptHashes(html) {
 	const hashes = new Set();
 	const root = parse(html);
 	const scriptTags = root.querySelectorAll("script");
 
+	// Types subject to CSP script-src enforcement
+	// (classic JS types, module, and speculationrules per spec)
+	const CSP_GOVERNED_TYPES = new Set([
+		"text/javascript",
+		"application/javascript",
+		"module",
+		"speculationrules",
+	]);
+
 	for (const script of scriptTags) {
 		// Skip external scripts (those with src attribute)
 		if (script.getAttribute("src")) continue;
 
-		// Skip speculation rules scripts
-		const type = script.getAttribute("type");
-		if (type?.includes("speculationrules")) continue;
+		// Only hash scripts that are subject to script-src CSP enforcement.
+		// Scripts with no type default to JS. Scripts with a non-governed type
+		// (e.g. application/ld+json) are data blocks not subject to script-src.
+		const type = script.getAttribute("type")?.toLowerCase().trim();
+		if (type && !CSP_GOVERNED_TYPES.has(type)) continue;
 
 		// Get the text content of the script
 		const body = script.textContent || "";
