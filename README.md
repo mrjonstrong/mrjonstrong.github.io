@@ -8,7 +8,7 @@ Personal infosec blog built with [Astro](https://astro.build), deployed on [Clou
 | --- | --- |
 | Build | [![CI](https://github.com/mrjonstrong/website/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mrjonstrong/website/actions/workflows/ci.yml) |
 | Vulnerabilities | [![Trivy](https://github.com/mrjonstrong/website/actions/workflows/trivy.yml/badge.svg?branch=main)](https://github.com/mrjonstrong/website/actions/workflows/trivy.yml) |
-| Observatory | [![Mozilla Observatory](https://github.com/mrjonstrong/website/actions/workflows/observatory.yml/badge.svg)](https://github.com/mrjonstrong/website/actions/workflows/observatory.yml) [![Mozilla Observatory grade](https://img.shields.io/mozilla-observatory/grade/jonathanstrong.org)](https://developer.mozilla.org/en-US/observatory/analyze?host=jonathanstrong.org) |
+| Observatory | [![Mozilla Observatory](https://github.com/mrjonstrong/website/actions/workflows/observatory.yml/badge.svg?branch=main)](https://github.com/mrjonstrong/website/actions/workflows/observatory.yml) [![Mozilla Observatory grade](https://img.shields.io/mozilla-observatory/grade/jonathanstrong.org)](https://developer.mozilla.org/en-US/observatory/analyze?host=jonathanstrong.org) |
 
 ## Security checks
 
