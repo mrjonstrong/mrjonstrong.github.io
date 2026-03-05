@@ -15,7 +15,13 @@ const { articleDate, description, ogImage, title } = Astro.props;
  * Escaping <, >, and & to their Unicode equivalents is the standard fix.
  */
 function safeJsonStringify(value: unknown): string {
-	return JSON.stringify(value)
+	const json = JSON.stringify(value);
+
+	if (json === undefined) {
+		return "null";
+	}
+
+	return json
 		.replace(/</g, "\\u003c")
 		.replace(/>/g, "\\u003e")
 		.replace(/&/g, "\\u0026");
