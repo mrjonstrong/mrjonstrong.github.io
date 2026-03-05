@@ -8,6 +8,22 @@ type Props = SiteMeta;
 
 const { articleDate, description, ogImage, title } = Astro.props;
 
+/**
+ * Serialize a value to JSON that is safe to embed inside an HTML <script> tag.
+ * JSON.stringify does not escape "<" by default, so a title/description
+ * containing "</script>" would prematurely terminate the script element.
+ * Escaping <, >, and & to their Unicode equivalents is the standard fix.
+ */
+function safeJsonStringify(value: unknown): string {
+	const json = JSON.stringify(value);
+
+	if (json === undefined) {
+		return "null";
+	}
+
+	return json.replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
+}
+
 const titleSeparator = "•";
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -94,7 +110,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 		<script
 			is:inline
 			type="application/ld+json"
-			set:html={JSON.stringify({
+			set:html={safeJsonStringify({
 				"@context": "https://schema.org",
 				"@type": "BlogPosting",
 				headline: title,
@@ -118,7 +134,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 		<script
 			is:inline
 			type="application/ld+json"
-			set:html={JSON.stringify({
+			set:html={safeJsonStringify({
 				"@context": "https://schema.org",
 				"@type": "WebSite",
 				name: siteConfig.title,

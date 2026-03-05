@@ -36,11 +36,18 @@ function findHtmlFiles(dir) {
  * Return the set of SHA-256 hashes (base64) for every inline <script>
  * in the given HTML string that is subject to CSP script-src enforcement.
  * This includes:
- *   - Inline JavaScript scripts (no type, or a JS MIME type, or "module")
+ *   - Inline JavaScript scripts with no type attribute (defaults to JS)
+ *   - Inline scripts whose type is one of the two canonical JS MIME types
+ *     recognised here: "text/javascript" or "application/javascript"
+ *   - <script type="module"> (ES module scripts)
  *   - <script type="speculationrules"> (subject to script-src per CSP spec)
  * Skips:
  *   - scripts with a src= attribute (external files)
  *   - non-executable data blocks like <script type="application/ld+json">
+ *
+ * Note: browsers also accept legacy JS MIME type aliases (e.g. text/ecmascript,
+ * application/x-javascript) but Astro never emits those, so they are not
+ * listed in CSP_GOVERNED_TYPES.  If that ever changes, add them here.
  */
 function extractInlineScriptHashes(html) {
 	const hashes = new Set();
