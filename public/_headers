@@ -1,3 +1,8 @@
+# SRI note: the Cloudflare Web Analytics beacon is injected by Cloudflare's edge,
+# not present in source HTML, so SRI cannot be applied from this codebase.
+# Mitigation: script-src CSP restricts execution to the Cloudflare origin only,
+# and the script is served over HTTPS. Disable analytics in CF dashboard to remove
+# the external script entirely if SRI compliance becomes a hard requirement.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
