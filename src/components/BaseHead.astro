@@ -21,10 +21,7 @@ function safeJsonStringify(value: unknown): string {
 		return "null";
 	}
 
-	return json
-		.replace(/</g, "\\u003c")
-		.replace(/>/g, "\\u003e")
-		.replace(/&/g, "\\u0026");
+	return json.replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
 }
 
 const titleSeparator = "•";
