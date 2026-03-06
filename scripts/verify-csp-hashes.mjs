@@ -275,7 +275,9 @@ const cspHashes = extractScriptSrcHashes(cspValue);
 /* ------------------------------------------------------------------ */
 
 const inBuildNotCsp = [...buildHashes].filter((h) => !cspHashes.has(h));
-const inCspNotBuild = [...cspHashes].filter((h) => !buildHashes.has(h) && !EDGE_INJECTED_HASHES.has(h));
+const inCspNotBuild = [...cspHashes].filter(
+	(h) => !buildHashes.has(h) && !EDGE_INJECTED_HASHES.has(h),
+);
 
 if (inBuildNotCsp.length === 0 && inCspNotBuild.length === 0) {
 	console.log(`CSP hash check passed — ${buildHashes.size} inline script hash(es) verified.`);
