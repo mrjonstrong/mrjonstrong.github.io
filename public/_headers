@@ -4,13 +4,13 @@
 # and the script is served over HTTPS. Disable analytics in CF dashboard to remove
 # the external script entirely if SRI compliance becomes a hard requirement.
 #
-# Edge-injected CSP hashes: Cloudflare injects additional inline content at the
-# edge (after the static build). These hashes are not in dist/ HTML but must be
-# in the CSP to permit execution. scripts/verify-csp-hashes.mjs excludes them
-# from the "hash in CSP but not in build" check via EDGE_INJECTED_HASHES.
+# Edge-injected CSP script hashes: Cloudflare injects additional inline content at the
+# edge (after the static build). These script hashes are not in dist/ HTML but must be
+# in the CSP to permit execution. scripts/verify-csp-hashes.mjs excludes these script
+# hashes from the "hash in CSP but not in build" check via EDGE_INJECTED_HASHES.
 # If Cloudflare updates its injection, update both this file and that constant.
-#   script-src: 'sha256-P6ITs8Oqg0dM2UoRISm6PejQ6KAgum8+i5uY+KgbJJA=' — Cloudflare edge-injected inline script
-#   style-src:  'sha256-+OsIn6RhyCZCUkkvtHxFtP0kU3CGdGeLjDd9Fzqdl3o=' — inline <style> injected by inject.js (injectGlobalStyles)
+#   script-src: 'sha256-P6ITs8Oqg0dM2UoRISm6PejQ6KAgum8+i5uY+KgbJJA=' — Cloudflare edge-injected inline script (covered by EDGE_INJECTED_HASHES)
+#   style-src:  'sha256-+OsIn6RhyCZCUkkvtHxFtP0kU3CGdGeLjDd9Fzqdl3o=' — inline <style> injected by inject.js (injectGlobalStyles); note: scripts/verify-csp-hashes.mjs currently only parses script-src, so this style hash is not validated by that script and must be kept in sync manually
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
