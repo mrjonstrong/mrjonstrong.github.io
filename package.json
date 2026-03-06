@@ -35,7 +35,7 @@
 		"rehype-external-links": "^3.0.0",
 		"rehype-unwrap-images": "^1.0.0",
 		"remark-directive": "^4.0.0",
-		"satori": "0.24.1",
+		"satori": "0.25.0",
 		"satori-html": "^0.3.2",
 		"sharp": "^0.34.5",
 		"unified": "^11.0.5",
@@ -43,7 +43,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.6",
-		"@biomejs/biome": "^2.4.5",
+		"@biomejs/biome": "^2.4.6",
 		"@iconify-json/mdi": "^1.2.3",
 		"@pagefind/default-ui": "^1.4.0",
 		"@resvg/resvg-js": "^2.6.2",

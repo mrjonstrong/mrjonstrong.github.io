@@ -1,3 +1,17 @@
+# SRI note: the Cloudflare Web Analytics beacon is injected by Cloudflare's edge,
+# not present in source HTML, so SRI cannot be applied from this codebase.
+# Mitigation: script-src CSP restricts execution to the Cloudflare origin only,
+# and the script is served over HTTPS. Disable analytics in CF dashboard to remove
+# the external script entirely if SRI compliance becomes a hard requirement.
+#
+# Edge-injected CSP hashes: Cloudflare injects additional inline content at the
+# edge (after the static build). These script/style hashes are not in dist/ HTML but
+# must be in the CSP to permit execution. scripts/verify-csp-hashes.mjs excludes the
+# edge-injected script hash from the "hash in CSP but not in build" check via
+# EDGE_INJECTED_HASHES. If Cloudflare updates its injection, update both this file and
+# that constant (for scripts) and the style hash below.
+#   script-src: 'sha256-P6ITs8Oqg0dM2UoRISm6PejQ6KAgum8+i5uY+KgbJJA=' — Cloudflare edge-injected inline script (covered by EDGE_INJECTED_HASHES)
+#   style-src:  'sha256-+OsIn6RhyCZCUkkvtHxFtP0kU3CGdGeLjDd9Fzqdl3o=' — inline <style> injected by Cloudflare at the edge; note: scripts/verify-csp-hashes.mjs currently only parses script-src, so this style hash is not validated by that script and must be kept in sync manually
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
@@ -7,4 +21,4 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: unsafe-none
   Cross-Origin-Resource-Policy: same-origin
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU=' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU=' 'sha256-P6ITs8Oqg0dM2UoRISm6PejQ6KAgum8+i5uY+KgbJJA=' https://static.cloudflareinsights.com; style-src 'self' 'sha256-+OsIn6RhyCZCUkkvtHxFtP0kU3CGdGeLjDd9Fzqdl3o='; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
