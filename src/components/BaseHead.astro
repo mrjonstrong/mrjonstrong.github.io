@@ -1,5 +1,5 @@
 ---
-import { WEBMENTION_PINGBACK, WEBMENTION_URL } from "astro:env/client";
+import { CF_BEACON_TOKEN, WEBMENTION_PINGBACK, WEBMENTION_URL } from "astro:env/client";
 import { siteConfig } from "@/site.config";
 import type { SiteMeta } from "@/types";
 import "@/styles/global.css";
@@ -103,6 +103,16 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 }
 
 <meta content={Astro.generator} name="generator" />
+
+{/* Cloudflare Web Analytics — manual snippet; auto-inject must be disabled in CF dashboard */}
+{import.meta.env.PROD && CF_BEACON_TOKEN && (
+	<script
+		is:inline
+		defer
+		src="https://static.cloudflareinsights.com/beacon.min.js"
+		data-cf-beacon={JSON.stringify({ token: CF_BEACON_TOKEN })}
+	/>
+)}
 
 {/* Structured Data */}
 {
