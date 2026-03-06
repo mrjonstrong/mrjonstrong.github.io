@@ -10,7 +10,7 @@
 # hashes from the "hash in CSP but not in build" check via EDGE_INJECTED_HASHES.
 # If Cloudflare updates its injection, update both this file and that constant.
 #   script-src: 'sha256-P6ITs8Oqg0dM2UoRISm6PejQ6KAgum8+i5uY+KgbJJA=' — Cloudflare edge-injected inline script (covered by EDGE_INJECTED_HASHES)
-#   style-src:  'sha256-+OsIn6RhyCZCUkkvtHxFtP0kU3CGdGeLjDd9Fzqdl3o=' — inline <style> injected by inject.js (injectGlobalStyles); note: scripts/verify-csp-hashes.mjs currently only parses script-src, so this style hash is not validated by that script and must be kept in sync manually
+#   style-src:  'sha256-+OsIn6RhyCZCUkkvtHxFtP0kU3CGdGeLjDd9Fzqdl3o=' — inline <style> injected by Cloudflare at the edge; note: scripts/verify-csp-hashes.mjs currently only parses script-src, so this style hash is not validated by that script and must be kept in sync manually
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
