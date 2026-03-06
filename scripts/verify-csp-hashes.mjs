@@ -14,11 +14,12 @@ import { parse } from "node-html-parser";
 const DIST_DIR = "dist";
 const HEADERS_FILE = "public/_headers";
 
-// Hashes for inline content injected by Cloudflare at the edge (not present in
-// build output). These must be present in the CSP to allow the injected content,
-// but will never appear in dist/ HTML. Excluding them from the "hash in CSP but
-// not in build" check prevents false-positive build failures.
-// If Cloudflare updates its injection, update both this set and public/_headers.
+// SHA-256 hashes for inline <script> content injected by Cloudflare at the edge
+// (not present in the build output). These must be present in the CSP `script-src`
+// directive to allow the injected scripts, but will never appear in dist/ HTML.
+// Excluding them from the "hash in CSP but not in build" check prevents
+// false-positive build failures. If Cloudflare updates its injected scripts,
+// update both this set and public/_headers.
 const EDGE_INJECTED_HASHES = new Set([
 	"sha256-P6ITs8Oqg0dM2UoRISm6PejQ6KAgum8+i5uY+KgbJJA=", // Cloudflare edge-injected inline script
 ]);
