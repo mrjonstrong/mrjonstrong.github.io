@@ -3,6 +3,14 @@
 # Mitigation: script-src CSP restricts execution to the Cloudflare origin only,
 # and the script is served over HTTPS. Disable analytics in CF dashboard to remove
 # the external script entirely if SRI compliance becomes a hard requirement.
+#
+# Edge-injected CSP hashes: Cloudflare injects additional inline content at the
+# edge (after the static build). These hashes are not in dist/ HTML but must be
+# in the CSP to permit execution. scripts/verify-csp-hashes.mjs excludes them
+# from the "hash in CSP but not in build" check via EDGE_INJECTED_HASHES.
+# If Cloudflare updates its injection, update both this file and that constant.
+#   script-src: 'sha256-P6ITs8Oqg0dM2UoRISm6PejQ6KAgum8+i5uY+KgbJJA=' — Cloudflare edge-injected inline script
+#   style-src:  'sha256-+OsIn6RhyCZCUkkvtHxFtP0kU3CGdGeLjDd9Fzqdl3o=' — inline <style> injected by inject.js (injectGlobalStyles)
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
@@ -12,4 +20,4 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: unsafe-none
   Cross-Origin-Resource-Policy: same-origin
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU=' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU=' 'sha256-P6ITs8Oqg0dM2UoRISm6PejQ6KAgum8+i5uY+KgbJJA=' https://static.cloudflareinsights.com; style-src 'self' 'sha256-+OsIn6RhyCZCUkkvtHxFtP0kU3CGdGeLjDd9Fzqdl3o='; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
