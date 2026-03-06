@@ -110,7 +110,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 		is:inline
 		defer
 		src="https://static.cloudflareinsights.com/beacon.min.js"
-		data-cf-beacon={`{"token":"${CF_BEACON_TOKEN}"}`}
+		data-cf-beacon={JSON.stringify({ token: CF_BEACON_TOKEN })}
 	/>
 )}
 
