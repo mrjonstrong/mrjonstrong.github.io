@@ -97,6 +97,7 @@ export default defineConfig({
 			WEBMENTION_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
 			WEBMENTION_URL: envField.string({ context: "client", access: "public", optional: true }),
 			WEBMENTION_PINGBACK: envField.string({ context: "client", access: "public", optional: true }),
+			CF_BEACON_TOKEN: envField.string({ context: "client", access: "public", optional: true }),
 		},
 	},
 });
