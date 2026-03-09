@@ -274,7 +274,7 @@ const cspHashes = extractScriptSrcHashes(cspValue);
 function extractEdgeInjectedHashes(content) {
 	const hashes = new Set();
 	for (const line of content.split(/\r?\n/)) {
-		const match = line.match(/^#\s*edge-injected-hash:\s*(sha256-[A-Za-z0-9+/]+=*)\s*$/);
+		const match = line.match(/^\s*#\s*edge-injected-hash:\s*(sha256-[A-Za-z0-9+/]+=*)\s*$/);
 		if (match) hashes.add(match[1]);
 	}
 	return hashes;
