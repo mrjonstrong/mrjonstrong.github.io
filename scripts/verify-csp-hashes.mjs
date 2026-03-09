@@ -262,11 +262,33 @@ function extractScriptSrcHashes(cspValue) {
 const cspHashes = extractScriptSrcHashes(cspValue);
 
 /* ------------------------------------------------------------------ */
-/*  3. Compare                                                        */
+/*  3. Extract edge-injected hashes (exempt from build check)         */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Parse "# edge-injected-hash: sha256-..." comments from the _headers file.
+ * These hashes belong to scripts that Cloudflare (or another CDN) injects at
+ * the edge — they are intentionally absent from the static build output and
+ * must be excluded from the "hash in CSP but not in build" error.
+ */
+function extractEdgeInjectedHashes(content) {
+	const hashes = new Set();
+	for (const line of content.split(/\r?\n/)) {
+		const match = line.match(/^#\s*edge-injected-hash:\s*(sha256-[A-Za-z0-9+/]+=*)\s*$/);
+		if (match) hashes.add(match[1]);
+	}
+	return hashes;
+}
+
+const edgeHashes = extractEdgeInjectedHashes(headersContent);
+
+/* ------------------------------------------------------------------ */
+/*  4. Compare                                                        */
 /* ------------------------------------------------------------------ */
 
 const inBuildNotCsp = [...buildHashes].filter((h) => !cspHashes.has(h));
-const inCspNotBuild = [...cspHashes].filter((h) => !buildHashes.has(h));
+// Edge-injected hashes are expected to be absent from the build output.
+const inCspNotBuild = [...cspHashes].filter((h) => !buildHashes.has(h) && !edgeHashes.has(h));
 
 if (inBuildNotCsp.length === 0 && inCspNotBuild.length === 0) {
 	console.log(`CSP hash check passed — ${buildHashes.size} inline script hash(es) verified.`);

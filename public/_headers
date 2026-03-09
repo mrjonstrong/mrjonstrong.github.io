@@ -1,3 +1,12 @@
+# ---------------------------------------------------------------------------
+# Edge-injected hashes — these are added by Cloudflare at the CDN edge and
+# are NOT present in the static build output. Listed here so that
+# scripts/verify-csp-hashes.mjs can exempt them from the "hash in CSP but
+# not in build" check while still requiring all build-time hashes to match.
+#
+# edge-injected-hash: sha256-XhAgTgaUfawhGSBspvlVA+Z00MbgfwmRbKH9Kk50tjU=
+# ---------------------------------------------------------------------------
+
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
@@ -7,4 +16,4 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: unsafe-none
   Cross-Origin-Resource-Policy: same-origin
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU='; style-src 'self'; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU=' 'sha256-XhAgTgaUfawhGSBspvlVA+Z00MbgfwmRbKH9Kk50tjU=' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
