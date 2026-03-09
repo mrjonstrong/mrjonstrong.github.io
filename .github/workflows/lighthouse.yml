@@ -1,0 +1,94 @@
+name: Lighthouse
+
+on:
+  schedule:
+    - cron: "0 15 * * 1" # Every Monday at 15:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write # needed to commit updated badge SVGs back to main
+
+jobs:
+  lighthouse:
+    name: Lighthouse Scores
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Install Google Chrome
+        run: |
+          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+          rm google-chrome-stable_current_amd64.deb
+
+      - name: Run Lighthouse
+        run: |
+          npx --yes lighthouse@latest https://jonathanstrong.org \
+            --output=json \
+            --output-path=/tmp/lh.json \
+            --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --quiet
+
+      - name: Generate badge SVGs
+        run: |
+          node - <<'EOF'
+          const fs   = require('fs');
+          const https = require('https');
+
+          const report = JSON.parse(fs.readFileSync('/tmp/lh.json', 'utf8'));
+          const cats   = report.categories;
+
+          const scores = {
+            performance:     Math.round(cats.performance.score     * 100),
+            accessibility:   Math.round(cats.accessibility.score   * 100),
+            'best-practices':Math.round(cats['best-practices'].score * 100),
+            seo:             Math.round(cats.seo.score             * 100),
+          };
+
+          fs.mkdirSync('badges', { recursive: true });
+
+          function color(n) {
+            if (n >= 90) return 'brightgreen';
+            if (n >= 50) return 'orange';
+            return 'red';
+          }
+
+          function download(url, dest) {
+            return new Promise((resolve, reject) => {
+              const file = fs.createWriteStream(dest);
+              https.get(url, (res) => {
+                if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                  file.close();
+                  download(res.headers.location, dest).then(resolve).catch(reject);
+                  return;
+                }
+                res.pipe(file);
+                file.on('finish', () => { file.close(); resolve(); });
+              }).on('error', reject);
+            });
+          }
+
+          (async () => {
+            for (const [key, score] of Object.entries(scores)) {
+              const label = key.replace(/-/g, '+');
+              const url   = `https://img.shields.io/badge/${label}-${score}%25-${color(score)}?style=flat`;
+              const dest  = `badges/lighthouse-${key}.svg`;
+              console.log(`${key}: ${score} → ${dest}`);
+              await download(url, dest);
+            }
+          })().catch(e => { console.error(e); process.exit(1); });
+          EOF
+
+      - name: Commit badges
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add badges/
+          if git diff --staged --quiet; then
+            echo "Badges unchanged — nothing to commit"
+            exit 0
+          fi
+          git commit -m "chore: update Lighthouse score badges [skip ci]"
+          git push origin main
