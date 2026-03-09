@@ -1,7 +1,3 @@
-# Cloudflare Web Analytics: beacon script is loaded via a manual <script> tag in
-# BaseHead.astro (CF_BEACON_TOKEN env var). Auto-inject is disabled in CF dashboard.
-# The beacon is an external script sourced from static.cloudflareinsights.com, which
-# is already covered by script-src — no inline script, no hash required.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
@@ -11,4 +7,4 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: unsafe-none
   Cross-Origin-Resource-Policy: same-origin
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU=' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU='; style-src 'self'; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
