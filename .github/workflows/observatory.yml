@@ -99,8 +99,8 @@ jobs:
               sleep "$POLL_SLEEP"; continue
             fi
 
-            grade=$(echo "$result" | jq -r '.grade // "null"')
-            state=$(echo "$result" | jq -r '.state // "unknown"')
+            grade=$(echo "$result" | jq -r '.scan.grade // "null"')
+            state=$(echo "$result" | jq -r 'if .scan.error != null then "error" elif .scan.grade != null then "complete" else "pending" end')
             echo "Poll $poll/$MAX_POLL_ATTEMPTS: state=$state grade=$grade"
 
             if [[ "$grade" != "null" && -n "$grade" ]]; then
@@ -115,7 +115,7 @@ jobs:
           fi
 
           # Step 3: Evaluate grade against minimum threshold (B)
-          score=$(echo "$result" | jq -r '.score // "N/A"')
+          score=$(echo "$result" | jq -r '.scan.score // "N/A"')
           echo "Grade: $grade (Score: $score)"
           # Minimum passing grade: B. B- and below (C+, C, C-, D+, D, D-, F) fail.
           case "$grade" in
