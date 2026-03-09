@@ -16,4 +16,5 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: unsafe-none
   Cross-Origin-Resource-Policy: same-origin
+  # TODO: add require-trusted-types-for 'script' — blocked on @pagefind/default-ui Trusted Types support (upstream issue)
   Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-OdbZQZXbUBJu+W/zfmrjzmW4F+LQcj1o7B14GjBDndk=' 'sha256-cLylwyRMqj4vcaurpixDxy1sxWPrN0XiZEslSDEWqqk=' 'sha256-88FtWL6IBxAOzdv3sO1JMQBMLKItxfLoIzsq7dPBPqU=' 'sha256-XhAgTgaUfawhGSBspvlVA+Z00MbgfwmRbKH9Kk50tjU=' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' https: data:; connect-src 'self' https://webmention.io https://api.github.com https://cloudflareinsights.com; font-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
