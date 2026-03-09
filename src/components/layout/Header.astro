@@ -83,7 +83,9 @@ import { siteConfig } from "../../site.config";
 </header>
 
 <script>
-	import { toggleClass } from "@/utils/domElement";
+	function toggleClass(element: HTMLElement, className: string) {
+		element.classList.toggle(className);
+	}
 
 	class MobileNavBtn extends HTMLElement {
 		#menuOpen: boolean = false;
