@@ -4,6 +4,8 @@
 # scripts/verify-csp-hashes.mjs can exempt them from the "hash in CSP but
 # not in build" check while still requiring all build-time hashes to match.
 #
+# Cloudflare Web Analytics — two inline scripts injected at the edge by the
+# Web Analytics app (both verified absent from dist/ — not build-time scripts)
 # edge-injected-hash: sha256-XhAgTgaUfawhGSBspvlVA+Z00MbgfwmRbKH9Kk50tjU=
 # edge-injected-hash: sha256-8odKxKLmRf1HgsohnCxJOOYDwk0CEmdC/17GKxeouxA=
 # ---------------------------------------------------------------------------
