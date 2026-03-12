@@ -1,7 +1,5 @@
 ---
 // Heavy inspiration taken from Astro Starlight -> https://github.com/withastro/starlight/blob/main/packages/starlight/components/Search.astro
-
-import "@/styles/blocks/search.css";
 ---
 
 <site-search class="ms-auto" id="search">
@@ -57,6 +55,8 @@ import "@/styles/blocks/search.css";
 </site-search>
 
 <script>
+	import searchCssUrl from "@/styles/blocks/search.css?url";
+
 	class SiteSearch extends HTMLElement {
 		#closeBtn: HTMLButtonElement | null;
 		#dialog: HTMLDialogElement | null;
@@ -98,6 +98,13 @@ import "@/styles/blocks/search.css";
 			if (import.meta.env.DEV) return;
 			const onIdle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
 			onIdle(async () => {
+				// Inject search CSS lazily — keeps it out of the initial render-blocking bundle
+				if (!document.querySelector(`link[href="${searchCssUrl}"]`)) {
+					const link = document.createElement("link");
+					link.rel = "stylesheet";
+					link.href = searchCssUrl;
+					document.head.appendChild(link);
+				}
 				const { PagefindUI } = await import("@pagefind/default-ui");
 				new PagefindUI({
 					baseUrl: import.meta.env.BASE_URL,
