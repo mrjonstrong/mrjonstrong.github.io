@@ -15,13 +15,16 @@
 		"lint": "biome check --write",
 		"format": "prettier -w . --cache"
 	},
+	"engines": {
+		"node": ">=20.19.5"
+	},
 	"dependencies": {
-		"@astrojs/markdown-remark": "^6.3.10",
-		"@astrojs/mdx": "4.3.13",
-		"@astrojs/rss": "4.0.15",
-		"@astrojs/sitemap": "3.7.0",
+		"@astrojs/markdown-remark": "^6.3.11",
+		"@astrojs/mdx": "4.3.14",
+		"@astrojs/rss": "4.0.17",
+		"@astrojs/sitemap": "3.7.1",
 		"@tailwindcss/vite": "4.2.1",
-		"astro": "5.18.0",
+		"astro": "5.18.1",
 		"astro-expressive-code": "^0.41.7",
 		"astro-icon": "^1.1.5",
 		"astro-robots-txt": "^1.0.0",
@@ -42,7 +45,7 @@
 		"unist-util-visit": "^5.1.0"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.6",
+		"@astrojs/check": "^0.9.7",
 		"@biomejs/biome": "^2.4.6",
 		"@iconify-json/mdi": "^1.2.3",
 		"@pagefind/default-ui": "^1.4.0",
