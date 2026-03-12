@@ -98,7 +98,8 @@
 			if (import.meta.env.DEV) return;
 			const onIdle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
 			onIdle(async () => {
-				// Inject search CSS lazily — keeps it out of the initial render-blocking bundle
+				// Preload search CSS during idle time so it's ready before the user opens search,
+				// without blocking the initial page render
 				if (!document.querySelector("link[data-search-css]")) {
 					const link = document.createElement("link");
 					link.rel = "stylesheet";
