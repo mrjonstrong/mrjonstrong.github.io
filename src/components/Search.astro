@@ -99,10 +99,11 @@
 			const onIdle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
 			onIdle(async () => {
 				// Inject search CSS lazily — keeps it out of the initial render-blocking bundle
-				if (!document.querySelector(`link[href="${searchCssUrl}"]`)) {
+				if (!document.querySelector("link[data-search-css]")) {
 					const link = document.createElement("link");
 					link.rel = "stylesheet";
 					link.href = searchCssUrl;
+					link.dataset.searchCss = "";
 					document.head.appendChild(link);
 				}
 				const { PagefindUI } = await import("@pagefind/default-ui");
