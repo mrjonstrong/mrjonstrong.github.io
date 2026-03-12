@@ -99,15 +99,20 @@
 			const onIdle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
 			onIdle(async () => {
 				// Preload search CSS during idle time so it's ready before the user opens search,
-				// without blocking the initial page render
-				if (!document.querySelector("link[data-search-css]")) {
-					const link = document.createElement("link");
-					link.rel = "stylesheet";
-					link.href = searchCssUrl;
-					link.dataset.searchCss = "";
-					document.head.appendChild(link);
-				}
-				const { PagefindUI } = await import("@pagefind/default-ui");
+				// without blocking the initial page render. Await the load event so PagefindUI
+				// is never instantiated before its styles are applied.
+				const cssReady = document.querySelector("link[data-search-css]")
+					? Promise.resolve()
+					: new Promise<void>((resolve) => {
+							const link = document.createElement("link");
+							link.rel = "stylesheet";
+							link.href = searchCssUrl;
+							link.dataset.searchCss = "";
+							link.addEventListener("load", () => resolve(), { once: true });
+							link.addEventListener("error", () => resolve(), { once: true });
+							document.head.appendChild(link);
+					  });
+				const [{ PagefindUI }] = await Promise.all([import("@pagefind/default-ui"), cssReady]);
 				new PagefindUI({
 					baseUrl: import.meta.env.BASE_URL,
 					bundlePath: import.meta.env.BASE_URL.replace(/\/$/, "") + "/pagefind/",
