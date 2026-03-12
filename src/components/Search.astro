@@ -101,8 +101,15 @@
 				// Preload search CSS during idle time so it's ready before the user opens search,
 				// without blocking the initial page render. Await the load event so PagefindUI
 				// is never instantiated before its styles are applied.
-				const cssReady = document.querySelector("link[data-search-css]")
-					? Promise.resolve()
+				const existingLink = document.querySelector<HTMLLinkElement>("link[data-search-css]");
+				const cssReady: Promise<void> = existingLink
+					? existingLink.sheet
+						? Promise.resolve()
+						: new Promise<void>((resolve) => {
+								const onDone = () => resolve();
+								existingLink.addEventListener("load", onDone, { once: true });
+								existingLink.addEventListener("error", onDone, { once: true });
+						  })
 					: new Promise<void>((resolve) => {
 							const link = document.createElement("link");
 							link.rel = "stylesheet";
