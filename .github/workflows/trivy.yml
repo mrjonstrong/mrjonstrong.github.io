@@ -45,7 +45,9 @@ jobs:
             get.trivy.dev:443
             ghcr.io:443
             github.com:443
+            release-assets.githubusercontent.com:443
             mirror.gcr.io:443
+            ghcr.io:443
             pkg-containers.githubusercontent.com:443
 
       - name: Checkout code
